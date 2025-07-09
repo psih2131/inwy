@@ -12,7 +12,7 @@
     letter-spacing: -0.72px;
     display: inline-flex;
     align-items: center;
-    background: #fff;
+    background: none;
     transition: all ease 0.3s;
 
     &::before {
@@ -28,6 +28,28 @@
 
     &:hover {
         padding-right: 25px;
+        transition: all ease 0.3s;
+    }
+}
+
+
+.btn-v2 {
+    border: solid 1px $green1;
+    border-radius: 10px;
+    padding: 17px 22px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    /* 250% */
+    letter-spacing: -0.8px;
+    background: none;
+    color: #fff;
+    transition: all ease 0.3s;
+
+    &:hover {
+        background: $green1;
+        color: #000;
         transition: all ease 0.3s;
     }
 }

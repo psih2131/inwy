@@ -90,9 +90,9 @@ textarea {
 }
 
 body {
-	overscroll-behavior-y: contain;
-	/* Для совместимости с большинством браузеров */
-	overscroll-behavior-y: auto;
+	// overscroll-behavior-y: contain;
+	// /* Для совместимости с большинством браузеров */
+	// overscroll-behavior-y: auto;
 	font-family: $mainFont;
 }
 
