@@ -109,17 +109,11 @@ ul {
 
 
 .container {
-	width: 1217px;
-	margin: 0 auto;
+	// width: 1217px;
+	// margin: 0 auto;
 }
 
-// .overflowChange {
-// 	overflow: hidden;
-// 	height: 100vh;
-// }
-.overflowChange {
-	overflow: hidden;
-}
+
 
 .main {
 	min-height: 700px;
@@ -130,21 +124,8 @@ ul {
 
 
 
-@media only screen and (max-width: 1250px) {
-	.container {
-		width: 746px;
-	}
-}
+@media only screen and (max-width: 1250px) {}
 
-@media only screen and (max-width: 750px) {
-	.container {
-		width: 343px;
-	}
-}
+@media only screen and (max-width: 750px) {}
 
-@media only screen and (max-width: 450px) {
-	.container {
-		width: calc(100% - 32px);
-		min-width: 345px;
-	}
-}
+@media only screen and (max-width: 450px) {}
