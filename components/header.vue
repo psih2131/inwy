@@ -20,12 +20,12 @@
               </NuxtLink>
           </li>
           <li class="header__list-element">
-            <a href="#" class="header__list-element-link">
-              <div class="header__list-element-link-col">
-                <span class="header__list-element-link-text">блог</span>
-                <span class="header__list-element-link-text">блог</span>
-              </div>
-            </a>
+            <NuxtLink to="/blog" class="header__list-element-link">
+                  <div class="header__list-element-link-col">
+                    <span class="header__list-element-link-text">блог</span>
+                    <span class="header__list-element-link-text">блог</span>
+                  </div>
+              </NuxtLink>
           </li>
         </ul>
       </nav>
