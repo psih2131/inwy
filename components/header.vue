@@ -12,12 +12,12 @@
             </a>
           </li>
           <li class="header__list-element">
-            <a href="#" class="header__list-element-link">
-              <div class="header__list-element-link-col">
-                <span class="header__list-element-link-text">о нас</span>
-                <span class="header__list-element-link-text">о нас</span>
-              </div>
-            </a>
+              <NuxtLink to="/about" class="header__list-element-link">
+                  <div class="header__list-element-link-col">
+                    <span class="header__list-element-link-text">о нас</span>
+                    <span class="header__list-element-link-text">о нас</span>
+                  </div>
+              </NuxtLink>
           </li>
           <li class="header__list-element">
             <a href="#" class="header__list-element-link">
@@ -30,10 +30,9 @@
         </ul>
       </nav>
 
-      <a href="#" class="header__logo">
-        <!-- <img src="@/assets/images/logo.png" alt="" class="header__logo-img" /> -->
-         <p class="header__logo-title">inwy</p>
-      </a>
+      <NuxtLink to="/" class="header__logo">
+        <p class="header__logo-title">inwy</p>
+      </NuxtLink>
 
       <div class="header__right">
         <button class="header__btn btn-v1">обсудить проект</button>
