@@ -154,16 +154,155 @@
             </section>
 
 
-            <section class="home-services-sec" ref="homeServicesSec">
+            <section class="home-services-sec target-block" ref="homeServicesSec">
                 <div class="home-services-sec__container">
                     <div class="home-services-sec__wrapper">
-                        <div class="home-services-sec__element"></div>
-                        <div class="home-services-sec__element"></div>
-                        <div class="home-services-sec__element"></div>
-                        <div class="home-services-sec__element"></div>
-                        <div class="home-services-sec__element"></div>
+                        <div class="home-services-sec__element services-el services-el-1">
+                            <div class="services-el__text-wrapper">
+                                <p class="services-el__title">Создание сайтов, которые работают.</p>
+                                <p class="services-el__subtitle">Создаем продающие сайты, которые сразу готовы к продвижению в поисковых системах. Оптимизированная структура, адаптивный дизайн и чистый код — для быстрого выхода в ТОП Яндекс и Google.</p>
+                            </div>
+
+                            <div class="services-el__btn-wrapper">
+                                <a href="" class="services-el__btn">
+                                    <div class="services-el__btn-element">
+                                        <div class="services-el__btn-ar">
+                                            <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.22264 15.224C0.514138 15.6533 0.287823 16.5757 0.717149 17.2842C1.14647 17.9927 2.06886 18.219 2.77736 17.7897L1.22264 15.224ZM22.4461 5.35744C22.6435 4.55288 22.1513 3.74062 21.3467 3.54322L8.2356 0.326302C7.43104 0.128896 6.61878 0.621094 6.42137 1.42566C6.22397 2.23022 6.71617 3.04248 7.52073 3.23988L19.1751 6.09936L16.3156 17.7537C16.1182 18.5583 16.6104 19.3705 17.4149 19.5679C18.2195 19.7653 19.0318 19.2731 19.2292 18.4686L22.4461 5.35744ZM2 16.5068L2.77736 17.7897L21.7666 6.28286L20.9893 5.00001L20.2119 3.71715L1.22264 15.224L2 16.5068Z" fill="white"/>
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <p class="services-el__btn-down-text">посмотрите сами</p>
+                            </div>
+                            <img class="services-el__img services-el-1__img" src="@/assets/images/home/home-sec-3-phone.png" alt="">
+                        </div>
+
+                        <div class="home-services-sec__element home-services-sec__element--50">
+                            <div class="services-el__text-wrapper">
+                                <p class="services-el__title">Продвижение в геосервисах.</p>
+                                <p class="services-el__subtitle">Повышаем позиции вашей компании в геосервисах, чтобы клиенты находили вас первыми при поиске поблизости. Оптимизация карточки, работа с отзывами и повышение доверия.</p>
+
+                                    <div class="services-el__map-row">
+                                        <div class="services-el__map-element">
+                                            <img src="@/assets/images/home/map-1.jpg" alt="" class="services-el__map-img">
+                                            <div class="services-el__map-title">Яндекс. Карты</div>
+                                        </div>
+
+                                        <div class="services-el__map-element">
+                                            <img src="@/assets/images/home/map-2.jpg" alt="" class="services-el__map-img">
+                                            <div class="services-el__map-title">2ГИС</div>
+                                        </div>
+
+                                        <div class="services-el__map-element">
+                                            <img src="@/assets/images/home/map-3.jpg" alt="" class="services-el__map-img">
+                                            <div class="services-el__map-title">ZOON</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="services-el__btn-wrapper">
+                                <a href="" class="services-el__btn">
+                                    <div class="services-el__btn-element">
+                                        <div class="services-el__btn-ar">
+                                            <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.22264 15.224C0.514138 15.6533 0.287823 16.5757 0.717149 17.2842C1.14647 17.9927 2.06886 18.219 2.77736 17.7897L1.22264 15.224ZM22.4461 5.35744C22.6435 4.55288 22.1513 3.74062 21.3467 3.54322L8.2356 0.326302C7.43104 0.128896 6.61878 0.621094 6.42137 1.42566C6.22397 2.23022 6.71617 3.04248 7.52073 3.23988L19.1751 6.09936L16.3156 17.7537C16.1182 18.5583 16.6104 19.3705 17.4149 19.5679C18.2195 19.7653 19.0318 19.2731 19.2292 18.4686L22.4461 5.35744ZM2 16.5068L2.77736 17.7897L21.7666 6.28286L20.9893 5.00001L20.2119 3.71715L1.22264 15.224L2 16.5068Z" fill="white"/>
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <p class="services-el__btn-down-text">подробнее</p>
+                            </div>
+
+                            
+                        </div>
+
+                        <div class="home-services-sec__element home-services-sec__element--50">
+
+                            <div class="services-el__text-wrapper">
+                                <p class="services-el__title">Профессиональная настройка Яндекс.Директ под ключ.</p>
+                                <p class="services-el__subtitle">Создаем рекламные кампании в Яндекс.Директ, которые приносят реальных клиентов. Точные настройки аудитории, подбор ключевых слов и оптимизация ставок для максимальной эффективности.</p>    
+                            </div>
+
+                            <div class="services-el__image-container">
+                                <img src="@/assets/images/home/x1.jpg" alt="" class="services-el__image-container-img">
+                            </div>
+
+                            <div class="services-el__btn-wrapper">
+                                <a href="" class="services-el__btn">
+                                    <div class="services-el__btn-element">
+                                        <div class="services-el__btn-ar">
+                                            <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.22264 15.224C0.514138 15.6533 0.287823 16.5757 0.717149 17.2842C1.14647 17.9927 2.06886 18.219 2.77736 17.7897L1.22264 15.224ZM22.4461 5.35744C22.6435 4.55288 22.1513 3.74062 21.3467 3.54322L8.2356 0.326302C7.43104 0.128896 6.61878 0.621094 6.42137 1.42566C6.22397 2.23022 6.71617 3.04248 7.52073 3.23988L19.1751 6.09936L16.3156 17.7537C16.1182 18.5583 16.6104 19.3705 17.4149 19.5679C18.2195 19.7653 19.0318 19.2731 19.2292 18.4686L22.4461 5.35744ZM2 16.5068L2.77736 17.7897L21.7666 6.28286L20.9893 5.00001L20.2119 3.71715L1.22264 15.224L2 16.5068Z" fill="white"/>
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <p class="services-el__btn-down-text">подробнее</p>
+                            </div>
+
+                        </div>
+
+                        <div class="home-services-sec__element home-services-sec__element--50">
+                            <div class="services-el__text-wrapper">
+                                <p class="services-el__title">Профессиональная настройка таргетированной <br>рекламы ВКонтакте.</p>
+                                <p class="services-el__subtitle">Запускаем эффективные рекламные кампании ВК, которые точно достигают вашей целевой аудитории. Настраиваем показы по полу, возрасту, интересам и поведению пользователей.
+
+</p>    
+                            </div>
+
+                            <div class="services-el__image-container">
+                                <img src="@/assets/images/home/x2.jpg" alt="" class="services-el__image-container-img">
+                            </div>
+
+                            <div class="services-el__btn-wrapper">
+                                <a href="" class="services-el__btn">
+                                    <div class="services-el__btn-element">
+                                        <div class="services-el__btn-ar">
+                                            <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.22264 15.224C0.514138 15.6533 0.287823 16.5757 0.717149 17.2842C1.14647 17.9927 2.06886 18.219 2.77736 17.7897L1.22264 15.224ZM22.4461 5.35744C22.6435 4.55288 22.1513 3.74062 21.3467 3.54322L8.2356 0.326302C7.43104 0.128896 6.61878 0.621094 6.42137 1.42566C6.22397 2.23022 6.71617 3.04248 7.52073 3.23988L19.1751 6.09936L16.3156 17.7537C16.1182 18.5583 16.6104 19.3705 17.4149 19.5679C18.2195 19.7653 19.0318 19.2731 19.2292 18.4686L22.4461 5.35744ZM2 16.5068L2.77736 17.7897L21.7666 6.28286L20.9893 5.00001L20.2119 3.71715L1.22264 15.224L2 16.5068Z" fill="white"/>
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <p class="services-el__btn-down-text">подробнее</p>
+                            </div>
+                        </div>
+
+                        <div class="home-services-sec__element home-services-sec__element--50">
+                            <div class="services-el__text-wrapper">
+                                <p class="services-el__title">Настройка таргетированной рекламы в Telegram..</p>
+                                <p class="services-el__subtitle">Поможем вашему бизнесу находить клиентов через рекламу в Telegram. Точные настройки показов только заинтересованной аудитории, готовой к покупке</p>    
+                            </div>
+
+                            <div class="services-el__image-container">
+                                <img src="@/assets/images/home/x3.jpg" alt="" class="services-el__image-container-img">
+                            </div>
+
+                            <div class="services-el__btn-wrapper">
+                                <a href="" class="services-el__btn">
+                                    <div class="services-el__btn-element">
+                                        <div class="services-el__btn-ar">
+                                            <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.22264 15.224C0.514138 15.6533 0.287823 16.5757 0.717149 17.2842C1.14647 17.9927 2.06886 18.219 2.77736 17.7897L1.22264 15.224ZM22.4461 5.35744C22.6435 4.55288 22.1513 3.74062 21.3467 3.54322L8.2356 0.326302C7.43104 0.128896 6.61878 0.621094 6.42137 1.42566C6.22397 2.23022 6.71617 3.04248 7.52073 3.23988L19.1751 6.09936L16.3156 17.7537C16.1182 18.5583 16.6104 19.3705 17.4149 19.5679C18.2195 19.7653 19.0318 19.2731 19.2292 18.4686L22.4461 5.35744ZM2 16.5068L2.77736 17.7897L21.7666 6.28286L20.9893 5.00001L20.2119 3.71715L1.22264 15.224L2 16.5068Z" fill="white"/>
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <p class="services-el__btn-down-text">подробнее</p>
+                            </div>
+                        </div>
                         
                     </div>
+
+
+
 
                     <div class="home-services-sec__down-text-wrapper">
                         <h3 class="home-services-sec__down-title">Не хотите разбираться сами? <br><b>Давайте упростим.</b> </h3>
@@ -228,7 +367,7 @@ function setCurrentHeroImgHeight(){
  
     heroImgWrapper.value.classList.add('home-hero-sec__image-wrapper--activ')
 
-    console.log(heightTextBlock)
+    // console.log(heightTextBlock)
 }
 
 
@@ -247,7 +386,7 @@ function handleScroll(){
     parntersSecAnimV1()
     parntersSecAnimV2()
 
-    console.log('scroll value', scrollPosition.value)
+    // console.log('scroll value', scrollPosition.value)
 }
 
 
@@ -284,8 +423,8 @@ function parntersSecAnimV1(){
     
     partnerSecBg.value.style.transform = `scale(${finishScaleValue})`
 
-    console.log('currentProcent', currentProcent)
-    console.log(windowsHeight.value, (windowsHeight.value / 100) * 65 )
+    // console.log('currentProcent', currentProcent)
+    // console.log(windowsHeight.value, (windowsHeight.value / 100) * 65 )
 }
 
 
@@ -314,7 +453,7 @@ function parntersSecAnimV2(){
 
     partnerSecContent.value.style.transform = `scale(${culcScaleValue})`
     
-    console.log('parntersSecAnimV2 currentProcent', currentProcent)
+    // console.log('parntersSecAnimV2 currentProcent', currentProcent)
 }
 
 
