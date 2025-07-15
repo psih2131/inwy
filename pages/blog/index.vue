@@ -27,11 +27,11 @@
 
                 <div class="blog-sec__post-container">
                     <div class="blog-sec__post post-element">
-                        <a href="" class="post-element__img-wrapper">
+                        <NuxtLink to="/blog/test" class="post-element__img-wrapper">
                             <img src="@/assets/images/blog/post1.jpg" alt="" class="post-element__img">
-                        </a>
+                        </NuxtLink>
                         <p class="post-element__title">
-                            <a href="">Рассказываем как за месяц увеличили клики в карточку на 47%</a>
+                            <NuxtLink to="/blog/test" >Рассказываем как за месяц увеличили клики в карточку на 47%</NuxtLink>
                         </p>
                         <p class="post-element__date">9 апр. 2025 г.</p>
                     </div>
@@ -51,7 +51,7 @@
                             <img src="@/assets/images/blog/post3.jpg" alt="" class="post-element__img">
                         </a>
                         <p class="post-element__title">
-                            <a href="">Теперь Яндекс Карты предоставляют возможность отслеживать почасовую посещаемость локаций в течение всего дня.</a>
+                             <NuxtLink to="/blog/test" >Теперь Яндекс Карты предоставляют возможность отслеживать почасовую посещаемость локаций в течение всего дня.</NuxtLink>
                         </p>
                         <p class="post-element__date">9 апр. 2025 г.</p>
                     </div>
@@ -61,7 +61,7 @@
                             <img src="@/assets/images/blog/post3.jpg" alt="" class="post-element__img">
                         </a>
                         <p class="post-element__title">
-                            <a href="">Рассказываем как за месяц увеличили клики в карточку на 47%</a>
+                            <NuxtLink to="/blog/test" >Рассказываем как за месяц увеличили клики в карточку на 47%</NuxtLink>
                         </p>
                         <p class="post-element__date">9 апр. 2025 г.</p>
                     </div>
@@ -71,7 +71,7 @@
                             <img src="@/assets/images/blog/post1.jpg" alt="" class="post-element__img">
                         </a>
                         <p class="post-element__title">
-                            <a href="">Влияние репутации на предпочтения клиентов</a>
+                             <NuxtLink to="/blog/test" >Влияние репутации на предпочтения клиентов </NuxtLink>
                         </p>
                         <p class="post-element__date">9 апр. 2025 г.</p>
                     </div>
@@ -81,7 +81,7 @@
                             <img src="@/assets/images/blog/post2.jpg" alt="" class="post-element__img">
                         </a>
                         <p class="post-element__title">
-                            <a href="">Теперь Яндекс Карты предоставляют возможность отслеживать почасовую посещаемость локаций в течение всего дня.</a>
+                             <NuxtLink to="/blog/test" >Теперь Яндекс Карты предоставляют возможность отслеживать почасовую посещаемость локаций в течение всего дня.</NuxtLink>
                         </p>
                         <p class="post-element__date">9 апр. 2025 г.</p>
                     </div>

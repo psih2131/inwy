@@ -72,17 +72,19 @@
                 <p class="footer__copy">© 2025 Inwy. All rights reserved </p>
                 <nav class="footer__nav">
                     <ul class="footer__nav-ul">
+
                         <li class="footer__nav-li">
-                            <a href="" class="footer__nav-link">Политика конфиденциальности</a>
+                            <NuxtLink to="/privacy-policy" class="footer__nav-link">Политика конфиденциальности</NuxtLink>
                         </li>
 
                         <li class="footer__nav-li">
-                            <a href="" class="footer__nav-link">Оферта</a>
+                            <NuxtLink to="/oferta" class="footer__nav-link">Оферта</NuxtLink>
                         </li>
 
                         <li class="footer__nav-li">
-                            <a href="" class="footer__nav-link">Политика использования cookie</a>
+                            <NuxtLink to="/cookie" class="footer__nav-link">Политика использования cookie</NuxtLink>
                         </li>
+
                     </ul>
                 </nav>
             </div>

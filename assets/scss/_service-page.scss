@@ -1,0 +1,60 @@
+.system-page-sec {
+    padding-top: 150px;
+
+}
+
+.system-page-sec__container {
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.system-page-sec__title {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-weight: 800px;
+}
+
+.wp-editor {
+    p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        line-height: 1.4;
+        color: #171717;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-weight: 800px;
+        color: #171717;
+    }
+
+    ul {
+        padding-left: 20px;
+        margin-bottom: 30px;
+
+        li {
+            list-style-type: disc;
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #171717;
+        }
+    }
+
+    ol {
+        padding-left: 20px;
+        margin-bottom: 30px;
+
+        li {
+            list-style-type: decimal;
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #171717;
+        }
+    }
+}
