@@ -72,7 +72,7 @@
 
 
           <li class="header__sub-meny-li">
-            <NuxtLink to="/direct" class="header__sub-meny-link">
+            <NuxtLink to="/tgads" class="header__sub-meny-link">
               <span class="header__sub-meny-link-icon-wrapper">
                 <svg class="framer-DjU2n framer-kdoboj" role="presentation" viewBox="0 0 24 24" style="--1m6trwb: 0; --21h8s6: rgb(0, 0, 0); --pgex8v: 1.5; opacity: 1;"><use href="#2921807503"></use></svg>
               </span>

@@ -304,7 +304,7 @@
                     </div>
 
                     <div class="direct-format-work-sec__element-img direct-format-work-sec__element-img--2">
-                        <img src="@/assets/images/yandex/format-human.jpg" alt="">
+                        <img src="@/assets/images/yandex/format-human-2.jpg" alt="">
 
                         <div class="direct-about-sec__el-search-x direct-format-work-sec__el-search--2">
                             <p class="direct-about-sec__el-search-request">Возможно вы искали inwy</p>
