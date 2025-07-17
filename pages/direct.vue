@@ -74,9 +74,390 @@
         </div>
 
 
+        <section class="direct-about-sec">
+            <div class="direct-about-sec__container">
+                <div class="direct-about-sec__col">
+
+                    <div class="direct-about-sec__el direct-about-sec__el--1">
+                        <div class="direct-about-sec__el-nam-counter">
+                            <p class="direct-about-sec__num">5</p>
+                            <p class="direct-about-sec__num-text">дней займет настройка рекламы.</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="direct-about-sec__el direct-about-sec__el--2">
+                        <div class="direct-about-sec__el-procent-wrapper">
+                            <div class="direct-about-sec__el-procent-wrapper-title">рекомендуют нас</div>
+                            <div class="direct-about-sec__el-procent">
+                                <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M38.5133 2.15413C47.7323 1.34757 56.9457 3.76252 64.5838 8.98752C72.2218 14.2125 77.8119 21.9242 80.4015 30.8088C82.9911 39.6933 82.42 49.2008 78.7855 57.7115C75.151 66.2221 68.678 73.2092 60.4694 77.4824C52.2609 81.7555 42.8246 83.0502 33.7684 81.1459C24.7123 79.2416 16.5966 74.2561 10.8041 67.0389C5.01169 59.8216 1.90093 50.8193 2.00188 41.5656C2.10282 32.3119 5.40923 23.3796 11.3577 16.2904" stroke="#ACFA03" stroke-width="4"/>
+                                </svg>
+                                <span>87%</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="direct-about-sec__col">
+                    <div class="direct-about-sec__el direct-about-sec__el--3">
+                        <div class="direct-about-sec__el-nam-counter">
+                            <p class="direct-about-sec__num">9/10</p>
+                            <p class="direct-about-sec__num-text">человек вокруг вас — в Яндексе и на партнёрских сайтах</p>
+                        </div>
+
+                        <div class="direct-about-sec__el-search-x direct-about-sec__el-search--1">
+                            <p class="direct-about-sec__el-search-request">салон красоты </p>
+                            <div class="direct-about-sec__el-search-search-icon-wrapper">
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect x="0.5" width="20" height="20" fill="url(#pattern0_1248_11)"/>
+                                <defs>
+                                <pattern id="pattern0_1248_11" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_1248_11" transform="scale(0.00390625)"/>
+                                </pattern>
+                                <image id="image0_1248_11" width="256" height="256" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                                </svg>
+
+                            </div>
+                        </div>
+
+
+                        <div class="direct-about-sec__el-search-x direct-about-sec__el-search--2">
+                            <p class="direct-about-sec__el-search-request">шиномонтаж</p>
+                            <div class="direct-about-sec__el-search-search-icon-wrapper">
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect x="0.5" width="20" height="20" fill="url(#pattern0_1248_11)"/>
+                                <defs>
+                                <pattern id="pattern0_1248_11" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_1248_11" transform="scale(0.00390625)"/>
+                                </pattern>
+                                <image id="image0_1248_11" width="256" height="256" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                                </svg>
+
+                            </div>
+                        </div>
+
+
+                        <div class="direct-about-sec__el-search-x direct-about-sec__el-search--3">
+                            <p class="direct-about-sec__el-search-request">юрист</p>
+                            <div class="direct-about-sec__el-search-search-icon-wrapper">
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect x="0.5" width="20" height="20" fill="url(#pattern0_1248_11)"/>
+                                <defs>
+                                <pattern id="pattern0_1248_11" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_1248_11" transform="scale(0.00390625)"/>
+                                </pattern>
+                                <image id="image0_1248_11" width="256" height="256" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                                </svg>
+
+                            </div>
+                        </div>
+
+                        <img src="@/assets/images/yandex/about-girl.png" alt="" class="direct-about-sec__el-girl-img">
+                    </div>
+                </div>
+
+                <div class="direct-about-sec__col">
+                    <div class="direct-about-sec__el direct-about-sec__el-search--4">
+
+                        <div class="direct-about-sec__el-search-on-btn">
+                            <svg width="90" height="33" viewBox="0 0 90 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.5" y="1.5" width="87" height="30" rx="15" fill="#ACFA03" stroke="#ACFA03" stroke-width="3"/>
+                            <rect x="1.5" y="1.5" width="87" height="30" rx="15" fill="#ACFA03" stroke="#ACFA03" stroke-width="3"/>
+                            <ellipse cx="16" cy="16.5" rx="13" ry="13.5" fill="white"/>
+                            <path d="M42.79 20.15C42.07 20.15 41.4483 19.9933 40.925 19.68C40.405 19.3667 40.0033 18.9283 39.72 18.365C39.44 17.8017 39.3 17.1467 39.3 16.4C39.3 15.6533 39.44 14.9983 39.72 14.435C40.0033 13.8717 40.405 13.4333 40.925 13.12C41.4483 12.8067 42.07 12.65 42.79 12.65C43.51 12.65 44.13 12.8067 44.65 13.12C45.1733 13.4333 45.575 13.8717 45.855 14.435C46.1383 14.9983 46.28 15.6533 46.28 16.4C46.28 17.1467 46.1383 17.8017 45.855 18.365C45.575 18.9283 45.1733 19.3667 44.65 19.68C44.13 19.9933 43.51 20.15 42.79 20.15ZM42.79 18.87C43.2467 18.8767 43.6267 18.7783 43.93 18.575C44.2333 18.3717 44.46 18.0833 44.61 17.71C44.7633 17.3367 44.84 16.9 44.84 16.4C44.84 15.9 44.7633 15.4667 44.61 15.1C44.46 14.7333 44.2333 14.4483 43.93 14.245C43.6267 14.0417 43.2467 13.9367 42.79 13.93C42.3333 13.9233 41.9533 14.0217 41.65 14.225C41.3467 14.4283 41.1183 14.7167 40.965 15.09C40.815 15.4633 40.74 15.9 40.74 16.4C40.74 16.9 40.815 17.3333 40.965 17.7C41.1183 18.0667 41.3467 18.3517 41.65 18.555C41.9533 18.7583 42.3333 18.8633 42.79 18.87ZM46.8781 20V12.8H48.2581L51.3881 17.6V12.8H52.7681V20H51.3881L48.2581 15.2V20H46.8781Z" fill="white" fill-opacity="0.8"/>
+                            </svg>
+                        </div>
+                        <div class="direct-about-sec__el-nam-counter">
+                            <p class="direct-about-sec__num">24</p>
+                            <p class="direct-about-sec__num-text">месяца средний срок сотрудничества.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="direct-about-sec__el direct-about-sec__el-search--5">
+                        <img src="@/assets/images/yandex/diamant.png" alt="" class="direct-about-sec__el-diamant-img">
+                     
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
 
 
 
+        <section class="direct-types-sec">
+            <div class="direct-types-sec__container">
+                <h2 class="direct-types-sec__title">Каждой задаче, своя реклама.</h2>
+
+                <div class="direct-types-sec__header">
+                    <div class="direct-types-sec__header-element"
+                    :class="{'direct-types-sec__header-element--activ': typesIndex == 1}"
+                    @click="typesIndex = 1">Приводить новых клиентов</div>
+                    <div class="direct-types-sec__header-element"
+                    :class="{'direct-types-sec__header-element--activ': typesIndex == 2}"
+                    @click="typesIndex = 2">Продавать товары или услуги</div>
+                    <div class="direct-types-sec__header-element"
+                    :class="{'direct-types-sec__header-element--activ': typesIndex == 3}"
+                    @click="typesIndex = 3">Возвращать клиентов</div>
+                </div>
+
+                <div class="direct-types-sec__body">
+
+                    <div v-if="typesIndex == 1" 
+                    class="direct-types-sec__body-element direct-types-sec__body-element--1">
+                        <div class="direct-types-sec__body-element-text-wrapper">
+                            <p class="direct-types-sec__body-element-text-title">Приводить новых клиентов</p>
+                            <p class="direct-types-sec__body-element-textelement">Чтобы привлечь покупателей, нужно мыслить как они. Проанализируем вашу аудиторию: её образ жизни, потребности и желания. Настроим контекстную рекламу для максимального отклика — на сайт придут только заинтересованные клиенты.</p>
+                        </div>
+
+                      
+                            <img src="@/assets/images/yandex/types-1-x1.png" alt="" class="direct-types-sec__body-element-img beimg-1">
+                            <img src="@/assets/images/yandex/types-1-x2.png" alt="" class="direct-types-sec__body-element-img beimg-2">
+                            <img src="@/assets/images/yandex/types-1-x3.png" alt="" class="direct-types-sec__body-element-img beimg-3">
+                      
+                    </div>
+
+
+                    <div v-if="typesIndex == 2" 
+                    class="direct-types-sec__body-element direct-types-sec__body-element--2">
+                        <div class="direct-types-sec__body-element-text-wrapper">
+                            <p class="direct-types-sec__body-element-text-title">Продавать товары и услуги</p>
+                            <p class="direct-types-sec__body-element-textelement">Реклама влияет на эмоции, подталкивая к решению. Важно, чтобы выгоды товара отвечали желаниям клиентов. Мы создадим контекстную рекламу для каждой группы аудитории, напишем убедительные тексты и настроим автоматизацию под поисковые запросы — так объявления будут работать на максимум.</p>
+                        </div>
+
+                        <img src="@/assets/images/yandex/types-2-x1.png" alt="" class="direct-types-sec__body-element-img beimg-1">
+                        <img src="@/assets/images/yandex/types-2-x2.png" alt="" class="direct-types-sec__body-element-img beimg-2">
+                    </div>
+
+
+                    <div v-if="typesIndex == 3" 
+                    class="direct-types-sec__body-element direct-types-sec__body-element--3">
+                        <div class="direct-types-sec__body-element-text-wrapper">
+                            <p class="direct-types-sec__body-element-text-title">Возвращать клиентов</p>
+                            <p class="direct-types-sec__body-element-textelement">Не все переходы превращаются в продажи — но это можно исправить. Разберём, на каком этапе клиенты уходят, найдём причины и создадим для каждой группы персональные объявления, которые вернут их к покупке.</p>
+                        </div>
+
+                        <img src="@/assets/images/yandex/types-3-x1.png" alt="" class="direct-types-sec__body-element-img beimg-1">
+                        <img src="@/assets/images/yandex/types-3-x2.png" alt="" class="direct-types-sec__body-element-img beimg-2">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="direct-format-work-sec">
+            <div class="direct-format-work-sec__container">
+                <h2 class="direct-format-work-sec__title">
+                    Наш формат работы
+                    <span class="direct-format-work-sec__title-img-wrapper">
+                        <img src="@/assets/images/yandex/format-title.jpg" alt="">
+                    </span>
+                </h2>
+
+                <div class="direct-format-work-sec__wrapper">
+                    <div class="direct-format-work-sec__element-text">
+                        <div class="direct-format-work-sec__element-text-container">
+                            <p class="direct-format-work-sec__element-text-title">#1</p>
+                            <p class="direct-format-work-sec__element-text-subtitle">Вы оставляете заявку.</p>
+                        </div>
+                    </div>
+
+                    <div class="direct-format-work-sec__element-text">
+                        <div class="direct-format-work-sec__element-text-container">
+                            <p class="direct-format-work-sec__element-text-title">#2</p>
+                            <p class="direct-format-work-sec__element-text-subtitle">Наш менеджер связывается с Вами и уточняет детали и задачи.</p>
+                        </div>
+                    </div>
+
+                    <div class="direct-format-work-sec__element-img direct-format-work-sec__element-img--1">
+                        <img src="@/assets/images/yandex/format-human.jpg" alt="">
+
+                        <div class="direct-about-sec__el-search-x direct-format-work-sec__el-search--1">
+                            <p class="direct-about-sec__el-search-request">Где запустить директ?</p>
+                            <div class="direct-about-sec__el-search-search-icon-wrapper">
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect x="0.5" width="20" height="20" fill="url(#pattern0_1248_11)"/>
+                                <defs>
+                                <pattern id="pattern0_1248_11" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_1248_11" transform="scale(0.00390625)"/>
+                                </pattern>
+                                <image id="image0_1248_11" width="256" height="256" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAEfVJREFUeF7tnVGS3DYOhtXjW8SVG9gPXh8gzslsn8zOAXbzYN8gFd/C0ym2rVmN0iIBAqQk4tuXrd2hQOIH+BEk1fJl4j8ogAJhFbiE9RzHUQAFJgBAEqBAYAUAQODg4zoKAAByAAUCKwAAAgcf11EAAJADKBBYAQAQOPi4jgIAgBxAgcAKAIDAwcd1FAAA5AAKBFYAAAQOPq6jAAAgB1AgsAIAIHDwcR0FAAA5gAKBFQAAgYOP6ygAAMgBFAisAAAIHHxcRwEAQA6gQGAFAEDg4OM6CgAAcgAFAisAAAIHH9dRAACQAygQWAEAEDj4uI4CAIAcQIHACgCAwMHHdRQAAOQACgRWAAAEDj6uowAAIAdQILACACBw8HEdBQAAOYACgRUAAIGDj+soAADIARQIrAAACBx8XEcBAEAOoEBgBQBA4ODjOgoAAHIABQIrAAACBx/XUQAAkAMoEFgBABA4+LiOAgCAHECBwAoAgMDBx3UUAADkAAoEVgAABA4+rqMAACAHUCCwAgAgcPBxHQUAADmAAoEVAACBg4/rKAAAyAEUCKwAAAgcfFxHAQBADqBAYAUAQODg4zoKAAByAAUCKwAAAgcf11EAAJADKBBYAQAQOPi4jgIAgBxAgcAKAIDAwcd1FAAAJ8qBP7/89W4e7uP08O7hcvltOfzrdH36e/r/L9Pl81P76/WPZduH6fHzm9e/Pv39RDIwVEcFAICjmN6m0oSfJ/p6cnv1lSDx+BMOb1+//OBlFzvnUAAAHChOTyv85cX7VhNe4u71On1M7QCCRK1ztwEAO8fvKJN+SwZgsHOCNO4eADQWeMv8beLvvNJrXU8w4OxAq9qx2wOAzvE548RfSzSfG7BF6Jw8DboDAA1EvWfyv1/+/nC5TO+t3c0n+/PBXVqRlzbXJ/vrm4O5bbpB8DhnSFUBILBGdb/nAUBj7dMEvF4ePtV2M6+2rUrv+aYhja8WUJwT1EZ3/+cAQKMY1Jb6txX++v12Cr/HPf0MhBoYUA00SqaGZgFAA3H//Prtk7a8nif+HpM+d1CZ3kPQwgAQNEiqRiYBgKOw2nL/iJN+Sw7tGcaZfHNMgdOZAgBOIdNMkDNPjuSn5ryAasApwRqZAQBGYTV7/TNP/LVMGuABAWOSNXwcABjE1ZT8o04CDQgu18ffj3TGYQj9MI8CgMpQShO/18Rf3vevXeox6aR6AIHKhGv0GACoEFaS7C3K/eXvBuZha24b1i8Reb/AI9EljbsXFCtCG+4RAKAMuSTJPRNcc8agdOWpufeLPJJrUE+Nav3mufTNCP4jVqDX5O8x6bec9oJBL63EwaPhXQUAgDAxJAlt3d9K+hAO16WZdZWW+GPtw8XRwEYAgCD4pUS27Pf3XO0Frt+aWCZpSTurfakPtLuvAAAoZEYpgdPkf/Pql99rEqxkW2pz+e2/e89oDgpzfdaCQHJdaq2epFrR7rkCACCTEaUJWjv5JRNia1jLXwemNtorPut3BmvPCCSVDhDojycAkNH8f1//vuYmYs3KLzkhX/b5tLpfv3/UTnZJOmlf7Z1t1lQDJfDVAlXiJ23YAqhyIDdRaxK1lPzrwVnOFVSOLhprYdBChxqw1PrLc1wD3s2BUun/n1cvVZVTyd6/VvxGq70m4TVj1k7aEgy19jR+0ZYzgGwOlBJfu08t2ZsHU7Oa9khm6fi1k7ZkV6tzDy1G7EO1ko0owNqn3L5fm+SS/f4epb42jqXJWnsukLN7VCBqtTt6ewCw2gNvff2mxeTX2tw7mSQg0PqUg6TW1t76nLF/APAzap6rUWnlP8Oqv5XM3hAonQdoz1vOOAn3HDMA+Kl+9tRf8Tt2yeSvuT7cM0nu9V3yU7N6e8L3aDodfTwAYJqmXAJ6JXJKBI2toydOGl+pGtD46wXgM+h2pDECgGmacgd/0hLUczIcKUFKYyn5LT3Nz20FOBAsRaH+7+EB4LH6lyaBZiWsD+V+T5b894CoFCT7qXDOnsMDYGv110xaz6vDc6bRNHm9ObmlJVVAm8wIDYDcyuWxamkg0ia8fa16XOlltwKKw9i+np+3t9AAsK7+XqXvedPn+chLV3rSMn4LJFQB/pkSFgAee//srwWDrlYeh3lUAf4TfcsiAFgpIy3bPQDSL8x9e8re6wvByFlAn5iFBYCl/M+tUFKA9Anvfr1Yy/gtiLAN8I1pSABYD/88VjjfMB7PmkcZv1kFCKuI46lyvBGFBMDW6iRdvS3Vw/FSoN2IrFWA9fl2no1jOSQAtiaw5OrPWj2MkzplT6xVQO55SazKI6RFOABsTWBW/zaTwbqKsw1oE5fZajgAWMp/Vn99MpqrgK/fPt37rDmHgfpY3HsiHAAs5b8FHj7hOqcVi25bAAEAPrkQCgDWPSXlaF3SWSexBdp1I47zVCgAWPb/lP+2SWGB5+Y5AteBtqBMwT4LbipFN/ai0sNDc6RObqCF9mwD7EkRqgKwlJKWFcwepvNbsGwDLM+eX7m2HgCAaZpKd8rWs4O2ITyP9VoAo3+7GIcBgGUVsZwdtAvd+Sxb9vK18DifSn1HHAYAlklsebZvOI/dmwUAlmePrcq+owMA1+nj29cvP+TCQPL5JOlWFSY5SCUGPjFYWwkPAMlXaig/fZKPbZiPjp5WwgDAsoIAAJ+UAwA+OnpaAQCFl0ksSesZqFFs1cKUOLTJgPAAqL0C5CWUuoQEAHW6tXoqDABIvFYppLO7tRUDxDodvVoDgFcvsxrwbTqvVPthBwD46mm1BgAAgDWHVM/XHsZyBqCSWdwYABQAQOKJc0nUkApAJFO3RgAAAHRLttQRZzFd5S52FgYArDzFXOjSoBYAnMW0CU94AJTeBGQL4Jd4ll/18XsMvzgsLQEAwVdlaletNiE7r1ULTAFAm7gDAAMAStVDm5Cd16qljAcAbeIeBgCWBKq9umoTsvNabREDyS8Jz6tY+5GHAYCl/LR8z659CM/TQwsAUIXZ4g8ApsvnN69++T0no6V0tYVnrKct31XkHKZNLoQBQIs76GSz9A57m7Cdz6rls+qW24PzKdV3xAAgfRudg8DmWWepoizPNnfs5B2EAoDlMM/6j1yePE/Mw7f8k+qWswPzwAc3EAoAlpWEMrR+Jlj/gVALPOpHHePJUAAw3QR8+evd9fLw6V5aSLYQMdLpvpcW8FrObiJrLvU9FAByySSZxGwDpGn1vJ1lBbfCo27EcZ4KBwDTOQBVgHpmWE7/U2fs/9WSqx6IB4CNSSz9xt/mXbbgfQJVZAZpbFn9rRXbIBI2dQMALOS1bAOSGcnzTaN5MOO51V/yCq+1ejiYHIccTjgApChY9vLZE22qgGdJvrX6p0aSF6is1cMhZ9zBBhUTAMZtwBZAqAL+n93W1T8HWkn1cLB5dtjhAIBVaCRlPFVAOZ+tqz/lf1ljjxYhAWDdBuROp9Pfoq9Q1tU/d/gXXVuPSb+0ERcADld6uVVOUkl4B/MI9jwmP6t/v0iGBYBHFZDbCkgPuvqFun1PuYmr0YPDv/axmnuIDQCHKiB7IBjoVqAEQ2npnoNI1KqqJQ5CA8CjCsjtV2+3AkEgkNsOSSc/e/+WU/2+7fAA8FhxvFa//uH36TFXBWlKf4/zAx+P4lgJD4BcFeCVvCPfDJQmv3T1Z/LvAx0AkN4MzJwFSBO4dDU4GgRKVY/WX16uAgD7KPCzV68ELK2II5wJlE77tZOf1X+/1KcCmAGQqQI0W4HSlmIOtaay2C89/t2z9+QvVU6S3wwcSZ+zjQUALCKWPRBUnuaXKgHtKnmExGrlE/f++0UXAKy0zyW5dtWWTJgzgECy6lv8AAAAYD8F1gAobAW0L6O0njwthZMc9HlsaTyh21KPEW1TAdyJamnStoLAvIqm/377+uWHvRIuTfzp8uL9dbq+k4xBq8faZgk02spLMmba/FAAAGxkQql81x5OlaCyHkZK+p4guE36W0YoJr7yXCQ36Up6A4E2yAIAGV2zv/arTH4tCFpWBfNKf+tDuNp7lPz3JC9VAZYzhjZTZwyrACATx1JS1t7p10BgHmbq8/F6/SP974fp8fOb179+LqXi0+o+TdPj9PDu4XL5TTvhl/1P1+8fJf2WxqXdCgABraLl9gCgoFEJAreqWfBvC97rxgKCe/YSHJb/f+0k37TdaOIv+5PozXagPLGlLQCAQCnJRK2FQOpeYl8wzCZNblDpMPGBQJPwFY0CgKJEPxpIJql1ZZL0IRyuudkeEx8ImMOmNgAAFJJJJqgVAjNsbluLy/ReMTxz06ctROcVf2vgbAfMIS0aAABFiZ436AWBudfUX0sYHG3Sr8MBBJQJqmwOAJSCSbcDqZ1HNbAe3gyEdJJ/60NxfTdP9nSLIL1B0Mizvlb0epcBCGiioGsLAHR6PbWWVAKtIJArmdd/a3Fdd2+Vzr1A5HGeAAQqE7XwGAAw6CpJytl8i2rAMHS3R6UgvG1jKq9L58FK9B5VZ7eArQwBAAdlNZNglASVTMZ70gIBh4RzNAEAnMTUQKD31sDJxZsZrZ9AwFN9f1sAwFFT7a/ozgKC5Fd6hdjzWpJKwDHxDKYAgEG8rUdrVkmvE3NPd2qANu/1JcAAAp7RqrMFAOp0Ez1VA4K5Kkj/3fubADU/CV4KsT7fkPgPBESp1KwRAGgm7Q/DkkmQG8L8679m9/a3JfvF7Y1DzTsFyzHnrvkk/gOBxkmYMQ8AOmkvmQjSoSx/EpyeSXAoPZtK8lvbiheItmxL7/clvgOBUgTb/B0AtNF102rrV3t7uCOd+MuxAIEekdH3AQD0mrk8cTYQ1Ez6tVBAwCV1XI0AAFc564wdGQYeE59KoC4vejwFAHqorOhjbxj0+HUglYAiIRo3BQCNBbaaX/76r/aUPjeGlrcMuX6BgDUzfJ4HAD46drUyv5k3dzqf7G8NYv6IaPr78sagxy8FgUDX1FB3BgDUkvGApwJUAp5q6m0BAL1mPOGswFEgYH0XwVmWLuYAQBeZ6aSkwFEgoP0Xn0p+Hf3vAODoEQo0viNAYJTvNUjTBgBIlaJdFwWOAIFIVQAA6JLWdKJRYG8IRDoLAACazKRtNwW6QODrt0/33q2o/Tcfu4nj2BEAcBQTU74KtIbA1ncNAYBvHLGGAtUKtIRA7sOmUc4BqACqU5MHeynQCgIAYJoAQK8sph+TAi0gsGWTLYApVDyMAm0U8IYAAKACaJOpWG2mgBcEcnYivQzEFqBZqmK4lQISCOQmcelfNYpyAJjiAwBaZSl2myoghUAaxLOPpl5evM99VyHS6g8AmqYoxlsrIIGAdgyRVn8AoM0O2h9OAU8IRFv9AcDh0pkB1SjgAYGIkx8A1GQbzxxSAQsEok5+AHDIVGZQFgU0IPD+5Lll3Hs9yy3AXsrTb1MF7n1effnJ89T53h9FbSqA0DgAEApFMxQYUQEAMGJU8QkFhAoAAKFQNEOBERUAACNGFZ9QQKgAABAKRTMUGFEBADBiVPEJBYQKAAChUDRDgREVAAAjRhWfUECoAAAQCkUzFBhRAQAwYlTxCQWECgAAoVA0Q4ERFQAAI0YVn1BAqAAAEApFMxQYUQEAMGJU8QkFhAoAAKFQNEOBERUAACNGFZ9QQKgAABAKRTMUGFEBADBiVPEJBYQKAAChUDRDgREVAAAjRhWfUECoAAAQCkUzFBhRAQAwYlTxCQWECgAAoVA0Q4ERFQAAI0YVn1BAqAAAEApFMxQYUQEAMGJU8QkFhAoAAKFQNEOBERUAACNGFZ9QQKgAABAKRTMUGFEBADBiVPEJBYQKAAChUDRDgREVAAAjRhWfUECoAAAQCkUzFBhRAQAwYlTxCQWECgAAoVA0Q4ERFQAAI0YVn1BAqAAAEApFMxQYUQEAMGJU8QkFhAoAAKFQNEOBERUAACNGFZ9QQKgAABAKRTMUGFEBADBiVPEJBYQKAAChUDRDgREVAAAjRhWfUECoAAAQCkUzFBhRAQAwYlTxCQWECgAAoVA0Q4ERFQAAI0YVn1BAqAAAEApFMxQYUQEAMGJU8QkFhAoAAKFQNEOBERUAACNGFZ9QQKgAABAKRTMUGFEBADBiVPEJBYQKAAChUDRDgREVAAAjRhWfUECoAAAQCkUzFBhRAQAwYlTxCQWECvwDJnagtYTaNjUAAAAASUVORK5CYII="/>
+                                </defs>
+                                </svg>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="direct-format-work-sec__element-text">
+                        <div class="direct-format-work-sec__element-text-container">
+                            <p class="direct-format-work-sec__element-text-title">#3</p>
+                            <p class="direct-format-work-sec__element-text-subtitle">Далее мы собираем аналитику и проводим анализ вышей задачи.</p>
+                        </div>
+                    </div>
+
+                    <div class="direct-format-work-sec__element-img direct-format-work-sec__element-img--2">
+                        <img src="@/assets/images/yandex/format-human.jpg" alt="">
+
+                        <div class="direct-about-sec__el-search-x direct-format-work-sec__el-search--2">
+                            <p class="direct-about-sec__el-search-request">Возможно вы искали inwy</p>
+                            <div class="direct-about-sec__el-search-search-icon-wrapper">
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect x="0.5" width="20" height="20" fill="url(#pattern0_1248_11)"/>
+                                <defs>
+                                <pattern id="pattern0_1248_11" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_1248_11" transform="scale(0.00390625)"/>
+                                </pattern>
+                                <image id="image0_1248_11" width="256" height="256" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                                </svg>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="direct-format-work-sec__element-text">
+                        <div class="direct-format-work-sec__element-text-container">
+                            <p class="direct-format-work-sec__element-text-title">#4</p>
+                            <p class="direct-format-work-sec__element-text-subtitle">Отвечаем на ваши вопрос и начинаем работу над проектом.</p>
+                        </div>
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="price-sec">
+            <div class="price-sec__container">
+                <div class="price-sec__header">
+
+                    <svg width="293" height="8" viewBox="0 0 293 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M292.352 3.6457C292.548 3.84029 292.549 4.15687 292.355 4.35281L289.184 7.5457C288.989 7.74163 288.673 7.74272 288.477 7.54813C288.281 7.35354 288.28 7.03696 288.474 6.84103L291.293 4.0029L288.455 1.18421C288.259 0.989619 288.258 0.673038 288.452 0.477106C288.647 0.281174 288.963 0.280086 289.159 0.474676L292.352 3.6457ZM0 5.00391L-0.0017182 4.50391L291.998 3.50047L292 4.00047L292.002 4.50047L0.0017182 5.5039L0 5.00391Z" fill="url(#paint0_linear_3103_112)"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_3103_112" x1="291.998" y1="3.50047" x2="-0.0017182" y2="4.50391" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#ACFA03"/>
+                    <stop offset="1" stop-color="#ACFA03" stop-opacity="0"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+
+
+                    <div class="price-sec__header-text">Стоимость</div>
+
+                    <svg width="293" height="8" viewBox="0 0 293 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.647678 3.6418C0.451746 3.83639 0.450658 4.15297 0.645248 4.3489L3.81627 7.5418C4.01086 7.73773 4.32745 7.73882 4.52338 7.54423C4.71931 7.34964 4.7204 7.03306 4.52581 6.83712L1.70712 3.99899L4.54525 1.1803C4.74118 0.985713 4.74227 0.669132 4.54768 0.4732C4.35309 0.277268 4.03651 0.27618 3.84057 0.47077L0.647678 3.6418ZM293 5L293.002 4.5L1.00173 3.49657L1.00001 3.99656L0.998296 4.49656L292.998 5.5L293 5Z" fill="url(#paint0_linear_3103_111)"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_3103_111" x1="1.00173" y1="3.49657" x2="293.002" y2="4.5" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#ACFA03"/>
+                    <stop offset="1" stop-color="#ACFA03" stop-opacity="0"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+
+                </div>
+
+                <div class="price-sec__body">
+                    <div class="price-sec__col">
+                        <div class="price-sec__list-work-wrapper">
+                            <p class="price-sec__list-work-wrapper-title">Запуск</p>
+                            <ul class="price-sec__list-work-wrapper-list">
+                                <li>Анализ бизнеса и ЦА</li>
+                                <li>Настройка рекламной кампании</li>
+                                <li>Создание объявлений</li>
+                                <li>Настройка Ретаргетинга/Ремаркетинга</li>
+                                <li>Подключение инструментов аналитики</li>
+                                <li>Тестирование и запуск</li>
+                                <li>Отчет о проделанной работе</li>
+                            </ul>
+
+                            <div class="price-sec__list-work-wrapper-down-btn">
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5" width="3" height="13" fill="#ACFA03"/>
+                                <rect y="5" width="13" height="3" fill="#ACFA03"/>
+                                </svg>
+                                объем выполняемых работ
+                            </div>
+                        </div>
+
+                        <div class="price-sec__cost-box cost-box">
+
+                            <div class="cost-box__bg-wrapper">
+                                
+                            </div>
+                            <div class="cost-box__wrapper">
+                                <p class="cost-box__value">15 000 ₽</p>
+                                <div class="cost-box__btn">
+                                    <p class="cost-box__btn-title">Заказать</p>
+                                    <div class="cost-box__btn-icon">
+                                        <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.591701 1.23274L1.16743 0.564631L17.8807 10.8802L17.9021 12.2716L1.51353 23.0717L0.917524 22.4216L10.397 11.6789L0.591701 1.23274Z" fill="#ACFA03"/>
+                                        </svg>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    
+
+
+                    <div class="price-sec__col">
+                        <div class="price-sec__list-work-wrapper">
+                            <p class="price-sec__list-work-wrapper-title">Ведение</p>
+                            <ul class="price-sec__list-work-wrapper-list">
+                                <li>Ежедневный/еженедельный мониторинг</li>
+                                <li>Оптимизация кампаний</li>
+                                <li>А/В тестирование объявлений</li>
+                                <li>Работа с аудиториями</li>
+                                <li>Анализ и отчетность</li>
+                                <li>Масштабирование рекламы</li>
+                                <li>Поддержка и консультации</li>
+                            </ul>
+
+                            <div class="price-sec__list-work-wrapper-down-btn">
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5" width="3" height="13" fill="#ACFA03"/>
+                                <rect y="5" width="13" height="3" fill="#ACFA03"/>
+                                </svg>
+                                объем выполняемых работ
+                            </div>
+                        </div>
+
+                        <div class="price-sec__cost-box cost-box">
+
+                            <div class="cost-box__bg-wrapper">
+                                
+                            </div>
+                            <div class="cost-box__wrapper">
+                                <p class="cost-box__value">10 000 ₽</p>
+                                <div class="cost-box__btn">
+                                    <p class="cost-box__btn-title">Заказать</p>
+                                    <div class="cost-box__btn-icon">
+                                        <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.591701 1.23274L1.16743 0.564631L17.8807 10.8802L17.9021 12.2716L1.51353 23.0717L0.917524 22.4216L10.397 11.6789L0.591701 1.23274Z" fill="#ACFA03"/>
+                                        </svg>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
          <section class="direct-other-services-sec">
@@ -145,7 +526,7 @@ import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 
 
 //DATA
-
+const typesIndex = ref(1)
 
 
 
