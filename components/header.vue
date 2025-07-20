@@ -9,11 +9,7 @@
                 <span class="header__list-element-link-text">услуги</span>
                 <span class="header__list-element-link-text">услуги</span>
               </div>
-
-              
             </a>
-
-            
           </li>
           <li class="header__list-element">
               <NuxtLink to="/about" class="header__list-element-link">
@@ -59,7 +55,7 @@
 
 
           <li class="header__sub-meny-li">
-            <NuxtLink to="/direct" class="header__sub-meny-link">
+            <NuxtLink to="/vkads" class="header__sub-meny-link">
               <span class="header__sub-meny-link-icon-wrapper">
                 <svg class="framer-lqwHZ framer-16nbkyz" role="presentation" viewBox="0 0 24 24" style="--1m6trwb: 0; --21h8s6: rgb(0, 0, 0); --pgex8v: 1.5; opacity: 1;"><use href="#4282185190"></use></svg>
               </span>
