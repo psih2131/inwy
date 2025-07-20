@@ -80,7 +80,7 @@
           </li>
 
           <li class="header__sub-meny-li">
-            <NuxtLink to="/direct" class="header__sub-meny-link">
+            <NuxtLink to="/website" class="header__sub-meny-link">
               <span class="header__sub-meny-link-icon-wrapper">
                 <svg class="framer-Cd0a8 framer-33brdq" role="presentation" viewBox="0 0 24 24" style="--1m6trwb: 0; --21h8s6: rgb(0, 0, 0); --pgex8v: 1.5; opacity: 1;"><use href="#464884188"></use></svg>
               </span>

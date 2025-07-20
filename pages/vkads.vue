@@ -544,8 +544,8 @@ function watchSecAnimV2(){
       
     }
 
-    culcScaleValue = (0.3 * currentProcent) / 100
-    finishScaleValue = 0.7 + culcScaleValue
+    culcScaleValue = (0.2 * currentProcent) / 100
+    finishScaleValue = 0.8 + culcScaleValue
     
     makeAdsSec.value.style.transform = `scale(${finishScaleValue})`
 
