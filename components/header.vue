@@ -92,7 +92,7 @@
           </li>
 
           <li class="header__sub-meny-li">
-            <NuxtLink to="/direct" class="header__sub-meny-link">
+            <NuxtLink to="/geomarketing" class="header__sub-meny-link">
               <span class="header__sub-meny-link-icon-wrapper">
                 <svg class="framer-LSzHH framer-1qtcjx6" role="presentation" viewBox="0 0 24 24" style="--1m6trwb: 0; --21h8s6: rgb(0, 0, 0); --pgex8v: 1.5; opacity: 1;"><use href="#2057380237"></use></svg>
               </span>
@@ -110,6 +110,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
+const route = useRoute()
+
 const isActive = ref(false)
 
 // Классы, появление которых под шапкой активирует её
@@ -119,8 +121,8 @@ const statusSubmeny = ref(false)
 
 let observer = null
 
-onMounted(() => {
-  const header = document.querySelector('.header')
+function changeHeaderColor(){
+ const header = document.querySelector('.header')
   if (!header || targetClassNames.length === 0) return
 
   const targets = targetClassNames
@@ -141,6 +143,16 @@ onMounted(() => {
   )
 
   targets.forEach(target => observer.observe(target))
+}
+
+
+watch(() => route.fullPath, (newPath) => {
+  console.log('Маршрут изменился:', newPath)
+  changeHeaderColor() // твой метод
+})
+
+onMounted(() => {
+ changeHeaderColor()
 })
 
 onBeforeUnmount(() => {

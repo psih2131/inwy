@@ -2,7 +2,7 @@
 
     <main class="main">
 
-        <section class="website-hero-sec">
+        <section class="website-hero-sec target-block">
             <div class="website-hero-sec__container">
                 <img src="@/assets/images/website/hero.jpg" alt="" class="website-hero-sec__bg">
                 <h1 class="website-hero-sec__title">Делаем сайты, которые продают</h1>
@@ -59,7 +59,7 @@
                 </div>
             </section>
 
-            <section class="website-portfolio-sec">
+            <section class="website-portfolio-sec target-block">
                 <div class="website-portfolio-sec__container">
                     <h2 class="website-portfolio-sec__title">Разработанные сайты</h2>
                     <p class="website-portfolio-sec__subtitle">которые отвечают задачам</p>
@@ -228,7 +228,7 @@
         </section>
 
 
-        <section class="website-bonus-sec">
+        <section class="website-bonus-sec target-block">
             <div class="website-bonus-sec__container">
                 <h2 class="website-bonus-sec__title">Это ещё не все. </h2>
                 <p class="website-bonus-sec__subtitle">У нас для вас бонусы.</p>

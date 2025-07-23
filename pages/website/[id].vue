@@ -2,7 +2,7 @@
 
     <main class="main">
 
-        <section class="website-single-sec">
+        <section class="website-single-sec target-block">
             <div class="website-single-sec__container">
                 <h1 class="website-single-sec__title">Korex</h1>
                 <p class="website-single-sec__subtitle">Разработка корпоративного сайта для компании «Корекс»</p>
