@@ -64,13 +64,14 @@
                     <h2 class="website-portfolio-sec__title">Разработанные сайты</h2>
                     <p class="website-portfolio-sec__subtitle">которые отвечают задачам</p>
                     <div class="website-portfolio-sec__works-wrapper">
-                        <div
+                        <NuxtLink
                             v-for="(work, index) in works"
                             :key="index"
                             class="website-portfolio-sec__work"
                             @mouseenter="show(index)"
                             @mousemove="move($event, index)"
                             @mouseleave="hide(index)"
+                            :to="`/website/${index}`"
                         >
                             <span class="website-portfolio-sec__work-name">{{ work.title }}</span>
                             <span class="website-portfolio-sec__work-ar">
@@ -93,7 +94,7 @@
                             >
                             <!-- <img :src="work.preview" alt="preview" /> -->
                             </div>
-                        </div>
+                        </NuxtLink>
                           
                     </div>
                 </div>
