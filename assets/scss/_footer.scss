@@ -188,3 +188,156 @@
     z-index: -100;
     pointer-events: none;
 }
+
+
+
+@media only screen and (max-width: 1200px) {
+    .footer__container {
+        width: 900px;
+    }
+
+    .footer__logo-wrapper-logo {
+        font-size: 300px;
+        letter-spacing: 0px;
+    }
+
+    .footer__logo-wrapper-email {
+        bottom: -13px;
+        right: 134px;
+        font-size: 20px;
+    }
+
+    .footer__logo-wrapper-ar {
+        width: 54px;
+        height: 54px;
+        top: 33px;
+        left: 10px;
+
+        svg {
+            width: 30px;
+        }
+    }
+
+    .footer__middle-row {
+        margin-bottom: 30px;
+    }
+
+    .footer__social {
+        display: flex;
+    }
+
+    .footer__social-element {
+        margin-top: 0;
+        margin-left: 15px;
+    }
+
+    .footer__middle-row-nav-li {
+        font-size: 25px;
+    }
+
+    .footer {
+        padding-bottom: 30px;
+        height: 550px;
+    }
+}
+
+
+@media only screen and (max-width: 950px) {
+    .footer__container {
+        width: 750px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .footer__container {
+        width: 350px;
+    }
+
+    .footer__down-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer__copy {
+        width: 100%;
+        text-align: center;
+        order: 2;
+    }
+
+    .footer__nav-ul {
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+
+    .footer__nav-li {
+        width: 100%;
+        margin: 0 0 10px 0;
+        text-align: center;
+    }
+
+    .footer {
+        height: 460px;
+    }
+
+    .footer__middle-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer__middle-row-col {
+        width: 100%;
+    }
+
+    .footer__middle-row-col {
+        width: 100%;
+    }
+
+    .footer__social {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer__social-element {
+        margin: 0 10px;
+    }
+
+    .footer__middle-row-nav-ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer__middle-row-nav {
+        margin-bottom: 40px;
+    }
+
+    .footer__logo-wrapper {
+        top: auto;
+        bottom: 280px;
+    }
+
+    .footer__logo-wrapper-logo {
+        font-size: 150px;
+    }
+
+    .footer__logo-wrapper-email {
+        bottom: -11px;
+        right: 70px;
+        font-size: 18px;
+    }
+
+    .footer__logo-wrapper-ar {
+        width: 30px;
+        top: 13px;
+        left: 3px;
+        height: 30px;
+
+        svg {
+            width: 15px;
+        }
+    }
+
+    .footer__middle-row-nav-li {
+        font-size: 20px;
+        margin-top: 0;
+    }
+}

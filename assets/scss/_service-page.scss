@@ -11,7 +11,7 @@
 .system-page-sec__title {
     font-size: 22px;
     margin-bottom: 30px;
-    font-weight: 800px;
+    font-weight: 800;
 }
 
 .wp-editor {
@@ -56,5 +56,37 @@
             margin-bottom: 15px;
             color: #171717;
         }
+    }
+}
+
+@media only screen and (max-width: 1560px) {
+    .system-page-sec__container {
+        width: calc(100% - 80px);
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .system-page-sec__container {
+        width: 900px
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .system-page-sec__container {
+        width: 750px
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .system-page-sec__container {
+        width: 350px
+    }
+
+    .system-page-sec {
+        padding-top: 120px;
+    }
+
+    .system-page-sec__title {
+        line-height: 1.2;
     }
 }

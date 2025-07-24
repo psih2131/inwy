@@ -31,6 +31,8 @@
     border-radius: 100px;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+    transition: all ease 0.3s;
 }
 
 .header__logo {
@@ -190,4 +192,244 @@
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+.header-container__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.burger {
+    display: none;
+}
+
+.moob-sub-meny {
+    display: none;
+}
+
+.header__btn-mob {
+    display: none;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .header__nav {
+        display: none;
+    }
+
+    .burger {
+        width: 39px;
+        height: 39px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30px;
+        position: relative;
+    }
+
+    .burger__line {
+        width: 39px;
+        height: 5px;
+        border-radius: 10px;
+        background: $green1;
+        position: absolute;
+        display: block;
+        transition: all ease 0.3s;
+    }
+
+    .burger__line--v1 {
+        top: 10px;
+    }
+
+    .burger__line--v2 {
+        bottom: 10px;
+    }
+
+    .header-container {
+        border-radius: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .moob-sub-meny__li-link {
+        font-size: 25px;
+        color: #fff;
+        font-weight: 800;
+        line-height: 1;
+        display: block;
+    }
+
+    .moob-sub-meny__li {
+        margin-bottom: 20px;
+        line-height: 1;
+        display: block;
+    }
+
+    .moob-sub-meny__sub-meny {
+        margin-top: 15px;
+    }
+
+    .moob-sub-meny__social {
+        padding-top: 15px;
+    }
+
+    .moob-sub-meny__social-li {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 5px;
+
+        a {
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .moob-sub-meny {
+        display: block;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: all ease 0.6s;
+    }
+
+    .headerMobMenyActiv {
+        background: rgba(0, 0, 0, 0.5);
+
+        .burger__line--v1 {
+            transform: rotate(45deg);
+            top: auto;
+        }
+
+        .burger__line--v2 {
+            transform: rotate(-45deg);
+            bottom: auto;
+        }
+
+        .moob-sub-meny {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: 70px;
+            padding-bottom: 35px;
+        }
+
+        .btn-v1 {
+            color: #fff;
+        }
+
+        .header__logo-title {
+            color: #fff;
+        }
+    }
+
+    .moob-sub-meny__sub-meny {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all ease 0.5s;
+        margin-top: 0;
+    }
+
+    .moob-sub-meny__sub-meny--activ {
+        max-height: 200px;
+        opacity: 1;
+        margin-top: 15px;
+
+    }
+
+    .moob-sub-meny__li-link--parent {
+        .moob-sub-meny__li-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+
+            &::before {
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                content: "";
+                background: url('../images/icons/ar.svg');
+                background-size: cover;
+                background-position: center;
+                right: -30px;
+                transition: all ease 0.3s;
+            }
+        }
+    }
+
+    .moob-sub-meny__parent--activ {
+        .moob-sub-meny__li-link {
+            &::before {
+                transform: rotate(180deg);
+                transition: all ease 0.3s;
+            }
+        }
+    }
+
+    .header-container {
+        width: 900px;
+    }
+}
+
+
+@media only screen and (max-width: 950px) {
+    .header-container {
+        width: 750px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .header-container {
+        padding: 5px 15px;
+        width: 350px;
+    }
+
+    .header__btn {
+        display: none;
+    }
+
+    .header__logo-title {
+        font-size: 40px;
+        letter-spacing: -0;
+
+    }
+
+    .moob-sub-meny__li-link {
+        font-size: 20px;
+    }
+
+    .moob-sub-meny {
+        width: 100%;
+
+    }
+
+    .headerMobMenyActiv {
+
+        border-radius: 20px;
+
+        .moob-sub-meny {
+            padding-top: 40px;
+            padding-bottom: 20px;
+            max-height: 550px;
+        }
+    }
+
+    .header__btn-mob {
+        display: block;
+        width: 100%;
+        line-height: 1;
+        font-size: 15px;
+        padding: 15px 0;
+        font-weight: 600;
+        letter-spacing: 0;
+        margin-top: 40px;
+
+        &::before {
+            top: 18px;
+            left: 70px;
+        }
+    }
+
+
 }

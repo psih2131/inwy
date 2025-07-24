@@ -74,11 +74,11 @@
                     <ul class="footer__nav-ul">
 
                         <li class="footer__nav-li">
-                            <NuxtLink to="/privacy-policy" class="footer__nav-link">Политика конфиденциальности</NuxtLink>
+                            <NuxtLink to="/oferta" class="footer__nav-link">Оферта</NuxtLink>
                         </li>
 
                         <li class="footer__nav-li">
-                            <NuxtLink to="/oferta" class="footer__nav-link">Оферта</NuxtLink>
+                            <NuxtLink to="/privacy-policy" class="footer__nav-link">Политика конфиденциальности</NuxtLink>
                         </li>
 
                         <li class="footer__nav-li">
