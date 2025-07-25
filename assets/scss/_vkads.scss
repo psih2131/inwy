@@ -13,6 +13,7 @@
 
 .tgads-watch-sec--vk {
     opacity: 1;
+    border-radius: 30px;
 
     .tgads-watch-sec__title {
         background: none;
@@ -31,9 +32,14 @@
     }
 }
 
+.tgads-watch-sec--activ {
+    border-radius: 0;
+}
+
 .vkads-benefits-sec {
     padding: 160px 0;
     padding-bottom: 200px;
+    overflow: hidden;
 }
 
 .vkads-benefits-sec__container {
@@ -473,4 +479,417 @@
     font-style: normal;
     font-weight: 800;
     line-height: 1.2;
+}
+
+
+
+@media only screen and (max-width: 1560px) {
+    .tgads-hero-sec__img-wrapper {
+        width: calc(100% - 80px);
+    }
+
+    .vkads-benefits-sec__img-element--v4 {
+        right: -10px;
+    }
+
+    .vkads-benefits-sec__img-element--v1 {
+        left: -10px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .vkads-benefits-sec__container {
+        width: 900px;
+    }
+
+    .vkads-benefits-sec__info--v1 {
+        left: 40px;
+    }
+
+    .vkads-make-all-sec__wrapper {
+        margin-top: 60px;
+    }
+
+    .vkads-make-all-sec__container {
+        width: 900px;
+    }
+
+    .vkads-make-all-sec__col-2 {
+        width: 300px;
+    }
+
+    .vkads-make-all-sec__col-3 {
+        width: 420px;
+    }
+
+    .vkads-make-all-sec__diagram-box--v3 .vkads-make-all-sec__diagram-box-img--v2 {
+        width: 110px;
+        right: 10px;
+        top: 50px;
+    }
+
+    .vkads-make-all-sec {
+        padding-bottom: 100px;
+    }
+
+    .tgads-hero-sec__img {
+        max-width: 90%;
+    }
+
+    .tgads-hero-sec__img-wrapper {
+        width: 900px
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .tgads-hero-sec__img-wrapper {
+        width: 750px
+    }
+
+    .vkads-benefits-sec__container {
+        width: 750px;
+    }
+
+    .vkads-make-all-sec__container {
+        width: 750px;
+    }
+
+    .tgads-watch-sec__wrapper {
+        width: 750px;
+        margin: 0 auto;
+    }
+
+    .tgads-watch-sec__img-wrapper {
+        max-width: 100%;
+    }
+
+    .tgads-watch-sec--vk .tgads-watch-sec__img-wrapper {
+        max-width: 100%;
+    }
+
+    .tgads-hero-sec__title {
+        font-size: 36px;
+    }
+
+    .tgads-hero-sec--vk_subtitle {
+        font-size: 22px;
+    }
+
+    .tgads-watch-sec__title {
+        line-height: 1;
+        font-size: 36px;
+    }
+
+    .tgads-watch-sec--vk {
+        .tgads-watch-sec__down-row .direct-direction-sec__down-el {
+            width: 33.333%;
+        }
+    }
+
+    .vkads-benefits-sec__info--v2 {
+        right: 270px;
+    }
+
+    .vkads-benefits-sec__info--v1 {
+        left: 25px;
+    }
+
+    .vkads-benefits-sec__info--v3 {
+        right: 20px;
+    }
+
+    .vkads-benefits-sec__img-element--v1 {
+        left: 10px;
+    }
+
+    .vkads-benefits-sec__img-element--v4 {
+        right: 10px;
+    }
+
+    .vkads-make-all-sec__title {
+        font-size: 36px;
+    }
+
+    .vkads-make-all-sec__title-img {
+        margin-bottom: -4px;
+    }
+
+    .vkads-make-all-sec__col-1 {
+        width: 90px;
+    }
+
+    .vkads-make-all-sec__human {
+        width: 70px;
+        height: 70px;
+    }
+
+    .vkads-make-all-sec__col-2 {
+        width: 250px;
+    }
+
+    .vkads-make-all-sec__col-3 {
+        width: 390px;
+    }
+
+    .vkads-make-all-sec__diagram-box--v3 .vkads-make-all-sec__diagram-box-img--v1 {
+        width: 216px;
+    }
+
+    .vkads-make-all-sec__diagram-box--v3 .vkads-make-all-sec__diagram-box-img--v2 {
+        top: 106px;
+    }
+
+    .direct-direction-sec__down-el-v2 {
+        width: 33.333%;
+    }
+
+    .vkads-make-all-sec__top-row {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .tgads-hero-sec__img-wrapper {
+        width: 350px;
+    }
+
+    .tgads-watch-sec__wrapper {
+        width: 350px;
+    }
+
+    .vkads-benefits-sec__container {
+        width: 350px;
+    }
+
+    .vkads-make-all-sec__container {
+        width: 350px;
+    }
+
+    .vkads-make-all-sec__wrapper {
+        flex-wrap: wrap;
+    }
+
+    .tgads-hero-sec__img-wrapper {
+        width: calc(100% - 20px);
+        overflow: hidden;
+        height: 350px;
+    }
+
+    .tgads-hero-sec__img {
+        height: 100%;
+        width: auto;
+        max-width: 1000px;
+    }
+
+    .tgads-hero-sec__container {
+        width: 350px;
+        margin-top: 30px;
+    }
+
+    .tgads-hero-sec__title {
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    .tgads-hero-sec--vk_subtitle {
+        line-height: 1.2;
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+    .tgads-hero-sec {
+        padding-bottom: 30px;
+
+    }
+
+    .tgads-watch-sec__title {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .tgads-watch-sec__subtitle {
+        font-size: 16px;
+        line-height: 1.2;
+        margin-top: 10px;
+    }
+
+    .vkads-benefits-sec__info {
+        position: relative;
+        left: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-bottom: 15px;
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        flex-wrap: wrap;
+    }
+
+    .vkads-benefits-sec__wrapper {
+        flex-wrap: wrap;
+        background: none;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .vkads-benefits-sec__logo {
+        display: none;
+    }
+
+    .vkads-benefits-sec {
+        padding: 194px 0;
+    }
+
+    .vkads-benefits-sec__img-element--v4,
+    .vkads-benefits-sec__img-element--v3 {
+        display: none;
+    }
+
+    .vkads-benefits-sec__img-element--v2 {
+        top: -180px;
+        right: 0;
+        left: auto;
+    }
+
+    .vkads-benefits-sec__img-element--v1 {
+        left: 0;
+        top: auto;
+        bottom: -165px;
+    }
+
+    .vkads-make-all-sec__title {
+        font-size: 28px;
+    }
+
+    .vkads-make-all-sec__title-img {
+
+        width: 100px;
+        height: 26px;
+    }
+
+    .vkads-make-all-sec__subtitle {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .vkads-make-all-sec__wrapper {
+        margin-top: 40px;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .vkads-make-all-sec__col-1 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .vkads-make-all-sec__humans-wrapper-col {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        height: auto;
+
+    }
+
+    .vkads-make-all-sec__human {
+        margin: 0 4px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .vkads-make-all-sec__humans-wrapper {
+        padding: 10px;
+    }
+
+    .vkads-make-all-sec__col-2 {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .vkads-make-all-sec__diagram-box {
+        width: 100%;
+        height: 190px;
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+
+    .vkads-make-all-sec__diagram-box--v1 .vkads-make-all-sec__diagram-box-img--v1 {
+        width: 230px;
+        left: calc(50% - 115px);
+    }
+
+    .vkads-make-all-sec__diagram-box-title {
+        font-size: 18px;
+    }
+
+    .vkads-make-all-sec__diagram-box-subtitle {
+        font-size: 11px;
+        line-height: 1.2;
+    }
+
+    .vkads-make-all-sec__diagram-box--v2 .vkads-make-all-sec__diagram-box-img--v1 {
+        width: 230px;
+        left: calc(50% - 115px);
+    }
+
+    .vkads-make-all-sec__diagram-box--v3 {
+        height: 200px;
+    }
+
+    .vkads-make-all-sec__diagram-box--v3 .vkads-make-all-sec__diagram-box-header {
+        max-width: 200px;
+    }
+
+    .vkads-make-all-sec__diagram-box--v3 .vkads-make-all-sec__diagram-box-img--v2 {
+        top: 10px;
+    }
+
+    .vkads-make-all-sec__diagram-box--v3 .vkads-make-all-sec__diagram-box-img--v1 {
+        width: 180px;
+        left: 15px;
+        bottom: 15px;
+    }
+
+    .vkads-make-all-sec__diagram-box--v4 .vkads-make-all-sec__diagram-box-img--v1 {
+        width: 200px;
+        left: calc(50% - 100px);
+    }
+
+    .vkads-make-all-sec {
+        padding-bottom: 50px;
+    }
+
+    .direct-direction-sec__down-el-title-v2 {
+        width: 70px;
+        height: 70px;
+    }
+
+    .tgads-watch-sec__down-row-v2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .direct-direction-sec__down-el-v2 {
+        width: 50%;
+        border: none;
+        margin-bottom: 20px;
+
+        &::before {
+            opacity: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .direct-direction-sec__down-el-subtitle-v2 {
+        font-size: 11px;
+    }
 }

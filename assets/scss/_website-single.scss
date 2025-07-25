@@ -148,3 +148,134 @@
         border-radius: 15px;
     }
 }
+
+
+@media only screen and (max-width: 1560px) {}
+
+@media only screen and (max-width: 1200px) {
+    .website-single-sec__video-big {
+        height: 300px;
+        border-radius: 25px;
+    }
+
+    .website-single-sec__container {
+        width: 900px;
+    }
+
+    .website-single-sec__title {
+        font-size: 40px;
+    }
+
+    .website-single-sec__two-video-row .video-work {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .website-single-sec__container {
+        width: 750px;
+    }
+
+    .website-single-sec__title {
+        font-size: 36px;
+    }
+
+    .website-single-sec__subtitle {
+        font-size: 15px;
+        line-height: 1;
+    }
+
+    .website-single-sec__link-text {
+        font-size: 15px;
+        line-height: 1;
+    }
+
+    .website-single-sec__video-big {
+        height: 200px;
+        border-radius: 20px;
+    }
+
+
+
+    .wp-editor-work {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 22px
+        }
+
+        p {
+
+            font-size: 14px;
+
+
+        }
+
+        ul {
+
+
+            li {
+                font-size: 14px;
+
+            }
+        }
+
+        ol {
+
+
+            li {
+                font-size: 14px;
+
+            }
+        }
+
+        a {
+            text-decoration: underline;
+            color: #fff;
+        }
+
+
+    }
+
+    .website-single-sec__two-video-row .video-work {
+        height: 180px;
+        border-radius: 15px;
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+    .website-single-sec__container {
+        width: 350px;
+    }
+
+    .website-single-sec__two-video-row {
+        flex-wrap: wrap;
+
+        .video-work {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .website-single-sec__title {
+        font-size: 28px;
+    }
+
+    .website-single-sec {
+        padding-bottom: 30px;
+    }
+
+    .website-single-sec__video-big {
+        border-radius: 15px;
+    }
+}

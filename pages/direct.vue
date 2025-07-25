@@ -14,10 +14,15 @@
                 </div>
                 
                 <img src="@/assets/images/yandex/hero.png" alt="" class="direct-hero-sec__hero-img">
+
+                <img src="@/assets/images/yandex/hero-mob-1.png" alt="" class="direct-hero-sec__hero-img-mob">
+
+                <img src="@/assets/images/yandex/hero-mob-2.png" alt="" class="direct-hero-sec__hero-img-mob">
+                
             </div>
         </section>
 
-        <div class="direct-sticky-wrapper ">
+        <div class="direct-sticky-wrapper">
 
             <section class="direct-direction-sec">
                 <div class="direct-direction-sec__container">

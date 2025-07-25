@@ -506,7 +506,7 @@
 }
 
 .geomarketing-phones-sec {
-    padding: 180px;
+    padding: 180px 0;
 }
 
 .geomarketing-phones-sec__container {
@@ -1123,4 +1123,521 @@
 
 .geomarketing-other-services-sec {
     padding-top: 0;
+}
+
+
+
+@media only screen and (max-width: 1560px) {}
+
+@media only screen and (max-width: 1200px) {
+    .geomarketing-hero-sec__container {
+        width: 900px;
+    }
+
+    .geomarketing-hero-sec__image--x1 {
+        right: 65px;
+    }
+
+    .geomarketing-hero-sec__image--x3 {
+        left: 65px;
+    }
+
+    .geomarketing-road-sec__container {
+        width: 900px;
+    }
+
+    .geomarketing-road-sec__partners-wrapper-row {
+        flex-wrap: wrap;
+    }
+
+    .geomarketing-road-sec__partners-wrapper-element {
+        padding: 0 30px;
+    }
+
+    .geomarketing-phones-sec__container {
+        width: 900px;
+    }
+
+    .geomarketing-phones-sec__phone-v3 {
+        right: 70px;
+    }
+
+    .geomarketing-phones-sec__phone-v1 {
+        left: 70px;
+    }
+
+    .geomarketing-revard-sec__container {
+        width: 900px;
+    }
+
+    .geomarketing-hero-sec__title {
+        font-size: 40px;
+    }
+
+    .geomarketing-hero-sec__subtitle {
+        font-size: 25px;
+    }
+
+    .geomarketing-road-sec__title {
+        font-size: 40px;
+    }
+
+    .geomarketing-revard-sec__title {
+        font-size: 40px;
+    }
+
+    .geomarketing-revard-sec__phones {
+        width: 325px;
+    }
+
+    .geomarketing-revard-sec__info {
+        width: 560px;
+    }
+
+    .geomarketing-revard-sec__reviews-text {
+        width: 410px;
+    }
+
+    .geomarketing-price-sec {
+        padding: 80px 0;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .geomarketing-hero-sec__container {
+        width: 750px;
+    }
+
+    .geomarketing-road-sec__container {
+        width: 750px;
+    }
+
+    .geomarketing-phones-sec__container {
+        width: 750px;
+    }
+
+    .geomarketing-revard-sec__container {
+        width: 750px;
+    }
+
+    .geomarketing-price-sec__container {
+        width: 750px;
+        margin: 0 auto;
+    }
+
+    .geomarketing-road-sec__title {
+        font-size: 36px;
+        line-height: 1;
+    }
+
+    .geomarketing-road-sec__text {
+        font-size: 18px;
+    }
+
+    .geomarketing-road-sec__info-box-text {
+        font-size: 14px;
+    }
+
+    .geomarketing-road-sec__info-box-map-list-element {
+        padding: 7px 15px;
+        font-size: 10px;
+    }
+
+    .geomarketing-road-sec__info-box-map-list {
+        padding: 5px;
+    }
+
+    .geomarketing-road-sec__partners-wrapper-element img {
+        height: 28px;
+    }
+
+    .geomarketing-road-sec__partners-wrapper {
+        margin-top: 50px;
+    }
+
+    .geomarketing-phones-sec__phone-v3 {
+        right: 8px;
+    }
+
+    .geomarketing-phones-sec__phone-v1 {
+        left: 8px;
+    }
+
+    .geomarketing-phones-sec {
+        padding: 130px 0;
+    }
+
+    .geomarketing-phones-sec__phone-v2-data-element:hover .geomarketing-phones-sec__phone-v2-data-element-info {
+        width: 275px;
+    }
+
+    .geomarketing-revard-sec__title {
+        font-size: 36px;
+    }
+
+    .geomarketing-revard-sec__subtitle {
+        font-size: 18px;
+    }
+
+    .geomarketing-revard-sec__claster {
+        padding: 40px 0;
+    }
+
+    .geomarketing-revard-sec__title-info {
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .geomarketing-revard-sec__text {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    .geomarketing-revard-sec__phones {
+        width: 210px;
+        height: 280px;
+    }
+
+    .geomarketing-revard-sec__info {
+        width: 500px;
+    }
+
+    .geomarketing-revard-sec__wrapper {
+        margin-top: 60px;
+    }
+
+    .geomarketing-revard-sec__reviews-ttitle {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    .geomarketing-revard-sec__reviews-subtitle {
+        font-size: 14px;
+    }
+
+    .geomarketing-revard-sec__reviews-text {
+        width: 50%;
+        padding-right: 20px;
+    }
+
+    .geomarketing-revard-sec__reviews-list {
+        width: 50%;
+    }
+
+    .geomarketing-price-sec__body {
+        margin-top: 35px;
+    }
+
+    .geomarketing-price-sec__body-tab {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .geomarketing-price-item {
+        width: calc(33.333% - 20px);
+        margin: 0 10px 20px 10px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .geomarketing-hero-sec__container {
+        width: 350px;
+    }
+
+    .geomarketing-road-sec__container {
+        width: 350px;
+    }
+
+    .geomarketing-phones-sec__container {
+        width: 350px;
+    }
+
+    .geomarketing-revard-sec__container {
+        width: 350px;
+    }
+
+    .geomarketing-price-sec__container {
+        width: 350px;
+    }
+
+    .geomarketing-hero-sec__images-claster {
+        background: none;
+        height: auto;
+    }
+
+    .geomarketing-hero-sec__text {
+        width: 350px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .geomarketing-hero-sec__title {
+        font-size: 30px;
+        line-height: 1;
+    }
+
+    .geomarketing-hero-sec__subtitle {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .geomarketing-herogeomarketing-hero-sec__image--phone {
+        position: relative;
+        width: 300px;
+    }
+
+    .geomarketing-hero-sec__image--x1,
+    .geomarketing-hero-sec__image--x2,
+    .geomarketing-hero-sec__image--x3,
+    .geomarketing-hero-sec__image--x4 {
+        width: 170px;
+        border-radius: 10px;
+    }
+
+    .geomarketing-hero-sec__image--x1 {
+        bottom: 0;
+        left: 0;
+        top: auto;
+        right: auto;
+    }
+
+    .geomarketing-hero-sec__image--x2 {
+        bottom: 0;
+        right: 0;
+        top: auto;
+        left: auto;
+    }
+
+
+    .geomarketing-hero-sec__image--x3 {
+        bottom: 132px;
+        left: 0;
+        top: auto;
+        right: auto;
+    }
+
+    .geomarketing-hero-sec__image--x4 {
+        bottom: 132px;
+        right: 0;
+        top: auto;
+        left: auto;
+    }
+
+    .geomarketing-hero-sec {
+        height: auto;
+        min-height: 860px;
+    }
+
+    .geomarketing-phones-sec {
+        overflow: hidden;
+    }
+
+    .geomarketing-road-sec__title {
+        font-size: 28px;
+    }
+
+    .geomarketing-road-sec__info-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .geomarketing-road-sec__info-wrapper-col {
+        width: 100%;
+    }
+
+    .geomarketing-road-sec__partners-wrapper-element {
+        padding: 0 20px;
+        margin-bottom: 10px;
+    }
+
+    .geomarketing-road-sec__partners-wrapper-row {
+        margin-top: 20px;
+    }
+
+    .geomarketing-road-sec__partners-wrapper {
+        margin-top: 30px;
+    }
+
+    .geomarketing-road-sec__partners-wrapper-element::before {
+        opacity: 0;
+    }
+
+    .geomarketing-revard-sec {
+        padding: 0;
+    }
+
+    .geomarketing-phones-sec__phone {
+        width: 250px;
+    }
+
+    .geomarketing-phones-sec__phone-v1,
+    .geomarketing-phones-sec__phone-v3 {
+        display: none;
+    }
+
+    .geomarketing-phones-sec__phone-v2 {
+        z-index: 10;
+    }
+
+    .geomarketing-phones-sec__phone-v2-data-element--1 .geomarketing-phones-sec__phone-v2-data-element-info {
+        right: auto;
+        left: 0;
+    }
+
+    .geomarketing-phones-sec__phone-v2-data-element-info-title {
+        padding-left: 70px;
+    }
+
+    .geomarketing-phones-sec__phone-v2-data-element--2 .geomarketing-phones-sec__phone-v2-data-element-info {
+        left: auto;
+        right: 0;
+    }
+
+    .geomarketing-phones-sec__claster {
+        background: none;
+        height: auto;
+    }
+
+    .geomarketing-phones-sec {
+        padding: 40px 0;
+    }
+
+    .geomarketing-phones-sec__phone-v2-data-element--2 .geomarketing-phones-sec__phone-v2-data-element-info-title {
+        padding-left: 0;
+        padding-right: 50px;
+        text-align: center;
+    }
+
+    .geomarketing-revard-sec__claster {
+        border-radius: 0;
+    }
+
+    .geomarketing-revard-sec__title {
+        font-size: 28px;
+    }
+
+    .geomarketing-revard-sec__subtitle {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    .geomarketing-revard-sec__wrapper {
+        margin-top: 35px;
+        flex-wrap: wrap;
+    }
+
+    .geomarketing-revard-sec__info {
+        width: 100%;
+    }
+
+    .geomarketing-revard-sec__title-info {
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .geomarketing-revard-sec__text {
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    .geomarketing-revard-sec__info-down-row {
+        flex-wrap: wrap;
+    }
+
+    .geomarketing-revard-sec__img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .geomarketing-revard-sec__btn {
+        width: 100%;
+    }
+
+    .geomarketing-revard-sec__phones {
+        margin: 0 auto;
+        margin-top: 30px;
+        height: auto;
+
+    }
+
+    .geomarketing-revard-sec__reviews {
+        flex-wrap: wrap;
+    }
+
+    .geomarketing-revard-sec__reviews-text {
+        width: 100%;
+        position: relative;
+        top: auto;
+        padding: 0;
+    }
+
+    .geomarketing-revard-sec__reviews-ttitle {
+        text-align: center;
+    }
+
+    .geomarketing-revard-sec__reviews-subtitle {
+        text-align: center;
+    }
+
+    .geomarketing-revard-sec__reviews-list {
+        width: 100%;
+        margin-top: 35px;
+    }
+
+    .geomarketing-price-sec__header-row-1,
+    .geomarketing-price-sec__header-row-2 {
+        display: none;
+    }
+
+    .geomarketing-price-sec {
+        padding: 60px 0;
+    }
+
+    .geomarketing-price-sec__header-li {
+        width: 33.33%;
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    .geomarketing-price-sec__header-nav {
+        width: 100%;
+    }
+
+    .geomarketing-price-sec__body-tab {
+        justify-content: space-between;
+    }
+
+    .geomarketing-price-item {
+        width: calc(100%);
+
+        margin: 0;
+        margin-bottom: 20px;
+        border-radius: 15px;
+
+        // .cost-box__btn {
+        //     width: calc(100% - 20px);
+        //     left: 10px;
+        //     margin-left: 1px;
+        // }
+
+        // .cost-box__btn-title {
+        //     padding-right: 30px;
+        // }
+    }
+
+    // .geomarketing-price-item__services-list-li {
+    //     line-height: 1.2;
+    // }
+
+    // .geomarketing-price-item__services-list {
+    //     margin-top: 30px;
+    //     padding: 0 10px;
+    // }
+
+    // .geomarketing-price-item__title {
+    //     font-size: 22px;
+    // }
+
+    // .geomarketing-price-item__price {
+    //     font-size: 24px;
+    // }
 }

@@ -588,3 +588,340 @@
     line-height: normal;
     letter-spacing: -0.76px;
 }
+
+
+
+@media only screen and (max-width: 1560px) {}
+
+@media only screen and (max-width: 1250px) {}
+
+@media only screen and (max-width: 1060px) {
+    .website-fase-sec__container {
+        width: 900px;
+    }
+
+    .website-portfolio-sec__container {
+        width: 900px;
+    }
+
+    .website-bonus-sec__container {
+        width: 900px;
+    }
+
+    .website-bonus-sec__col-1,
+    .website-bonus-sec__col-2,
+    .website-bonus-sec__col-3 {
+        width: calc(33.333% - 7px);
+    }
+
+    .website-portfolio-sec__work-name {
+        font-size: 32px;
+    }
+
+    .website-fase-sec__title {
+        font-size: 36px;
+    }
+
+    .website-portfolio-sec__title {
+        font-size: 36px;
+    }
+
+    .website-bonus-sec__title {
+        font-size: 36px;
+    }
+}
+
+
+@media only screen and (max-width: 950px) {
+    .website-hero-sec__title {
+        width: 750px;
+        margin: 0 auto;
+        font-size: 36px;
+    }
+
+    .website-hero-sec__subtitle {
+        font-size: 20px;
+        width: 750px;
+        margin: 0 auto;
+    }
+
+    .website-fase-sec__container {
+        width: 750px;
+    }
+
+    .website-portfolio-sec__container {
+        width: 750px;
+    }
+
+    .website-bonus-sec__container {
+        width: 750px;
+    }
+
+    .website-bonus-sec__content-box-header-text {
+        font-size: 16px;
+        text-align: left;
+    }
+
+
+    .website-bonus-sec__content-box-body {
+        font-size: 13px;
+    }
+
+    .website-bonus-sec__content-box-header-text {
+        font-size: 16px;
+    }
+
+    .website-bonus-sec__content-box__btn-title {
+        font-size: 16px;
+        padding-left: 85px;
+    }
+
+    .phone-info-box__info {
+        left: auto;
+        right: 0;
+        padding-left: 30px;
+        padding-right: 90px;
+    }
+
+    .phone-info-box--el-1 {
+        .phone-info-box__info {
+            transform: translateX(20%);
+        }
+    }
+
+    .phone-info-box--el-2 {
+        .phone-info-box__info {
+            transform: translateX(20%);
+        }
+    }
+
+    .phone-info-box--el-3 {
+        .phone-info-box__info {
+            transform: translateX(-20%);
+
+            left: 0;
+            right: auto;
+            padding-left: 90px;
+            padding-right: 30px;
+        }
+    }
+
+    .phone-info-box--el-4 {
+        .phone-info-box__info {
+            transform: translateX(-20%);
+            left: 0;
+            right: auto;
+            padding-left: 90px;
+            padding-right: 30px;
+        }
+    }
+
+    .price-sec__text {
+        font-size: 14px;
+        padding: 0;
+        align-items: flex-start;
+        padding-top: 15px;
+    }
+
+    .website-price-sec {
+        .price-sec__list-work-wrapper-title {
+            font-size: 20px;
+            text-align: left;
+        }
+    }
+
+    .website-portfolio-sec__work-name {
+        font-size: 28px;
+    }
+
+    .website-portfolio-sec__work-ar {
+        height: 70px;
+        width: 70px;
+
+        svg {
+            width: 40px;
+            height: auto;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+    .website-hero-sec__container {
+        background: #000;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+
+    .website-hero-sec__bg {
+        width: auto;
+        height: 70%;
+        position: absolute;
+
+        left: auto;
+        top: 15%;
+    }
+
+    .website-hero-sec__title {
+        width: 350px;
+        margin: 0 auto;
+        font-size: 28px;
+    }
+
+    .website-hero-sec__subtitle {
+        font-size: 20px;
+        width: 350px;
+        margin: 0 auto;
+    }
+
+    .website-fase-sec__container {
+        width: 350px;
+    }
+
+    .website-portfolio-sec__container {
+        width: 350px;
+    }
+
+    .website-bonus-sec__container {
+        width: 350px;
+    }
+
+    .website-bonus-sec__title {
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    .website-bonus-sec__subtitle {
+        font-size: 16px;
+    }
+
+    .website-bonus-sec__wrapper {
+        margin-top: 35px;
+        height: auto;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .website-bonus-sec__col-1,
+    .website-bonus-sec__col-2,
+    .website-bonus-sec__col-3 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+
+
+    .website-bonus-sec__content-box-body {
+        margin-top: 20px;
+    }
+
+    .website-bonus-sec__content-box-down {
+        margin-top: 25px;
+
+        img {
+            max-height: 100px;
+            width: 100%;
+        }
+    }
+
+    .website-bonus-sec__content-box--v3 {
+        height: auto;
+    }
+
+    .website-bonus-sec__content-box--v2 {
+        margin-bottom: 10px;
+    }
+
+    .website-bonus-sec__content-box__btn-title {
+        padding-left: 128px;
+    }
+
+    .website-bonus-sec {
+        padding: 50px 0;
+    }
+
+    .website-bonus-sec__content-box--v4 {
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .website-price-sec .price-sec__list-work-wrapper-title {
+        font-size: 24px;
+    }
+
+    .price-sec__text {
+        font-size: 16px;
+    }
+
+    .website-portfolio-sec__work-name {
+        font-size: 22px;
+        padding-left: 0;
+    }
+
+    .website-portfolio-sec__work-ar {
+        height: 60px;
+        width: 60px;
+
+        svg {
+            width: 35px;
+        }
+    }
+
+    .website-portfolio-sec__title {
+        font-size: 28px;
+    }
+
+    .website-portfolio-sec__subtitle {
+        font-size: 16px;
+    }
+
+    .website-fase-sec__title {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .website-fase-sec__phone {
+        width: 260px;
+        margin-top: 60px;
+    }
+
+    .website-fase-sec__phone-info-box {
+        width: 50px;
+        height: 50px;
+    }
+
+    .website-fase-sec__container {
+        overflow: hidden;
+    }
+
+    .phone-info-box--el-1,
+    .phone-info-box--el-2 {
+        right: -17px;
+
+        .phone-info-box__info {
+            padding-left: 20px;
+            padding-right: 60px;
+        }
+    }
+
+    .phone-info-box--el-3,
+    .phone-info-box--el-4 {
+        left: -17px;
+
+        .phone-info-box__info {
+            padding-left: 60px;
+            padding-right: 20px;
+        }
+    }
+
+
+
+    .phone-info-box__info {
+        font-size: 13px;
+    }
+}
