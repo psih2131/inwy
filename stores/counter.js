@@ -9,7 +9,7 @@ export const useCounterStore = defineStore('counter', () => {
     const serverUrlDomainRequest = ref('https://cy18281-wordpress-gre0n.tw1.ru')
 
 
-    const domainUrlCurrent = ref('https://psih2131-inwy-bb76.twc1.net')
+    const domainUrlCurrent = ref('https://psih2131-inwy-f96d.twc1.net')
 
     const popupCurrent = ref(null)
 
