@@ -36,7 +36,7 @@
         </NuxtLink>
 
         <div class="header__right">
-          <button class="header__btn btn-v1">обсудить проект</button>
+          <button class="header__btn btn-v1" @click="openFormPopup()">обсудить проект</button>
 
           <div class="burger" @click="headerMobMenyActiv = !headerMobMenyActiv">
             <div class="burger__line burger__line--v1"></div>
@@ -221,7 +221,14 @@
 </template>
 
 <script setup>
+import { useCounterStore } from '@/stores/counter'
+
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const store = useCounterStore()
+
+
+    
 
 const route = useRoute()
 
@@ -267,6 +274,12 @@ function closeMeny(){
   headerMobMenyActiv.value = false
   servicesSubMenuActiv.value = false
 }
+
+//open form popup 
+  function openFormPopup(){
+      store.changeTrigerButtonForm('Кнопка в шапке ')
+      store.changePopupCurrent('popup-form')
+  }
 
 
 watch(() => route.fullPath, (newPath) => {

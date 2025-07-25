@@ -5,36 +5,46 @@ import { defineStore } from 'pinia'
 export const useCounterStore = defineStore('counter', () => {
     const router = useRouter();
 
-    // const serverUrlDomainRequest = ref('http://gearsdpz.beget.tech')
-
-    // const currentIdForOpenObjectOnMap = ref(null)
-
-    // const objectViewSwitch = ref(0)
-
-    // // const doubleCount = computed(() => count.value * 2)
-    // function changeCurrentIdForOpenObjectOnMap(newValue) {
-    //     currentIdForOpenObjectOnMap.value = newValue
-    //     console.log('object open on map', currentIdForOpenObjectOnMap.value)
-    // }
+    // const serverUrlDomainRequest = ref('http://syberia.gearsdpz.beget.tech')
+    const serverUrlDomainRequest = ref('https://cy18281-wordpress-gre0n.tw1.ru')
 
 
-    // //change view object switch
-    // function changeObjectViewSwitch(newValue) {
-    //     objectViewSwitch.value = newValue
-    //     console.log('objectViewSwitch', objectViewSwitch.value)
-    // }
+    const domainUrlCurrent = ref('https://psih2131-inwy-bb76.twc1.net')
+
+    const popupCurrent = ref(null)
+
+    const trigerButtonForm = ref(null)
+
+    const serteficatCurrent = ref(null)
 
 
+    function changePopupCurrent(newValue) {
+        popupCurrent.value = newValue
+        console.log('popupCurrent', popupCurrent.value)
+    }
+
+    function changeTrigerButtonForm(newValue) {
+        trigerButtonForm.value = newValue
+        console.log('trigerButtonForm', trigerButtonForm.value)
+    }
+
+
+    function changeSerteficatCurrent(newValue) {
+        serteficatCurrent.value = newValue
+        console.log('changeSerteficatCurrent', serteficatCurrent.value)
+    }
 
 
 
     // doubleCount, increment 
     return {
-        // currentIdForOpenObjectOnMap,
-        // serverUrlDomainRequest,
-        // objectViewSwitch,
-
-        // changeCurrentIdForOpenObjectOnMap,
-        // changeObjectViewSwitch
+        serverUrlDomainRequest,
+        domainUrlCurrent,
+        popupCurrent,
+        serteficatCurrent,
+        trigerButtonForm,
+        changePopupCurrent,
+        changeSerteficatCurrent,
+        changeTrigerButtonForm,
     }
 })

@@ -5,41 +5,64 @@
         <slot />
     
         <component__footer />
+
+        <popupsPlagin v-if="store.popupCurrent != null" />
     </div>
 </template>
 
-<script>
+
+  
+
+
+<script setup>
+import { useCounterStore } from '@/stores/counter'
+
+import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
+
 import component__header from '@/components/header.vue'
 import component__footer from '@/components/footer.vue'
 
-export default {
-    data() {
-        return {
+import popupsPlagin from '@/components/popups/popups-parent.vue'
 
-        }
-    },
+//DATA
+const currentSearchType = ref('personPhone')
 
-    components: {
-        component__header,
-        component__footer,
-    },
+const store = useCounterStore()
 
-    methods: {
 
-    },
 
-    computed: {
+//METHODS 
 
-    },
 
-    watch: {
 
-    },
 
-    mounted(){
 
-    },
+//HOOKS
+watch(() => store.popupCurrent,  // отслеживаемое значение
+  (newVal, oldVal) => {
+    console.log('Значение изменилось:', oldVal, '→', newVal)
+  }
+)
 
-}
-</script>
+
+onMounted(() => {
+  // Добавляем обработчик события scroll
+
   
+});
+
+onBeforeUnmount(() => {
+
+});
+
+
+
+
+
+
+ // props
+ const props = defineProps({
+//   mainData: Object,
+      // postAllCategory: Object,
+  })
+</script>
