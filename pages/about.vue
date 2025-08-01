@@ -41,7 +41,7 @@
                                 <img 
                                 :class="{ active: activeIndex === index }"
                                 :style="activeIndex === index ? style : null"
-                                src="`@/assets/images/about/fix1.jpg`" alt="" class="circle-sector__img">
+                                src="@/assets/images/about/fix1.jpg" alt="" class="circle-sector__img">
 
 
                             </div>
@@ -138,10 +138,10 @@ const scrollPosition = ref(null)
 const windowsHeight = ref(null)
 
 const aboutFixedImageList = ref([
-    '@/assets/images/about/fix1.jpg',
-    '@/assets/images/about/fix2.jpg',
-    '@/assets/images/about/fix2.jpg',
-    '@/assets/images/about/fix1.jpg',
+    '1',
+    '2',
+    '3',
+    '4',
 ])
 
 const activeIndex = ref(null)
