@@ -5,7 +5,7 @@
         <section class="website-hero-sec target-block">
             <div class="website-hero-sec__container">
                 <img src="@/assets/images/website/hero.jpg" alt="" class="website-hero-sec__bg">
-                <h1 class="website-hero-sec__title">Делаем сайты, которые продают</h1>
+                <h1 class="website-hero-sec__title">Делаем сайты,<span><br></span> которые продают</h1>
                 <p class="website-hero-sec__subtitle">И  любят поисковики</p>
             </div>
         </section>
@@ -92,7 +92,10 @@
                             :class="{ active: activeIndex === index }"
                             :style="activeIndex === index ? style : null"
                             >
-                            <!-- <img :src="work.preview" alt="preview" /> -->
+                            <video autoplay muted loop playsinline>
+                            <source src="@/assets/video/work1.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                            </video>
                             </div>
                         </NuxtLink>
                           
@@ -108,15 +111,15 @@
             <div class="price-sec__container">
 
                 <div class="price-sec__body">
-                    <div class="price-sec__col">
+
+                    <div class="price-sec__col" v-for="(item, index) in dataPriceSec" :key="index">
                         <div class="price-sec__list-work-wrapper">
-                            <p class="price-sec__list-work-wrapper-title">Лендинг</p>
+                            <p class="price-sec__list-work-wrapper-title" v-html="item.title"></p>
+         
 
-                            <p class="price-sec__text">
-                                Сайт, направленный на целевые действия: заявка, подписка, скачивание, покупка, расчет стоимости или презентация продукта/услуги.
-                            </p>
+                            <p class="price-sec__text" v-html="item.serviceDescription"></p>
 
-                            <div class="price-sec__list-work-wrapper-down-btn">
+                            <div class="price-sec__list-work-wrapper-down-btn" @click="dataPriceSecActioDopIndex = index, targetClickOutside()" >
                                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="5" width="3" height="13" fill="#ACFA03"/>
                                 <rect y="5" width="13" height="3" fill="#ACFA03"/>
@@ -131,96 +134,28 @@
                                 
                             </div>
                             <div class="cost-box__wrapper">
-                                <p class="cost-box__value">15 000 ₽</p>
+                                <p class="cost-box__value">{{ item.price }} ₽</p>
                                 <div class="cost-box__btn">
                                     <p class="cost-box__btn-title">Заказать</p>
                                     <div class="cost-box__btn-icon">
                                         <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0.591701 1.23274L1.16743 0.564631L17.8807 10.8802L17.9021 12.2716L1.51353 23.0717L0.917524 22.4216L10.397 11.6789L0.591701 1.23274Z" fill="#ACFA03"/>
                                         </svg>
-
-
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="cost-box__dop" v-if="dataPriceSecActioDopIndex == index">
+                                <p class="cost-box__dop-title" v-html="item.servicesListFullTitle" ></p>
+                                <ul class="cost-box__dop-list">
+                                    <li class="cost-box__dop-list-element" v-for="dopServItem in item.servicesListFullList" :key="dopServItem">{{ dopServItem }}</li>                                 
+                                </ul>
                             </div>
                         </div>
 
                     </div>
 
-                    
 
-
-                    <div class="price-sec__col">
-                        <div class="price-sec__list-work-wrapper">
-                            <p class="price-sec__list-work-wrapper-title">Многостраничный</p>
-                            <p class="price-sec__text">Сайт с многоуровневой структурой, объединенной единой навигацией (меню) или связующими блоками. Каждая страница представляет отдельный раздел или направление, решающее конкретные задачи в рамках общей цели проекта.</p>
-
-                            <div class="price-sec__list-work-wrapper-down-btn">
-                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="5" width="3" height="13" fill="#ACFA03"/>
-                                <rect y="5" width="13" height="3" fill="#ACFA03"/>
-                                </svg>
-                                объем выполняемых работ
-                            </div>
-                        </div>
-
-                        <div class="price-sec__cost-box cost-box">
-
-                            <div class="cost-box__bg-wrapper">
-                                
-                            </div>
-                            <div class="cost-box__wrapper">
-                                <p class="cost-box__value">10 000 ₽</p>
-                                <div class="cost-box__btn">
-                                    <p class="cost-box__btn-title">Заказать</p>
-                                    <div class="cost-box__btn-icon">
-                                        <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.591701 1.23274L1.16743 0.564631L17.8807 10.8802L17.9021 12.2716L1.51353 23.0717L0.917524 22.4216L10.397 11.6789L0.591701 1.23274Z" fill="#ACFA03"/>
-                                        </svg>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="price-sec__col">
-                        <div class="price-sec__list-work-wrapper">
-                            <p class="price-sec__list-work-wrapper-title">Интернет магазин</p>
-                            <p class="price-sec__text">Сайт с детализированным каталогом товаров, ориентированный на сбор заявок или онлайн-продажи через корзину. Функционал включает промокоды, скидки, выбор способов доставки, настройку вариантов и свойств товаров.</p>
-
-                            <div class="price-sec__list-work-wrapper-down-btn">
-                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="5" width="3" height="13" fill="#ACFA03"/>
-                                <rect y="5" width="13" height="3" fill="#ACFA03"/>
-                                </svg>
-                                объем выполняемых работ
-                            </div>
-                        </div>
-
-                        <div class="price-sec__cost-box cost-box">
-
-                            <div class="cost-box__bg-wrapper">
-                                
-                            </div>
-                            <div class="cost-box__wrapper">
-                                <p class="cost-box__value">10 000 ₽</p>
-                                <div class="cost-box__btn">
-                                    <p class="cost-box__btn-title">Заказать</p>
-                                    <div class="cost-box__btn-icon">
-                                        <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.591701 1.23274L1.16743 0.564631L17.8807 10.8802L17.9021 12.2716L1.51353 23.0717L0.917524 22.4216L10.397 11.6789L0.591701 1.23274Z" fill="#ACFA03"/>
-                                        </svg>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
                 </div>
@@ -331,45 +266,39 @@
                 <h2 class="about-services-sec_title">Другие наши услуги.</h2>
                 <div class="about-services-sec__row">
 
-                    <a href="" class="about-services-sec__element">
+                    <NuxtLink to="/direct" class="about-services-sec__element about-services-sec__element--yandex">
                         <p class="about-services-sec__element-text">Яндекс.Директ</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1AFF00;"></div>
                             <img src="@/assets/images/about/a2.jpg" alt="" class="about-services-sec__element-img">
                         </div>
-                    </a>
+                    </NuxtLink>
 
-                    <a href="" class="about-services-sec__element">
+                    <NuxtLink to="/geomarketing" class="about-services-sec__element about-services-sec__element--geo" >
                         <p class="about-services-sec__element-text">Геомаркетинг</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1A00FF;"></div>
                             <img src="@/assets/images/about/a3.jpg" alt="" class="about-services-sec__element-img">
                         </div>
-                    </a>
+                    </NuxtLink>
 
-                    <a href="" class="about-services-sec__element">
+                    <NuxtLink to="/vkads" class="about-services-sec__element about-services-sec__element--vk">
                         <p class="about-services-sec__element-text">VK реклама</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1A00FF;"></div>
                             <img src="@/assets/images/about/a4.jpg" alt="" class="about-services-sec__element-img">
                         </div>
-                    </a>
+                    </NuxtLink>
 
-                    <a href="" class="about-services-sec__element">
+                    <NuxtLink to="/tgads" class="about-services-sec__element about-services-sec__element--telegtam">
                         <p class="about-services-sec__element-text">Telegram Ads</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #FF00BB;"></div>
                             <img src="@/assets/images/about/a4.jpg" alt="" class="about-services-sec__element-img">
                         </div>
-                    </a>
+                    </NuxtLink>
 
-                    <a href="" class="about-services-sec__element">
-                        <p class="about-services-sec__element-text">Разработка сайтов</p>
-                        <div class="about-services-sec__element-img-wrapper">
-                            <div class="about-services-sec__element-img-wrapper-circle" style="background: #FF7700;"></div>
-                            <img src="@/assets/images/about/a1.jpg" alt="" class="about-services-sec__element-img">
-                        </div>
-                    </a>
+
                 </div>
             </div>
         </section>
@@ -406,9 +335,143 @@ const activeIndex = ref(null)
 
 const style = ref({ top: '0px', left: '0px' })
 
+const dataPriceSecActioDopIndex = ref(null)
+
+const dataPriceSec = ref([
+    {
+        'title': 'Запуск',
+        'price': '10 000',
+        'servicesList': [
+            'Ежедневный/еженедельный мониторинг',
+            'Оптимизация кампаний',
+            'А/В тестирование объявлений',
+            'Анализ и отчетность',
+            'Анализ и отчетность',
+            'Масштабирование рекламы',
+            'Поддержка и консультации',
+            ],
+        'serviceDescription': 'Сайт с детализированным каталогом товаров, ориентированный на сбор заявок или онлайн-продажи через корзину. Функционал включает промокоды, скидки, выбор способов доставки, настройку вариантов и свойств товаров.',
+        'servicesListFullTitle': 'Запуск',
+        'servicesListFullList': [
+            'SEO - продвижение',
+            'Добавление компаний на основные платформы',
+            'Добавление фото',
+            'Добавление/корректировка акций',
+            'Добавление/корректировка акций',
+            'Актуализация информации',
+            'Удаление дубликатов',
+            'Обжалование негативных отзывов',
+            'Ответы на положительные отзывы',
+            'Подбор/создание изображений под акции и скидки',
+            'Настройки и внедрение витрины товаров',
+            'Контроль синей галочки на Яндекс.Картах',
+            'Внедрение и оформление stories',
+            'Персональный менеджер',
+            'Статистика по продвижению',
+            'Статистика по отзывам',
+        ]
+    },
+
+    {
+        'title': 'Ведение',
+        'price': '12 000',
+        'servicesList': [
+            'Ежедневный/еженедельный мониторинг',
+            'Оптимизация кампаний',
+            'А/В тестирование объявлений',
+            'Анализ и отчетность',
+            'Анализ и отчетность',
+            'Масштабирование рекламы',
+            'Поддержка и консультации',
+            ],
+        'serviceDescription': 'Сайт с детализированным каталогом товаров, ориентированный на сбор заявок или онлайн-продажи через корзину. Функционал включает промокоды, скидки, выбор способов доставки, настройку вариантов и свойств товаров.',
+        'servicesListFullTitle': 'Ведение',
+        'servicesListFullList': [
+            'SEO - продвижение',
+            'Добавление компаний на основные платформы',
+            'Добавление фото',
+            'Добавление/корректировка акций',
+            'Добавление/корректировка акций',
+            'Актуализация информации',
+            'Удаление дубликатов',
+            'Обжалование негативных отзывов',
+            'Ответы на положительные отзывы',
+            'Подбор/создание изображений под акции и скидки',
+            'Настройки и внедрение витрины товаров',
+            'Контроль синей галочки на Яндекс.Картах',
+            'Внедрение и оформление stories',
+            'Персональный менеджер',
+            'Статистика по продвижению',
+            'Статистика по отзывам',
+        ]
+    },
+
+
+    {
+        'title': 'Ведение',
+        'price': '12 000',
+        'servicesList': [
+            'Ежедневный/еженедельный мониторинг',
+            'Оптимизация кампаний',
+            'А/В тестирование объявлений',
+            'Анализ и отчетность',
+            'Анализ и отчетность',
+            'Масштабирование рекламы',
+            'Поддержка и консультации',
+            ],
+        'serviceDescription': 'Сайт с детализированным каталогом товаров, ориентированный на сбор заявок или онлайн-продажи через корзину. Функционал включает промокоды, скидки, выбор способов доставки, настройку вариантов и свойств товаров.',
+        'servicesListFullTitle': 'Ведение',
+        'servicesListFullList': [
+            'SEO - продвижение',
+            'Добавление компаний на основные платформы',
+            'Добавление фото',
+            'Добавление/корректировка акций',
+            'Добавление/корректировка акций',
+            'Актуализация информации',
+            'Удаление дубликатов',
+            'Обжалование негативных отзывов',
+            'Ответы на положительные отзывы',
+            'Подбор/создание изображений под акции и скидки',
+            'Настройки и внедрение витрины товаров',
+            'Контроль синей галочки на Яндекс.Картах',
+            'Внедрение и оформление stories',
+            'Персональный менеджер',
+            'Статистика по продвижению',
+            'Статистика по отзывам',
+        ]
+    }
+])
+
+
 
 
 //METHODS 
+let handler // глобально или вне функции — чтобы был доступен при remove
+
+function targetClickOutside() {
+
+  stopTargetClickOutside()
+
+  setTimeout(() => {
+    handler = (e) => {
+      if (!e.target.closest('.cost-box__dop')) {
+        console.log('Клик вне .cost-box__dop', e.target)
+        dataPriceSecActioDopIndex.value = null
+        stopTargetClickOutside()
+      }
+    }
+
+    document.addEventListener('click', handler)
+  }, 100)
+}
+
+function stopTargetClickOutside() {
+  if (handler) {
+    document.removeEventListener('click', handler)
+    handler = null
+  }
+}
+
 function show(index) {
   activeIndex.value = index
 }

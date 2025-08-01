@@ -1,10 +1,13 @@
 <template>
     <div class="app-wrapper">
-        <component__header />
+        <component__header  :trigerCloseSubMeny="triggerCloseSubMeny"/>
         
-        <slot />
+        <div class="page-main-wrapper" @click="closeHeaderSub">
+          <slot></slot>
+        </div>
+        
     
-        <component__footer />
+        <component__footer @click="closeHeaderSub"/>
 
         <popupsPlagin v-if="store.popupCurrent != null" />
     </div>
@@ -29,9 +32,15 @@ const currentSearchType = ref('personPhone')
 
 const store = useCounterStore()
 
+const triggerCloseSubMeny = ref(false)
+
 
 
 //METHODS 
+function closeHeaderSub(){
+  console.log('close header')
+  triggerCloseSubMeny.value = !triggerCloseSubMeny.value
+}
 
 
 

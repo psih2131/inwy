@@ -1,4 +1,11 @@
-.tgads-hero-sec--vk {}
+.vk-hero-sec__img-wrapper {
+    width: calc(100% - 120px - 120px - 100px);
+}
+
+.vk-hero-sec__img {
+    max-width: 980px;
+    max-height: 100%;
+}
 
 .tgads-hero-sec--vk_subtitle {
     color: rgba(171, 171, 171, 0.57);
@@ -32,14 +39,15 @@
     }
 }
 
-.tgads-watch-sec--activ {
-    border-radius: 0;
-}
 
 .vkads-benefits-sec {
     padding: 160px 0;
     padding-bottom: 200px;
     overflow: hidden;
+}
+
+.tgads-hero-sec__title-blue {
+    color: rgb(2, 119, 255);
 }
 
 .vkads-benefits-sec__container {
@@ -150,6 +158,18 @@
     height: 90px;
     border-radius: 100px;
     overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.vkads-benefits-sec__bg-line {
+    position: absolute;
+    top: 108px;
+    left: 356px;
+
+    svg {
+        display: block;
+    }
 }
 
 .vkads-benefits-sec__logo-img {
@@ -168,6 +188,7 @@
     letter-spacing: -0.04em;
     font-size: 14px;
     color: #fff;
+    z-index: 10;
 }
 
 .vkads-benefits-sec__info--v1 {
@@ -329,11 +350,12 @@
     color: #9D9B9B;
     font-size: 13px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
     margin-top: 5px;
     /* 120% */
     letter-spacing: -0.4px;
+    opacity: 0.6;
 }
 
 .vkads-make-all-sec__diagram-box-img {
@@ -401,6 +423,7 @@
 .tgads-make-ads-sec {
     opacity: 1;
     transform: scale(0.8);
+    border-radius: 30px;
 
     .tgads-watch-sec__title {
         background: none;
@@ -425,7 +448,7 @@
 }
 
 .direct-direction-sec__down-el-v2 {
-    width: 500px;
+    width: 33.33%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -481,6 +504,21 @@
     line-height: 1.2;
 }
 
+.vkads-price-sec {
+    .cost-box__bg-wrapper {
+        background: linear-gradient(-45deg, #957072, #744B38, #B2C4E4, #2E4951);
+        background-size: 400% 400%;
+
+    }
+}
+
+.tgads-watch-sec--activ {
+    border-radius: 0;
+}
+
+.tgads-watch-sec--vk-img-mob {
+    display: none;
+}
 
 
 @media only screen and (max-width: 1560px) {
@@ -496,6 +534,16 @@
         left: -10px;
     }
 }
+
+@media only screen and (max-width: 1560px) and (max-height: 840px) {
+    .tgads-make-ads-sec {
+        .tgads-watch-sec__img-wrapper {
+            width: 550px;
+        }
+    }
+}
+
+
 
 @media only screen and (max-width: 1250px) {
     .vkads-benefits-sec__container {
@@ -538,6 +586,15 @@
 
     .tgads-hero-sec__img-wrapper {
         width: 900px
+    }
+
+    .vkads-benefits-sec__bg-line {
+        top: 108px;
+        left: 236px;
+    }
+
+    .vkads-benefits-sec__info--v2 {
+        right: 230px;
     }
 }
 
@@ -646,6 +703,17 @@
     .vkads-make-all-sec__top-row {
         width: 100%;
     }
+
+
+    .vkads-benefits-sec__bg-line {
+        top: 114px;
+        left: 208px;
+        width: 350px;
+
+        svg {
+            width: 100%;
+        }
+    }
 }
 
 @media only screen and (max-width: 750px) {
@@ -687,13 +755,13 @@
     }
 
     .tgads-hero-sec__title {
-        font-size: 28px;
+        font-size: 32px;
         line-height: 1;
     }
 
     .tgads-hero-sec--vk_subtitle {
         line-height: 1.2;
-        font-size: 16px;
+        font-size: 18px;
         margin-top: 5px;
     }
 
@@ -703,12 +771,12 @@
     }
 
     .tgads-watch-sec__title {
-        font-size: 26px;
+        font-size: 32px;
         line-height: 1.2;
     }
 
     .tgads-watch-sec__subtitle {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.2;
         margin-top: 10px;
     }
@@ -741,7 +809,7 @@
     }
 
     .vkads-benefits-sec {
-        padding: 194px 0;
+        padding: 130px 0;
     }
 
     .vkads-benefits-sec__img-element--v4,
@@ -750,7 +818,7 @@
     }
 
     .vkads-benefits-sec__img-element--v2 {
-        top: -180px;
+        top: -100px;
         right: 0;
         left: auto;
     }
@@ -758,7 +826,8 @@
     .vkads-benefits-sec__img-element--v1 {
         left: 0;
         top: auto;
-        bottom: -165px;
+        bottom: -85px;
+        z-index: 1;
     }
 
     .vkads-make-all-sec__title {
@@ -891,5 +960,37 @@
 
     .direct-direction-sec__down-el-subtitle-v2 {
         font-size: 11px;
+    }
+
+    .vkads-benefits-sec__bg-line {
+        display: none;
+    }
+
+    .tgads-watch-sec--vk-img {
+        display: none;
+    }
+
+    .tgads-watch-sec--vk-img-mob {
+        display: block;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .tgads-watch-sec--vk .tgads-watch-sec__down-row .direct-direction-sec__down-el {
+        width: 50%;
+
+        .direct-direction-sec__down-el-title {
+            font-size: 34px;
+        }
+    }
+
+    .tgads-watch-sec--vk {
+        .tgads-watch-sec__title {
+            font-size: 25px;
+        }
+
+        .tgads-watch-sec__subtitle {
+            font-size: 16px;
+        }
     }
 }

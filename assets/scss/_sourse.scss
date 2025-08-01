@@ -9,7 +9,7 @@
 	-ms-user-select: none;
 	user-select: none;
 
-	// cursor: none !important;
+	cursor: none !important;
 }
 
 
@@ -32,7 +32,7 @@ button {
 }
 
 body::-webkit-scrollbar {
-	width: 5px;
+	width: 0px;
 }
 
 body::-webkit-scrollbar-track {}
@@ -150,9 +150,18 @@ ul {
 }
 
 
+
 @media only screen and (max-width: 1560px) {}
 
-@media only screen and (max-width: 1200px) {}
+@media only screen and (max-width: 1200px) {
+	* {
+		cursor: default;
+	}
+
+	#custom-cursor {
+		display: none;
+	}
+}
 
 @media only screen and (max-width: 950px) {}
 

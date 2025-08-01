@@ -2,9 +2,10 @@
 
     <main class="main">
 
-        <section class="tgads-hero-sec">
+        <section class="tgads-hero-sec tg-her-sec">
             <div class="tgads-hero-sec__img-wrapper">
-                <img src="@/assets/images/tgads/hero.png" alt="" class="tgads-hero-sec__img">
+                <img src="@/assets/images/tgads/hero.png" alt="" class="tgads-hero-sec__img tg-her-sec__img--pc">
+                <img src="@/assets/images/tgads/hero-mob.png" alt="" class="tgads-hero-sec__img tg-her-sec__img--mob">
             </div>
 
             <div class="tgads-hero-sec__container">
@@ -14,7 +15,7 @@
         </section>
 
         <div class="tgads-watch-sec-wrapper" >
-            <section class="tgads-watch-sec" ref="watchSec">
+            <section class="tgads-watch-sec tgads-watch-sec--mob target-block" ref="watchSec">
                 <div class="tgads-watch-sec__wrapper">
                     <div class="tgads-watch-sec__header">
                         <h2 class="tgads-watch-sec__title">Покажите себя</h2>
@@ -226,11 +227,7 @@
         </section>
 
 
-        
-
-
-
-        <section class="price-sec">
+        <section class="price-sec tgads-price-sec">
             <div class="price-sec__container">
                 <div class="price-sec__header">
 
@@ -260,20 +257,15 @@
                 </div>
 
                 <div class="price-sec__body">
-                    <div class="price-sec__col">
+                    <div class="price-sec__col" v-for="(item, index) in dataPriceSec" :key="index">
                         <div class="price-sec__list-work-wrapper">
-                            <p class="price-sec__list-work-wrapper-title">Запуск</p>
+                            <p class="price-sec__list-work-wrapper-title" v-html="item.title"></p>
                             <ul class="price-sec__list-work-wrapper-list">
-                                <li>Анализ бизнеса и ЦА</li>
-                                <li>Настройка рекламной кампании</li>
-                                <li>Создание объявлений</li>
-                                <li>Настройка Ретаргетинга/Ремаркетинга</li>
-                                <li>Подключение инструментов аналитики</li>
-                                <li>Тестирование и запуск</li>
-                                <li>Отчет о проделанной работе</li>
+                                <li v-for="servElement in item.servicesList" :key="servElement">{{ servElement }}</li>
+
                             </ul>
 
-                            <div class="price-sec__list-work-wrapper-down-btn">
+                            <div class="price-sec__list-work-wrapper-down-btn" @click="dataPriceSecActioDopIndex = index, targetClickOutside()" >
                                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="5" width="3" height="13" fill="#ACFA03"/>
                                 <rect y="5" width="13" height="3" fill="#ACFA03"/>
@@ -300,54 +292,15 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </div>
-
-                    
-
-
-                    <div class="price-sec__col">
-                        <div class="price-sec__list-work-wrapper">
-                            <p class="price-sec__list-work-wrapper-title">Ведение</p>
-                            <ul class="price-sec__list-work-wrapper-list">
-                                <li>Ежедневный/еженедельный мониторинг</li>
-                                <li>Оптимизация кампаний</li>
-                                <li>А/В тестирование объявлений</li>
-                                <li>Работа с аудиториями</li>
-                                <li>Анализ и отчетность</li>
-                                <li>Масштабирование рекламы</li>
-                                <li>Поддержка и консультации</li>
-                            </ul>
-
-                            <div class="price-sec__list-work-wrapper-down-btn">
-                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="5" width="3" height="13" fill="#ACFA03"/>
-                                <rect y="5" width="13" height="3" fill="#ACFA03"/>
-                                </svg>
-                                объем выполняемых работ
+                            <div class="cost-box__dop" v-if="dataPriceSecActioDopIndex == index">
+                                <p class="cost-box__dop-title" v-html="item.servicesListFullTitle" ></p>
+                                <ul class="cost-box__dop-list">
+                                    <li class="cost-box__dop-list-element" v-for="dopServItem in item.servicesListFullList" :key="dopServItem">{{ dopServItem }}</li>                                 
+                                </ul>
                             </div>
                         </div>
 
-                        <div class="price-sec__cost-box cost-box">
-
-                            <div class="cost-box__bg-wrapper">
-                                
-                            </div>
-                            <div class="cost-box__wrapper">
-                                <p class="cost-box__value">10 000 ₽</p>
-                                <div class="cost-box__btn">
-                                    <p class="cost-box__btn-title">Заказать</p>
-                                    <div class="cost-box__btn-icon">
-                                        <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.591701 1.23274L1.16743 0.564631L17.8807 10.8802L17.9021 12.2716L1.51353 23.0717L0.917524 22.4216L10.397 11.6789L0.591701 1.23274Z" fill="#ACFA03"/>
-                                        </svg>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -359,45 +312,37 @@
                 <h2 class="about-services-sec_title">Другие наши услуги.</h2>
                 <div class="about-services-sec__row">
 
-                    <a href="" class="about-services-sec__element">
+                    <NuxtLink to="/direct" class="about-services-sec__element about-services-sec__element--yandex">
                         <p class="about-services-sec__element-text">Яндекс.Директ</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1AFF00;"></div>
                             <img src="@/assets/images/about/a2.jpg" alt="" class="about-services-sec__element-img">
                         </div>
-                    </a>
+                    </NuxtLink>
 
-                    <a href="" class="about-services-sec__element">
+                    <NuxtLink to="/geomarketing" class="about-services-sec__element about-services-sec__element--geo" >
                         <p class="about-services-sec__element-text">Геомаркетинг</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1A00FF;"></div>
                             <img src="@/assets/images/about/a3.jpg" alt="" class="about-services-sec__element-img">
                         </div>
-                    </a>
+                    </NuxtLink>
 
-                    <a href="" class="about-services-sec__element">
+                    <NuxtLink to="/vkads" class="about-services-sec__element about-services-sec__element--vk">
                         <p class="about-services-sec__element-text">VK реклама</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1A00FF;"></div>
                             <img src="@/assets/images/about/a4.jpg" alt="" class="about-services-sec__element-img">
                         </div>
-                    </a>
+                    </NuxtLink>
 
-                    <a href="" class="about-services-sec__element">
-                        <p class="about-services-sec__element-text">Telegram Ads</p>
-                        <div class="about-services-sec__element-img-wrapper">
-                            <div class="about-services-sec__element-img-wrapper-circle" style="background: #FF00BB;"></div>
-                            <img src="@/assets/images/about/a4.jpg" alt="" class="about-services-sec__element-img">
-                        </div>
-                    </a>
-
-                    <a href="" class="about-services-sec__element">
+                    <NuxtLink to="/website" class="about-services-sec__element about-services-sec__element--dev">
                         <p class="about-services-sec__element-text">Разработка сайтов</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #FF7700;"></div>
                             <img src="@/assets/images/about/a1.jpg" alt="" class="about-services-sec__element-img">
                         </div>
-                    </a>
+                    </NuxtLink>
                 </div>
             </div>
         </section>
@@ -424,9 +369,107 @@ const windowsHeight = ref(null)
 const watchSec = ref(null)
 const scrollPosition = ref(null)
 
+const dataPriceSecActioDopIndex = ref(null)
+
+const dataPriceSec = ref([
+    {
+        'title': 'Запуск',
+        'price': '10 000',
+        'servicesList': [
+            'Ежедневный/еженедельный мониторинг',
+            'Оптимизация кампаний',
+            'А/В тестирование объявлений',
+            'Анализ и отчетность',
+            'Анализ и отчетность',
+            'Масштабирование рекламы',
+            'Поддержка и консультации',
+            ],
+        'servicesListFullTitle': 'Запуск',
+        'servicesListFullList': [
+            'SEO - продвижение',
+            'Добавление компаний на основные платформы',
+            'Добавление фото',
+            'Добавление/корректировка акций',
+            'Добавление/корректировка акций',
+            'Актуализация информации',
+            'Удаление дубликатов',
+            'Обжалование негативных отзывов',
+            'Ответы на положительные отзывы',
+            'Подбор/создание изображений под акции и скидки',
+            'Настройки и внедрение витрины товаров',
+            'Контроль синей галочки на Яндекс.Картах',
+            'Внедрение и оформление stories',
+            'Персональный менеджер',
+            'Статистика по продвижению',
+            'Статистика по отзывам',
+        ]
+    },
+
+    {
+        'title': 'Ведение',
+        'price': '12 000',
+        'servicesList': [
+            'Ежедневный/еженедельный мониторинг',
+            'Оптимизация кампаний',
+            'А/В тестирование объявлений',
+            'Анализ и отчетность',
+            'Анализ и отчетность',
+            'Масштабирование рекламы',
+            'Поддержка и консультации',
+            ],
+        'servicesListFullTitle': 'Ведение',
+        'servicesListFullList': [
+            'SEO - продвижение',
+            'Добавление компаний на основные платформы',
+            'Добавление фото',
+            'Добавление/корректировка акций',
+            'Добавление/корректировка акций',
+            'Актуализация информации',
+            'Удаление дубликатов',
+            'Обжалование негативных отзывов',
+            'Ответы на положительные отзывы',
+            'Подбор/создание изображений под акции и скидки',
+            'Настройки и внедрение витрины товаров',
+            'Контроль синей галочки на Яндекс.Картах',
+            'Внедрение и оформление stories',
+            'Персональный менеджер',
+            'Статистика по продвижению',
+            'Статистика по отзывам',
+        ]
+    }
+])
+
+
 
 
 //METHODS 
+let handler // глобально или вне функции — чтобы был доступен при remove
+
+function targetClickOutside() {
+
+  stopTargetClickOutside()
+
+  setTimeout(() => {
+    handler = (e) => {
+      if (!e.target.closest('.cost-box__dop')) {
+        console.log('Клик вне .cost-box__dop', e.target)
+        dataPriceSecActioDopIndex.value = null
+        stopTargetClickOutside()
+      }
+    }
+
+    document.addEventListener('click', handler)
+  }, 100)
+}
+
+function stopTargetClickOutside() {
+  if (handler) {
+    document.removeEventListener('click', handler)
+    handler = null
+  }
+}
+
+
 //scroll start script
 function firstLoadScollScripts(){
     scrollPosition.value = window.scrollY
@@ -494,8 +537,14 @@ function watchSecAnimV1(){
 
 //HOOKS
 onMounted(() => {
-windowsHeight.value = watchSec.value.clientHeight
+
+    if (window.matchMedia('(max-width: 750px)').matches) {
+       
+    } else {
+       windowsHeight.value = watchSec.value.clientHeight
     firstLoadScollScripts()
+    }
+
 
    
 });

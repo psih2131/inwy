@@ -558,11 +558,15 @@
 
 
 
-
+@media only screen and (max-width: 1760px) {
+    .home-services-sec__container {
+        width: calc(100% - 200px);
+    }
+}
 
 @media only screen and (max-width: 1560px) {
     .home-services-sec__container {
-        width: calc(100% - 80px);
+        width: calc(100% - 140px);
     }
 
     .home-hero-sec__nav-li-link-text {
@@ -591,6 +595,12 @@
 
     .home-partner-sec__container {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1560px) and (max-height: 860px) {
+    .home-hero-sec {
+        height: 120vh;
     }
 }
 
@@ -738,6 +748,10 @@
 
 @media only screen and (max-width: 750px) {
     .home-hero-sec__info-container {
+        padding-top: 100px;
+    }
+
+    .home-hero-sec__info-container {
         width: 100%;
     }
 
@@ -750,10 +764,12 @@
     }
 
     .home-hero-sec__title {
-        font-size: 32px;
+        font-size: 42px;
         width: 350px;
+        line-height: 0.8;
         margin: 0 auto;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+        letter-spacing: -3px;
     }
 
     .home-hero-sec__sutitle-img-wrapper {
@@ -761,7 +777,8 @@
     }
 
     .home-hero-sec__sutitle {
-        font-size: 18px;
+        font-size: 22px;
+        font-weight: 800;
         line-height: 1.2;
         margin-top: 0;
         width: 350px;
@@ -771,7 +788,9 @@
     }
 
     .home-hero-sec__nav-li-link-icon-wrapper {
-        font-size: 11px;
+        font-size: 15px;
+        padding-top: 7px;
+        padding-bottom: 7px;
     }
 
     .home-hero-sec__nav-li-link {
@@ -783,6 +802,7 @@
         left: 30px;
         top: 30px;
         width: 1000px;
+        height: auto;
     }
 
     .home-hero-sec__image-wrapper--activ {
@@ -841,25 +861,25 @@
         padding: 0 20px;
     }
 
-    .services-el__btn {
-        height: 40px;
+    // .services-el__btn {
+    //     height: 40px;
 
-        &:hover {
-            .services-el__btn-element {
-                transform: translateX(110px);
-            }
-        }
-    }
+    //     &:hover {
+    //         .services-el__btn-element {
+    //             transform: translateX(110px);
+    //         }
+    //     }
+    // }
 
-    .services-el__btn-element {
-        height: 40px;
-        left: -110px;
-    }
+    // .services-el__btn-element {
+    //     height: 40px;
+    //     left: -110px;
+    // }
 
-    .services-el__btn-ar {
-        height: 40px;
-        width: 40px;
-    }
+    // .services-el__btn-ar {
+    //     height: 40px;
+    //     width: 40px;
+    // }
 
     .home-services-sec__element--50 {
         width: 100%;
@@ -882,4 +902,10 @@
     .btn-v2 {
         font-size: 16px;
     }
+
+    .home-partner-sec__bg {
+        transform: scale(0.85);
+    }
+
+
 }

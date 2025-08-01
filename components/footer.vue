@@ -20,15 +20,15 @@
                     <nav class="footer__middle-row-nav">
                         <ul class="footer__middle-row-nav-ul">
                             <li class="footer__middle-row-nav-li">
-                                <a href="" class="footer__middle-row-nav-link">услуги</a>
+                                <a  class="footer__middle-row-nav-link">услуги</a>
                             </li>
 
                             <li class="footer__middle-row-nav-li">
-                                <a href="" class="footer__middle-row-nav-link">блог</a>
+                                <NuxtLink to="/blog" class="footer__middle-row-nav-link">блог</NuxtLink>
                             </li>
 
                             <li class="footer__middle-row-nav-li">
-                                <a href="" class="footer__middle-row-nav-link">о нас</a>
+                                <NuxtLink to="/about" class="footer__middle-row-nav-link">о нас</NuxtLink>
                             </li>
                         </ul>
                     </nav>
