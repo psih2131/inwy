@@ -10,8 +10,8 @@ export default defineEventHandler(async (event) => {
 📨 Новая заявка с сайта:
 
 👤 Имя: ${body.name}
-📧 Email: ${body.email}
 📱 Телефон: ${body.phone}
+   Как связаться: ${body.typeRequest}
 
 
 

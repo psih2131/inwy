@@ -397,7 +397,7 @@
                             </div>
                             <div class="cost-box__wrapper">
                                 <p class="cost-box__value">15 000 ₽</p>
-                                <div class="cost-box__btn">
+                                <div class="cost-box__btn" @click="openFormPopup()">
                                     <p class="cost-box__btn-title">Заказать</p>
                                     <div class="cost-box__btn-icon">
                                         <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -473,7 +473,7 @@
 
 //IMPORT
 
-// import { useCounterStore } from '@/stores/counter'
+import { useCounterStore } from '@/stores/counter'
 
 import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 
@@ -483,6 +483,8 @@ import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 
 
 //DATA
+const store = useCounterStore()
+
 const typesIndex = ref(1)
 
 const dataPriceSecActioDopIndex = ref(null)
@@ -559,6 +561,15 @@ const dataPriceSec = ref([
 
 
 //METHODS 
+
+//open form popup 
+function openFormPopup(){
+    store.changeTrigerButtonForm('Кнопка в блоке с ценой ')
+    store.changePopupCurrent('popup-form')
+}
+
+
+
 let handler // глобально или вне функции — чтобы был доступен при remove
 
 function targetClickOutside() {

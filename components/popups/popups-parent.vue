@@ -1,5 +1,5 @@
 <template>
-    <div class="popups-wrapper">
+    <div class="popups-wrapper" @click.self="closeAllForms">
 
         <popupForm v-if="store.popupCurrent == 'popup-form'" />
 
@@ -30,7 +30,9 @@ const store = useCounterStore()
 
 
 //METHODS 
-
+function closeAllForms(){
+  store.changePopupCurrent(null)
+}
 
 
 //HOOKS

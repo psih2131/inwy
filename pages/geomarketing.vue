@@ -217,7 +217,7 @@
               <div class="geomarketing-revard-sec__info-down-row">
                 <img src="@/assets/images/geo/reward-img.png" alt="" class="geomarketing-revard-sec__img">
 
-                <div class="website-bonus-sec__content-box__btn geomarketing-revard-sec__btn">
+                <div class="website-bonus-sec__content-box__btn geomarketing-revard-sec__btn" @click="openFormPopup()">
                     <p class="website-bonus-sec__content-box__btn-title">Задать вопрос </p>
                     <div class="website-bonus-sec__content-box__btn-icon">
                         <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -283,7 +283,7 @@
                 <p class="geomarketing-price-item__price">{{ item.price3Month }} ₽</p>
                 <p class="geomarketing-price-item__subprice">{{ item.price3perMonth }}/мес</p>
 
-                <div class="cost-box__btn">
+                <div class="cost-box__btn" @click="openFormPopup()">
                   <p class="cost-box__btn-title">Заказать</p>
                   <div class="cost-box__btn-icon">
                       <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -343,7 +343,7 @@
                 <p class="geomarketing-price-item__price">{{ item.price6Month }} ₽</p>
                 <p class="geomarketing-price-item__subprice">{{ item.price6perMonth }}/мес</p>
 
-                <div class="cost-box__btn">
+                <div class="cost-box__btn" @click="openFormPopup()">
                   <p class="cost-box__btn-title">Заказать</p>
                   <div class="cost-box__btn-icon">
                       <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -401,7 +401,7 @@
                 <p class="geomarketing-price-item__price">{{ item.price12Month }} ₽</p>
                 <p class="geomarketing-price-item__subprice">{{ item.price12perMonth }}/мес</p>
 
-                <div class="cost-box__btn">
+                <div class="cost-box__btn" @click="openFormPopup()">
                   <p class="cost-box__btn-title">Заказать</p>
                   <div class="cost-box__btn-icon">
                       <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -507,7 +507,7 @@
 
 //IMPORT
 
-// import { useCounterStore } from '@/stores/counter'
+import { useCounterStore } from '@/stores/counter'
 
 import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 
@@ -515,6 +515,9 @@ import componentReview from '@/components/review.vue'
 
 
 //DATA
+
+const store = useCounterStore()
+
 const currentTabPrice = ref(1)
 
 const dataPriceSecActioDopIndex = ref(null)
@@ -705,7 +708,15 @@ const dataPriceSec = ref([
 ])
 
 
-//METHODS 
+//METHODS
+
+//open form popup 
+function openFormPopup(){
+    store.changeTrigerButtonForm('Кнопка в блоке с ценой ')
+    store.changePopupCurrent('popup-form')
+}
+
+
 let handler // глобально или вне функции — чтобы был доступен при remove
 
 function targetClickOutside() {

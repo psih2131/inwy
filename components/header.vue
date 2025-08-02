@@ -337,10 +337,10 @@ function closeMeny(){
 }
 
 //open form popup 
-  function openFormPopup(){
-      store.changeTrigerButtonForm('Кнопка в шапке ')
-      store.changePopupCurrent('popup-form')
-  }
+function openFormPopup(){
+    store.changeTrigerButtonForm('Кнопка в шапке ')
+    store.changePopupCurrent('popup-form')
+}
 
 
   

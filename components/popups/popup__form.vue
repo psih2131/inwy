@@ -6,40 +6,93 @@
             </svg>
         </div>
 
-        <div class="form-popup__wrapper">
-            <p class="info-form-sec__form-title">Оставьте заявку</p>
-            <p class="info-form-sec__form-subtitle">Заполните форму, и наши специалисты свяжутся с Вами в ближайшее время.</p>
-            <form action="">
-                <div class="info-form-sec__form-inp" :class="{'form-error-field': formNameValidStatus == false}">
-                    <input v-model="formName" type="text" placeholder="Ваше имя">
-                    <p v-if="formNameValidStatus == false" class="form-valid-error">Проверьте правильность введенных данных</p>
-                </div>
 
-                <div class="info-form-sec__form-inp" :class="{'form-error-field': formEmailValidStatus == false}">
-                    <input v-model="formEmail" type="text" placeholder="Email">
-                    <p v-if="formEmailValidStatus == false" class="form-valid-error">Проверьте правильность введенных данных</p>
-                </div>
+        <div class="form-popup__top">
+          <div class="form-popup__top-video-wrapper">
+            <video autoplay muted loop playsinline>
+              <source src="@/assets/video/form-bg.mp4" type="video/mp4">
+              Ваш браузер не поддерживает видео.
+            </video>
+          </div>
 
-                <div class="info-form-sec__form-inp" :class="{'form-error-field': formPhoneValidStatus == false}">
-                    <input v-model="formPhone" type="text" placeholder="Номер телефона">
-                    <p v-if="formPhoneValidStatus == false" class="form-valid-error">Проверьте правильность введенных данных</p>
-                </div>
+          <div class="form-popup__form-wrapper">
 
-                <div class="info-form-sec__form-inp-btn-v2" @click="validationForm()">
-                    Оставить заявку
-                 
-                </div>
+            <div class="info-form-sec__form-inp" :class="{'form-error-field': formNameValidStatus == false}">
+                  <input v-model="formName" type="text" placeholder="Ваше имя">
+                  <p v-if="formNameValidStatus == false" class="form-valid-error">Проверьте правильность введенных данных</p>
+              </div>
 
-                <p class="info-form-sec__form-down-text">Нажимая на кнопку, вы автоматически соглашаетесь с политикой конфиденциальности и обработкой персональных данных</p>
+              <!-- <div class="info-form-sec__form-inp" :class="{'form-error-field': formEmailValidStatus == false}">
+                  <input v-model="formEmail" type="text" placeholder="Email">
+                  <p v-if="formEmailValidStatus == false" class="form-valid-error">Проверьте правильность введенных данных</p>
+              </div> -->
 
-                <p v-if="sendStatus == false" class="form-valid-error-main">Ошибка, проверьте правильность введенных данных</p>
+              <div class="info-form-sec__form-inp" :class="{'form-error-field': formPhoneValidStatus == false}">
+                  <input v-model="formPhone" type="text" placeholder="Номер телефона">
+                  <p v-if="formPhoneValidStatus == false" class="form-valid-error">Проверьте правильность введенных данных</p>
+              </div>
 
-                <!-- <div class="info-form-sec__form-captcha-wrapper">
-                    <img src="@/assets/images/img/captcha.png" alt="" class="info-form-sec__form-captcha">
-                </div> -->
-            </form>
+              <div class="info-form-sec__form-select">
+                <select v-model="typeCallback">
+                  <option value="">Удобный способ связи</option>
+                  <option value="call">Звонок</option>
+                  <option value="telegram">Telegram</option>
+                  <option value="whatsapp">WhatsApp</option>
+                </select>
+              </div>
+
+              <div class="info-form-sec__form-inp-btn-v2" @click="validationForm()">
+                  Оставить заявку
+              </div>
+
+              <!-- <p class="info-form-sec__form-down-text">Нажимая на кнопку, вы автоматически соглашаетесь с политикой конфиденциальности и обработкой персональных данных</p> -->
+
+              <!-- <p v-if="sendStatus == false" class="form-valid-error-main">Ошибка, проверьте правильность введенных данных</p> -->
+
+          </div>
         </div>
-        
+
+
+        <div class="form-popup__down">
+          <div class="form-popup__down-icon">
+            <img src="@/assets/images/icons/logo.png" alt="">
+          </div>
+
+          <p class="form-popup__down-text">Следите за нашими новостями</p>
+
+          <ul class="form-popup__down-social-row">
+              <li class="footer__social-element">
+                  <a href="" class="footer__social-link">
+                      <img src="@/assets/images/icons/telegram.png" alt="" class="footer__social-element-img">
+                  </a>
+              </li>
+
+              <li class="footer__social-element">
+                  <a href="" class="footer__social-link">
+                      <img src="@/assets/images/icons/wt.png" alt="" class="footer__social-element-img">
+                  </a>
+              </li>
+
+              <li class="footer__social-element">
+                  <a href="" class="footer__social-link">
+                      <img src="@/assets/images/icons/wk.png" alt="" class="footer__social-element-img">
+                  </a>
+              </li>
+
+              <li class="footer__social-element">
+                  <a href="" class="footer__social-link">
+                      <img src="@/assets/images/icons/dzen.png" alt="" class="footer__social-element-img">
+                  </a>
+              </li>
+
+              <li class="footer__social-element">
+                  <a href="" class="footer__social-link">
+                      <img src="@/assets/images/icons/vc.png" alt="" class="footer__social-element-img">
+                  </a>
+              </li>
+          </ul>
+
+        </div>
         
     </div>
 </template>
@@ -51,7 +104,6 @@ import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 // import popupForm from '@/components/popups/popup__form.vue'
 
 
-
 //DATA
 const store = useCounterStore()
 
@@ -60,6 +112,8 @@ const formName = ref(null)
 const formEmail = ref(null)
 
 const formPhone = ref(null)
+
+const typeCallback = ref('')
 
 const route = useRoute()
 
@@ -82,11 +136,11 @@ function validationForm(){
 
     validName(formName.value)
 
-    validEmail(formEmail.value)
+    // validEmail(formEmail.value)
 
     validPhone(formPhone.value)
 
-    if(formNameValidStatus.value == true && formEmailValidStatus.value == true && formPhoneValidStatus.value == true){
+    if(formNameValidStatus.value == true && formPhoneValidStatus.value == true){
         sendStatus.value = true
 
         sendForm()
@@ -135,8 +189,8 @@ const sendForm = async () => {
       method: 'POST',
       body: {
         name: formName.value,
-        email: formEmail.value,
         phone: formPhone.value,
+        typeRequest: typeCallback.value,
         currentUrl: store.domainUrlCurrent + route.fullPath,
         currentPlase: store.trigerButtonForm || 'Не получилось оприделить точное положение'
       },

@@ -426,7 +426,7 @@
                     <div class="home-services-sec__down-text-wrapper">
                         <h3 class="home-services-sec__down-title">Не хотите разбираться сами? <br><b>Давайте упростим.</b> </h3>
                         <div class="home-services-sec__down-btn-row">
-                            <button class="home-services-sec__down-btn btn-v2">Обсудить задачу</button>
+                            <button class="home-services-sec__down-btn btn-v2" @click="openFormPopup()">Обсудить задачу</button>
                         </div>
                         <div class="home-services-sec__down-subtitle-wrapper">
                             <p class="home-services-sec__down-subtitle">Решаем конкретные задачи, а не названиваем с уникальными предложениями.</p>
@@ -447,24 +447,27 @@
 
 //IMPORT
 
-// import { useCounterStore } from '@/stores/counter'
+import { useCounterStore } from '@/stores/counter'
 
 import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 
 
 
-
-
-
 //DATA
+const store = useCounterStore()
+
 const windowsHeight = ref(null)
 
 const infoContainer = ref(null)
+
 const heroImgWrapper = ref(null)
+
 const heroSec = ref(null)
 
 const partnerSec = ref(null)
+
 const partnerSecBg = ref(null)
+
 const partnerSecContent = ref(null)
 
 const homeServicesSec = ref(null)
@@ -479,8 +482,13 @@ const screenWidth = ref(0)
 
 
 
-
 //METHODS 
+
+//open form popup 
+function openFormPopup(){
+    store.changeTrigerButtonForm('Кнопка внизу страницы ')
+    store.changePopupCurrent('popup-form')
+}
 
 //banner gallery
 const swiperHerroBanner = useSwiper(heroBannerSec, {
