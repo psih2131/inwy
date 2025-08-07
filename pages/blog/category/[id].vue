@@ -4,24 +4,15 @@
      
         <section class="blog-sec">
             <div class="blog-sec__wrapper">
-                <h1 class="blog-sec__title">Блог об интернет-рекламе и веб-аналитике.</h1>
+                <h1 class="blog-sec__title" v-if="current_category[0]?.name ">{{ current_category[0].name }}</h1>
                 <nav class="blog-sec__nav">
                     <ul class="blog-sec__nav-list">
                         <li class="blog-sec__nav-list-element">
-                            <a class="blog-sec__nav-link blog-sec__nav-link--activ">Все</a>
+                            <NuxtLink to="/blog" class="blog-sec__nav-link">Все</NuxtLink>
                         </li>
                         <li v-for="item in all_categories" :key="item" class="blog-sec__nav-list-element">
-                            <NuxtLink :to="`/blog/category/${item.slug}`" class="blog-sec__nav-link">{{item.name}}</NuxtLink>
+                            <NuxtLink :to="`/blog/category/${item.slug}`" :activeClass="'blog-sec__nav-link--activ'" class="blog-sec__nav-link">{{item.name}}</NuxtLink>
                         </li>
-                        <!-- <li class="blog-sec__nav-list-element">
-                            <a href="" class="blog-sec__nav-link">Маркетинг</a>
-                        </li>
-                        <li class="blog-sec__nav-list-element">
-                            <a href="" class="blog-sec__nav-link">Новости компании</a>
-                        </li>
-                        <li class="blog-sec__nav-list-element">
-                            <a href="" class="blog-sec__nav-link">Разработка</a>
-                        </li> -->
                     </ul>
                 </nav>
 
@@ -34,10 +25,6 @@
                     </template>
                     
                 </div>
-
-                <!-- <div class="blog-sec__load-more-row">
-                    <button class="blog-sec__load-more-btn">Показать еще</button>
-                </div> -->
 
 
                 <div class="blog-sec__body-pagination-row" v-if="all_object && all_categories && all_object.length > 0">
@@ -68,16 +55,7 @@
                         </a>
                     </div>
 
-                    <!-- <div class="page-counter">
-                        <div class="page-counter__text">Страница</div>
-                        <div class="page-counter__counter">{{ currentPage }}</div>
-                        <div class="page-counter__text">из  {{ totalPages }}</div>
-                    </div> -->
-
                 </div>
-
-
-
                 
             </div>
         </section>
@@ -111,7 +89,11 @@ const perPage = ref(6)
 
 const totalPages = ref(null)
 
-const { data: all_object, error, pending } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/my-blog?page=${currentPage.value || 1}&per_page=${perPage.value}`, {
+const { data: current_category } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/blog-category?slug=${route.params.id}`)
+
+
+const { data: all_object, error, pending } = await useFetch(
+    `${store.serverUrlDomainRequest}/wp-json/wp/v2/my-blog?blog-category=${current_category.value[0].id}&page=${currentPage.value || 1}&per_page=${perPage.value}`, {
     onResponse({ response }) {
       const total = response.headers.get('X-WP-Total')
       const pages = response.headers.get('X-WP-TotalPages')
@@ -125,9 +107,13 @@ const { data: all_object, error, pending } = await useFetch(`${store.serverUrlDo
 
 const { data: all_categories } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/blog-category`)
 
-console.log(all_object)
+console.log('current_category', current_category)
 
-console.log(all_categories)
+console.log('all_object',all_object)
+
+console.log('all_categories', all_categories)
+
+
 
 
 
@@ -136,7 +122,7 @@ console.log(all_categories)
 
 //get posts on client side
 async function fetchClientData() {
-  const res = await fetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/my-blog?page=${currentPage.value || 1}&per_page=${perPage.value}`)
+  const res = await fetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/my-blog?blog-category=${current_category.value[0].id}&page=${currentPage.value || 1}&per_page=${perPage.value}`)
   const data = await res.json()
   all_object.value = data
 
@@ -152,7 +138,7 @@ function nextPage(){
     }
     else{
         router.push({
-            path: '/blog/',
+            path: `/blog/categories/${route.params.id}/`,
             query: { page: +currentPage.value + 1 }
         })
     }
@@ -164,7 +150,7 @@ function prevPage(){
     }
     else{
         router.push({
-            path: '/blog/',
+            path: `/blog/categories/${route.params.id}/`,
             query: { page: +currentPage.value - 1 }
         })
     }
@@ -174,16 +160,17 @@ function prevPage(){
 
 
 
-
 //HOOKS
 onMounted(async () => {
-    const res = await fetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/my-blog?page=${currentPage.value || 1}&per_page=${perPage.value}`)
+    const res = await fetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/my-blog?blog-category=${current_category.value[0].id}&page=${currentPage.value || 1}&per_page=${perPage.value}`)
     const pages = res.headers.get('X-WP-TotalPages')
     if (pages) totalPages.value = Number(pages)
 
 
     console.log('route',route.query.page)
 })
+
+
 
 watch(() => route.query.page, async (newPage) => {
     console.log('gg', route.query.page)

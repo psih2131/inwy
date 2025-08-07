@@ -1,11 +1,11 @@
 <template>
 
-    <main class="main">
-        <section class="home-hero-sec" ref="heroSec">
+    <main class="main" v-if="pageData[0]">
+        <section class="home-hero-sec" ref="heroSec" v-if="pageData[0].acf?.sekcziya_1_hero">
             <div class="home-hero-sec__info-container" ref="infoContainer">
-                <h1 class="home-hero-sec__title">Digital-агентство полного цикла</h1>
+                <h1 class="home-hero-sec__title" v-html="pageData[0].acf.sekcziya_1_hero.zagolovok"></h1>
                 <h2 class="home-hero-sec__sutitle">
-                    С эффективными инструментами продвижения
+                    <span v-html="pageData[0].acf.sekcziya_1_hero.podzagolovok"></span>
                     <div class="home-hero-sec__sutitle-img-wrapper">
                         <img src="@/assets/images/home/hero-text-img.jpg" alt="" class="home-hero-sec__sutitle-img">
                     </div>
@@ -238,7 +238,7 @@
             </div>
 
             <div class="home-hero-sec__image-wrapper" ref="heroImgWrapper">
-                <img src="@/assets/images/home/home-hero-ipad.png" alt="" class="home-hero-sec__img">
+                <img :src="pageData[0].acf.sekcziya_1_hero.ifobrazhenie.url" :alt="pageData[0].acf.sekcziya_1_hero.ifobrazhenie.alt" class="home-hero-sec__img">
             </div>
 
         </section>
@@ -248,27 +248,16 @@
             <section class="home-partner-sec" ref="partnerSec">
                 <div class="home-partner-sec__bg" ref="partnerSecBg"></div>
                 <div class="home-partner-sec__container" ref="partnerSecContent">
-                    <h2 class="home-partner-sec__title">Доверьте нам свою задачу. </h2>
+                    <h2 class="home-partner-sec__title" v-html="pageData[0].acf.sekcziya_2_doverie.zagolovok"></h2>
                     <div class="home-partner-sec__img-wrapper">
-                        <img src="@/assets/images/home/home-sec-2-img.jpg" alt="" class="home-partner-sec__img">
+                        <img :src="pageData[0].acf.sekcziya_2_doverie.izobrazhenie.url" :alt="pageData[0].acf.sekcziya_2_doverie.izobrazhenie.alt" class="home-partner-sec__img">
                     </div>
-                    <p class="home-partner-sec__subtitle">И это точно будет не последний наш проект. </p>
+                    <p class="home-partner-sec__subtitle" v-html="pageData[0].acf.sekcziya_2_doverie.podzagolovok"></p>
                     <div class="home-partner-sec__row">
 
-                        <div class="home-partner-sec__row-element">
-                            <img src="@/assets/images/home/pr1.png" alt="" class="home-partner-sec__part-img">
-                        </div>
-
-                        <div class="home-partner-sec__row-element">
-                            <img src="@/assets/images/home/pr2.png" alt="" class="home-partner-sec__part-img">
-                        </div>
-
-                        <div class="home-partner-sec__row-element">
-                            <img src="@/assets/images/home/pr3.png" alt="" class="home-partner-sec__part-img">
-                        </div>
-
-                        <div class="home-partner-sec__row-element">
-                            <img src="@/assets/images/home/pr4.png" alt="" class="home-partner-sec__part-img">
+                        <div v-for="item in pageData[0].acf.sekcziya_2_doverie.logotipy" :key="item" 
+                        class="home-partner-sec__row-element">
+                            <img :src="item.logo.url" :alt="item.logo.alt" class="home-partner-sec__part-img">
                         </div>
 
                     </div>
@@ -279,10 +268,12 @@
             <section class="home-services-sec " ref="homeServicesSec">
                 <div class="home-services-sec__container">
                     <div class="home-services-sec__wrapper">
-                        <div class="home-services-sec__element services-el services-el-1">
+
+                        <div v-if="pageData[0].acf?.sekcziya_3_uslugi?.sozdanie_sejtov"
+                        class="home-services-sec__element services-el services-el-1">
                             <div class="services-el__text-wrapper">
-                                <p class="services-el__title">Создание сайтов, которые работают.</p>
-                                <p class="services-el__subtitle">Создаем продающие сайты, которые сразу готовы к продвижению в поисковых системах. Оптимизированная структура, адаптивный дизайн и чистый код — для быстрого выхода в ТОП Яндекс и Google.</p>
+                                <p class="services-el__title" v-html="pageData[0].acf.sekcziya_3_uslugi.sozdanie_sejtov.zagolovok"></p>
+                                <p class="services-el__subtitle" v-html="pageData[0].acf.sekcziya_3_uslugi.sozdanie_sejtov.tekst"></p>
                             </div>
 
                             <div class="services-el__btn-wrapper">
@@ -301,10 +292,10 @@
                             <img class="services-el__img services-el-1__img" src="@/assets/images/home/home-sec-3-phone.png" alt="">
                         </div>
 
-                        <div class="home-services-sec__element home-services-sec__element--50">
+                        <div class="home-services-sec__element home-services-sec__element--50" v-if="pageData[0].acf?.sekcziya_3_uslugi?.geomarketing">
                             <div class="services-el__text-wrapper">
-                                <p class="services-el__title">Продвижение в геосервисах.</p>
-                                <p class="services-el__subtitle">Повышаем позиции вашей компании в геосервисах, чтобы клиенты находили вас первыми при поиске поблизости. Оптимизация карточки, работа с отзывами и повышение доверия.</p>
+                                <p class="services-el__title" v-html="pageData[0].acf.sekcziya_3_uslugi.geomarketing.zagolovok"></p>
+                                <p class="services-el__subtitle" v-html="pageData[0].acf.sekcziya_3_uslugi.geomarketing.tekst"></p>
 
                                     <div class="services-el__map-row">
                                         <div class="services-el__map-element">
@@ -341,15 +332,15 @@
                             
                         </div>
 
-                        <div class="home-services-sec__element home-services-sec__element--50">
+                        <div class="home-services-sec__element home-services-sec__element--50" v-if="pageData[0].acf?.sekcziya_3_uslugi?.direkt">
 
                             <div class="services-el__text-wrapper">
-                                <p class="services-el__title">Профессиональная настройка Яндекс.Директ под ключ.</p>
-                                <p class="services-el__subtitle">Создаем рекламные кампании в Яндекс.Директ, которые приносят реальных клиентов. Точные настройки аудитории, подбор ключевых слов и оптимизация ставок для максимальной эффективности.</p>    
+                                <p class="services-el__title" v-html="pageData[0].acf.sekcziya_3_uslugi.direkt.zagolovok"></p>
+                                <p class="services-el__subtitle" v-html="pageData[0].acf.sekcziya_3_uslugi.direkt.tekst"></p>   
                             </div>
 
                             <div class="services-el__image-container">
-                                <img src="@/assets/images/home/x1.jpg" alt="" class="services-el__image-container-img">
+                               <img :src="pageData[0].acf.sekcziya_3_uslugi.direkt.izobrazhenie.url" :alt="pageData[0].acf.sekcziya_3_uslugi.direkt.izobrazhenie.alt" class="services-el__image-container-img">
                             </div>
 
                             <div class="services-el__btn-wrapper">
@@ -368,14 +359,14 @@
 
                         </div>
 
-                        <div class="home-services-sec__element home-services-sec__element--50">
+                        <div class="home-services-sec__element home-services-sec__element--50" v-if="pageData[0].acf?.sekcziya_3_uslugi?.vk">
                             <div class="services-el__text-wrapper">
-                                <p class="services-el__title">Профессиональная настройка таргетированной <br>рекламы ВКонтакте.</p>
-                                <p class="services-el__subtitle">Запускаем эффективные рекламные кампании ВК, которые точно достигают вашей целевой аудитории. Настраиваем показы по полу, возрасту, интересам и поведению пользователей.</p>    
+                                <p class="services-el__title" v-html="pageData[0].acf.sekcziya_3_uslugi.vk.zagolovok"></p>
+                                <p class="services-el__subtitle" v-html="pageData[0].acf.sekcziya_3_uslugi.vk.tekst"></p>   
                             </div>
 
                             <div class="services-el__image-container">
-                                <img src="@/assets/images/home/x2.jpg" alt="" class="services-el__image-container-img">
+                                  <img :src="pageData[0].acf.sekcziya_3_uslugi.vk.izobrazhenie.url" :alt="pageData[0].acf.sekcziya_3_uslugi.vk.izobrazhenie.alt" class="services-el__image-container-img">
                             </div>
 
                             <div class="services-el__btn-wrapper">
@@ -393,14 +384,14 @@
                             </div>
                         </div>
 
-                        <div class="home-services-sec__element home-services-sec__element--50">
+                        <div class="home-services-sec__element home-services-sec__element--50" v-if="pageData[0].acf?.sekcziya_3_uslugi?.telegram">
                             <div class="services-el__text-wrapper">
-                                <p class="services-el__title">Настройка таргетированной рекламы в Telegram..</p>
-                                <p class="services-el__subtitle">Поможем вашему бизнесу находить клиентов через рекламу в Telegram. Точные настройки показов только заинтересованной аудитории, готовой к покупке</p>    
+                                <p class="services-el__title" v-html="pageData[0].acf.sekcziya_3_uslugi.telegram.zagolovok"></p>
+                                <p class="services-el__subtitle" v-html="pageData[0].acf.sekcziya_3_uslugi.telegram.tekst"></p>     
                             </div>
 
                             <div class="services-el__image-container">
-                                <img src="@/assets/images/home/x3.jpg" alt="" class="services-el__image-container-img">
+                                <img :src="pageData[0].acf.sekcziya_3_uslugi.telegram.izobrazhenie.url" :alt="pageData[0].acf.sekcziya_3_uslugi.telegram.izobrazhenie.alt" class="services-el__image-container-img">
                             </div>
 
                             <div class="services-el__btn-wrapper">
@@ -423,13 +414,13 @@
 
 
 
-                    <div class="home-services-sec__down-text-wrapper">
-                        <h3 class="home-services-sec__down-title">Не хотите разбираться сами? <br><b>Давайте упростим.</b> </h3>
+                    <div class="home-services-sec__down-text-wrapper" v-if="pageData[0].acf?.sekcziya_4_zayavka">
+                        <h3 class="home-services-sec__down-title" v-html="pageData[0].acf.sekcziya_4_zayavka.zagolovok"> </h3>
                         <div class="home-services-sec__down-btn-row">
-                            <button class="home-services-sec__down-btn btn-v2" @click="openFormPopup()">Обсудить задачу</button>
+                            <button class="home-services-sec__down-btn btn-v2" @click="openFormPopup()" v-html="pageData[0].acf.sekcziya_4_zayavka.tekst_knopki"></button>
                         </div>
                         <div class="home-services-sec__down-subtitle-wrapper">
-                            <p class="home-services-sec__down-subtitle">Решаем конкретные задачи, а не названиваем с уникальными предложениями.</p>
+                            <p class="home-services-sec__down-subtitle" v-html="pageData[0].acf.sekcziya_4_zayavka.podzagolovok"></p>
                         </div>
                         
                     </div>
@@ -456,6 +447,8 @@ import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 //DATA
 const store = useCounterStore()
 
+const route = useRoute()
+
 const windowsHeight = ref(null)
 
 const infoContainer = ref(null)
@@ -479,6 +472,10 @@ const heroBannerSec = ref(null)
 const heroBannerSecMobActiv = ref(false)
 
 const screenWidth = ref(0)
+
+const { data: pageData } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/pages?slug=home`)
+
+console.log('pageData', pageData)
 
 
 
@@ -663,10 +660,44 @@ watchEffect(() => {
 
 
 
- // props
- const props = defineProps({
+//SEO
+useHead({
+    title: pageData.value[0].acf.seo_title || pageData.value[0].title.rendered,
+    meta: [
+        // Description
+        { name: 'description', content: pageData.value[0].acf.seo_description || 'Описание по умолчанию' },
 
-  })
+        // Keywords (опционально, не влияет сильно на SEO)
+        { name: 'keywords',  content: pageData.value[0].acf.klyuchevaya_fraza || 'test' },
+
+        // OpenGraph
+        { property: 'og:title', content: pageData.value[0].acf.seo_title },
+        { property: 'og:description', content: pageData.value[0].acf.seo_description },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: `${store.domainUrlCurrent}${route.fullPath}` },
+        { property: 'og:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Twitter Card (если используешь)
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: pageData.value[0].acf.seo_title },
+        { name: 'twitter:description', content: pageData.value[0].acf.seo_description },
+        { name: 'twitter:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Индексация / Деиндексация
+        // Например, noindex для черновика:
+        {
+        name: 'robots',
+        content:
+            pageData.value[0].acf.indeksacziya_v_poiskovyh_sistemah === 'index'
+            ? 'index, follow'
+            : 'noindex, nofollow'
+        }
+    ],
+    link: [
+        // Canonical (вручную или динамически)
+        { rel: 'canonical', href: `${store.domainUrlCurrent}/${pageData.value[0].acf.canonical || route.name}` }
+    ]
+})
   
 </script>
 

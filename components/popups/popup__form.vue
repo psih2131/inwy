@@ -61,33 +61,10 @@
           <p class="form-popup__down-text">Следите за нашими новостями</p>
 
           <ul class="form-popup__down-social-row">
-              <li class="footer__social-element">
-                  <a href="" class="footer__social-link">
-                      <img src="@/assets/images/icons/telegram.png" alt="" class="footer__social-element-img">
-                  </a>
-              </li>
 
-              <li class="footer__social-element">
-                  <a href="" class="footer__social-link">
-                      <img src="@/assets/images/icons/wt.png" alt="" class="footer__social-element-img">
-                  </a>
-              </li>
-
-              <li class="footer__social-element">
-                  <a href="" class="footer__social-link">
-                      <img src="@/assets/images/icons/wk.png" alt="" class="footer__social-element-img">
-                  </a>
-              </li>
-
-              <li class="footer__social-element">
-                  <a href="" class="footer__social-link">
-                      <img src="@/assets/images/icons/dzen.png" alt="" class="footer__social-element-img">
-                  </a>
-              </li>
-
-              <li class="footer__social-element">
-                  <a href="" class="footer__social-link">
-                      <img src="@/assets/images/icons/vc.png" alt="" class="footer__social-element-img">
+              <li class="footer__social-element" v-for="item in formData.socz_seti" :key="item">
+                  <a :href="item.ssylka" class="footer__social-link">
+                      <img :src="item.ikonka.url" :alt="item.ikonka.alt" class="footer__social-element-img">
                   </a>
               </li>
           </ul>
@@ -226,5 +203,14 @@ onMounted(() => {
 onBeforeUnmount(() => {
 
 });
+
+ const props = defineProps({
+  formData: Object,
+      // postAllCategory: Object,
+  })
+
+
+
+
 
 </script>

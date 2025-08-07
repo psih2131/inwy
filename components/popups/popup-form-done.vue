@@ -14,8 +14,9 @@
                 </svg>
             </div>
 
-            <p class="form-popup-done__title">Заявка отправлена</p>
-            <p class="form-popup-done__subtitle">Спасибо, что выбрали нас! Наши специалисты свяжутся с Вами в ближайшее время.</p>
+            <p class="form-popup-done__title" v-html="formData.uspeshnaya_otpravka_formy.zagolovok || 'Заявка отправленна'"></p>
+
+            <p class="form-popup-done__subtitle" v-html="formData.uspeshnaya_otpravka_formy.tekst || 'Скоро мы с вами свяжемся'"></p>
 
         </div>
         
@@ -48,5 +49,11 @@ onMounted(() => {
 onBeforeUnmount(() => {
 
 });
+
+
+ const props = defineProps({
+  formData: Object,
+      // postAllCategory: Object,
+  })
 
 </script>

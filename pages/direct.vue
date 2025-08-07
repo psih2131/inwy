@@ -1,77 +1,63 @@
 <template>
 
-    <main class="main">
+    <main class="main" v-if="pageData[0]">
         
-        <section class="direct-hero-sec">
+        <section class="direct-hero-sec" v-if="pageData[0].acf?.sekcziya_1_hero">
             <div class="direct-hero-sec__container">
                 <div class="direct-hero-sec__text">
                     <h1 class="direct-hero-sec__title">
-                    Запускаем Яндекс.Директ
+                    <span v-html="pageData[0].acf.sekcziya_1_hero.zagolovok"></span>
                         <img src="@/assets/images/yandex/direct-ic.png" alt="">
                     </h1>
-                    <p class="direct-hero-sec__subtitle">Мы раскрываем ваш потенциал там, где вас уже ждут.</p>
+                    <p class="direct-hero-sec__subtitle" v-html="pageData[0].acf.sekcziya_1_hero.podzagolovok"></p>
 
                 </div>
                 
-                <img src="@/assets/images/yandex/hero.png" alt="" class="direct-hero-sec__hero-img">
+                <img :src="pageData[0].acf.sekcziya_1_hero.izobrazhenie_pk.url" :alt="pageData[0].acf.sekcziya_1_hero.izobrazhenie_pk.alt" class="direct-hero-sec__hero-img">
 
                 <img src="@/assets/images/yandex/hero-mob-1.png" alt="" class="direct-hero-sec__hero-img-mob direct-hero-sec__hero-img-mob--v1">
 
-                <img src="@/assets/images/yandex/hero-mob-2.png" alt="" class="direct-hero-sec__hero-img-mob direct-hero-sec__hero-img-mob--v2">
+                <img :src="pageData[0].acf.sekcziya_1_hero.izobrazhenie_mobilka.url" :alt="pageData[0].acf.sekcziya_1_hero.izobrazhenie_mobilka.alt" class="direct-hero-sec__hero-img-mob direct-hero-sec__hero-img-mob--v2">
                 
             </div>
         </section>
 
         <div class="direct-sticky-wrapper target-block">
 
-            <section class="direct-direction-sec">
+            <section class="direct-direction-sec" v-if="pageData[0].acf?.sekcziya_2_raznye_nishhi">
                 <div class="direct-direction-sec__container">
                     <div class="direct-direction-sec__text-top">
-                        <h2 class="direct-direction-sec__title">Работаем с разными нишами.</h2>
-                        <p class="direct-direction-sec__subtitle">И в каждой добиваемся эффективности.</p>
+                        <h2 class="direct-direction-sec__title" v-html="pageData[0].acf.sekcziya_2_raznye_nishhi.zagolovok"></h2>
+                        <p class="direct-direction-sec__subtitle" v-html="pageData[0].acf.sekcziya_2_raznye_nishhi.podzagolovok"></p>
                     </div>
 
-                    <img src="@/assets/images/yandex/sec-2.png" alt="" class="direct-direction-sec__img">
+                    <img :src="pageData[0].acf.sekcziya_2_raznye_nishhi.izobrazhenie.url" :alt="pageData[0].acf.sekcziya_2_raznye_nishhi.izobrazhenie.alt" class="direct-direction-sec__img">
 
                     <div class="direct-direction-sec__down-row">
-                        <div class="direct-direction-sec__down-el">
-                            <p class="direct-direction-sec__down-el-title">20</p>
-                            <p class="direct-direction-sec__down-el-subtitle">проработанных ниш</p>
+
+                        <div class="direct-direction-sec__down-el" v-for="item in pageData[0].acf.sekcziya_2_raznye_nishhi.infografika" :key="item">
+                            <p class="direct-direction-sec__down-el-title" v-html="item.znachenie"></p>
+                            <p class="direct-direction-sec__down-el-subtitle" v-html="item.tekst"></p>
                         </div>
-                        <div class="direct-direction-sec__down-el">
-                            <p class="direct-direction-sec__down-el-title">30+</p>
-                            <p class="direct-direction-sec__down-el-subtitle">компаний работают с нами<br> прямо сейчас</p>
-                        </div>
-                        <div class="direct-direction-sec__down-el">
-                            <p class="direct-direction-sec__down-el-title">160%</p>
-                            <p class="direct-direction-sec__down-el-subtitle">Средний ROI наших рекламных<br> кампаний</p>
-                        </div>
+
                     </div>
 
                 </div>
             </section>
 
 
-            <section class="direct-work-list-sec ">
+            <section class="direct-work-list-sec "  v-if="pageData[0].acf?.sekcziya_3_informacziya">
                 <div class="direct-work-list-sec__container">
                     <div class="direct-work-list-sec__img-wrapper">
-                        <img src="@/assets/images/yandex/sec-3.png" alt="">
+                        <img :src="pageData[0].acf.sekcziya_3_informacziya.izobrazhenie.url" :alt="pageData[0].acf.sekcziya_3_informacziya.izobrazhenie.alt">
                     </div>
                     <div class="direct-work-list-sec__text-wrapper">
-                        <div class="direct-work-list-sec__text-element">
-                            <h3 class="direct-work-list-sec__text-title">Комплексная настройка</h3>
-                            <p class="direct-work-list-sec__text-subtitle">Мы предлагаем комплексную настройку Яндекс.Директ, которая включает анализ ниши, подбор ключевых слов, создание эффективных объявлений, настройку ставок и таргетинга, а также постоянный мониторинг и оптимизацию кампаний.</p>
+
+                        <div class="direct-work-list-sec__text-element" v-for="item in pageData[0].acf.sekcziya_3_informacziya.inform_bloki" :key="item">
+                            <h3 class="direct-work-list-sec__text-title" v-html="item.zagolovok"></h3>
+                            <p class="direct-work-list-sec__text-subtitle" v-html="item.tekst"></p>
                         </div>
 
-                        <div class="direct-work-list-sec__text-element">
-                            <h3 class="direct-work-list-sec__text-title">Подготовим креативы</h3>
-                            <p class="direct-work-list-sec__text-subtitle">Наши маркетологи подготовят compelling тексты и цепляющие заголовки для ваших объявлений, которые привлекут внимание целевой аудитории и повысят CTR. Дизайнеры создадут яркие и запоминающиеся креативы, чтобы ваша реклама выделялась среди конкурентов.</p>
-                        </div>
-
-                        <div class="direct-work-list-sec__text-element">
-                            <h3 class="direct-work-list-sec__text-title">Уменьшаем стоимость заявки</h3>
-                            <p class="direct-work-list-sec__text-subtitle">Наша цель — максимально повысить конверсию и снизить затраты на рекламу, чтобы ваш бизнес получал больше клиентов при минимальных вложениях.</p>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -197,9 +183,9 @@
 
 
 
-        <section class="direct-types-sec">
+        <section class="direct-types-sec" v-if="pageData[0].acf?.sekcziya_5_zadachi">
             <div class="direct-types-sec__container">
-                <h2 class="direct-types-sec__title">Каждой задаче, своя реклама.</h2>
+                <h2 class="direct-types-sec__title" v-html="pageData[0].acf.sekcziya_5_zadachi.zagolovok"></h2>
 
                 <div class="direct-types-sec__header">
                     <div class="direct-types-sec__header-element"
@@ -219,7 +205,7 @@
                     class="direct-types-sec__body-element direct-types-sec__body-element--1">
                         <div class="direct-types-sec__body-element-text-wrapper">
                             <p class="direct-types-sec__body-element-text-title">Приводить новых клиентов</p>
-                            <p class="direct-types-sec__body-element-textelement">Чтобы привлечь покупателей, нужно мыслить как они. Проанализируем вашу аудиторию: её образ жизни, потребности и желания. Настроим контекстную рекламу для максимального отклика — на сайт придут только заинтересованные клиенты.</p>
+                            <p class="direct-types-sec__body-element-textelement" v-html="pageData[0].acf.sekcziya_5_zadachi.zadacha_1_tekst"></p>
                         </div>
 
                       
@@ -234,7 +220,7 @@
                     class="direct-types-sec__body-element direct-types-sec__body-element--2">
                         <div class="direct-types-sec__body-element-text-wrapper">
                             <p class="direct-types-sec__body-element-text-title">Продавать товары и услуги</p>
-                            <p class="direct-types-sec__body-element-textelement">Реклама влияет на эмоции, подталкивая к решению. Важно, чтобы выгоды товара отвечали желаниям клиентов. Мы создадим контекстную рекламу для каждой группы аудитории, напишем убедительные тексты и настроим автоматизацию под поисковые запросы — так объявления будут работать на максимум.</p>
+                            <p class="direct-types-sec__body-element-textelement" v-html="pageData[0].acf.sekcziya_5_zadachi.zadacha_2_tekst"></p>
                         </div>
 
                         <img src="@/assets/images/yandex/types-2-x1.png" alt="" class="direct-types-sec__body-element-img beimg-1">
@@ -246,7 +232,7 @@
                     class="direct-types-sec__body-element direct-types-sec__body-element--3">
                         <div class="direct-types-sec__body-element-text-wrapper">
                             <p class="direct-types-sec__body-element-text-title">Возвращать клиентов</p>
-                            <p class="direct-types-sec__body-element-textelement">Не все переходы превращаются в продажи — но это можно исправить. Разберём, на каком этапе клиенты уходят, найдём причины и создадим для каждой группы персональные объявления, которые вернут их к покупке.</p>
+                            <p class="direct-types-sec__body-element-textelement" v-html="pageData[0].acf.sekcziya_5_zadachi.zadacha_3_tekst"></p>
                         </div>
 
                         <img src="@/assets/images/yandex/types-3-x1.png" alt="" class="direct-types-sec__body-element-img beimg-1">
@@ -258,10 +244,10 @@
         </section>
 
 
-        <section class="direct-format-work-sec">
+        <section class="direct-format-work-sec" v-if="pageData[0].acf?.sekcziya_6_format_raboty">
             <div class="direct-format-work-sec__container">
                 <h2 class="direct-format-work-sec__title">
-                    Наш формат работы
+                    <span v-html="pageData[0].acf.sekcziya_6_format_raboty.zagolovok"></span>
                     <span class="direct-format-work-sec__title-img-wrapper">
                         <img src="@/assets/images/yandex/format-title.jpg" alt="">
                     </span>
@@ -271,19 +257,20 @@
                     <div class="direct-format-work-sec__element-text">
                         <div class="direct-format-work-sec__element-text-container">
                             <p class="direct-format-work-sec__element-text-title">#1</p>
-                            <p class="direct-format-work-sec__element-text-subtitle">Вы оставляете заявку.</p>
+                            <p class="direct-format-work-sec__element-text-subtitle" v-html="pageData[0].acf.sekcziya_6_format_raboty.tekst_1"></p>
                         </div>
                     </div>
 
                     <div class="direct-format-work-sec__element-text">
                         <div class="direct-format-work-sec__element-text-container">
                             <p class="direct-format-work-sec__element-text-title">#2</p>
-                            <p class="direct-format-work-sec__element-text-subtitle">Наш менеджер связывается с Вами и уточняет детали и задачи.</p>
+                            <p class="direct-format-work-sec__element-text-subtitle" v-html="pageData[0].acf.sekcziya_6_format_raboty.tekst_2"></p>
                         </div>
                     </div>
 
                     <div class="direct-format-work-sec__element-img direct-format-work-sec__element-img--1">
-                        <img src="@/assets/images/yandex/format-human.jpg" alt="">
+                        <img :src="pageData[0].acf.sekcziya_6_format_raboty.izobrazhenie_1.url" 
+                        :alt="pageData[0].acf.sekcziya_6_format_raboty.izobrazhenie_1.alt">
 
                         <div class="direct-about-sec__el-search-x direct-format-work-sec__el-search--1">
                             <p class="direct-about-sec__el-search-request">Где запустить директ?</p>
@@ -305,12 +292,13 @@
                     <div class="direct-format-work-sec__element-text">
                         <div class="direct-format-work-sec__element-text-container">
                             <p class="direct-format-work-sec__element-text-title">#3</p>
-                            <p class="direct-format-work-sec__element-text-subtitle">Далее мы собираем аналитику и проводим анализ вышей задачи.</p>
+                            <p class="direct-format-work-sec__element-text-subtitle" v-html="pageData[0].acf.sekcziya_6_format_raboty.tekst_3"></p>
                         </div>
                     </div>
 
                     <div class="direct-format-work-sec__element-img direct-format-work-sec__element-img--2">
-                        <img src="@/assets/images/yandex/format-human-2.jpg" alt="">
+                        <img :src="pageData[0].acf.sekcziya_6_format_raboty.izobrazhenie_2.url" 
+                        :alt="pageData[0].acf.sekcziya_6_format_raboty.izobrazhenie_2.alt">
 
                         <div class="direct-about-sec__el-search-x direct-format-work-sec__el-search--2">
                             <p class="direct-about-sec__el-search-request">Возможно вы искали inwy</p>
@@ -332,7 +320,7 @@
                     <div class="direct-format-work-sec__element-text">
                         <div class="direct-format-work-sec__element-text-container">
                             <p class="direct-format-work-sec__element-text-title">#4</p>
-                            <p class="direct-format-work-sec__element-text-subtitle">Отвечаем на ваши вопрос и начинаем работу над проектом.</p>
+                            <p class="direct-format-work-sec__element-text-subtitle" v-html="pageData[0].acf.sekcziya_6_format_raboty.tekst_4"></p>
                         </div>
                     </div>
 
@@ -342,7 +330,7 @@
             </div>
         </section>
 
-        <section class="price-sec direct-price-sec">
+        <section class="price-sec direct-price-sec" v-if="pageData[0].acf?.sekcziya_7_czena?.length">
             <div class="price-sec__container">
                 <div class="price-sec__header">
 
@@ -372,12 +360,11 @@
                 </div>
 
                 <div class="price-sec__body">
-
-                    <div class="price-sec__col" v-for="(item, index) in dataPriceSec" :key="index">
+                    <div class="price-sec__col" v-for="(item, index) in pageData[0].acf.sekcziya_7_czena" :key="index">
                         <div class="price-sec__list-work-wrapper">
-                            <p class="price-sec__list-work-wrapper-title" v-html="item.title"></p>
+                            <p class="price-sec__list-work-wrapper-title" v-html="item.nazvanie_paketa"></p>
                             <ul class="price-sec__list-work-wrapper-list">
-                                <li v-for="servElement in item.servicesList" :key="servElement">{{ servElement }}</li>
+                                <li v-for="servElement in item.opisanie_paketa" :key="servElement">{{ servElement.tekst }}</li>
 
                             </ul>
 
@@ -396,7 +383,7 @@
                                 
                             </div>
                             <div class="cost-box__wrapper">
-                                <p class="cost-box__value">15 000 ₽</p>
+                                <p class="cost-box__value">{{ item.czena_v_rublyah }} ₽</p>
                                 <div class="cost-box__btn" @click="openFormPopup()">
                                     <p class="cost-box__btn-title">Заказать</p>
                                     <div class="cost-box__btn-icon">
@@ -410,15 +397,14 @@
                             </div>
 
                             <div class="cost-box__dop" v-if="dataPriceSecActioDopIndex == index">
-                                <p class="cost-box__dop-title" v-html="item.servicesListFullTitle" ></p>
+                                <p class="cost-box__dop-title" v-html="item.nazvanie_paketa" ></p>
                                 <ul class="cost-box__dop-list">
-                                    <li class="cost-box__dop-list-element" v-for="dopServItem in item.servicesListFullList" :key="dopServItem">{{ dopServItem }}</li>                                 
+                                    <li class="cost-box__dop-list-element" v-for="dopServItem in item.dop_parametry" :key="dopServItem">{{ dopServItem.tekst }}</li>                                 
                                 </ul>
                             </div>
                         </div>
 
                     </div>
-
                 </div>
             </div>
         </section>
@@ -485,78 +471,15 @@ import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 //DATA
 const store = useCounterStore()
 
+const route = useRoute()
+
 const typesIndex = ref(1)
 
 const dataPriceSecActioDopIndex = ref(null)
 
-const dataPriceSec = ref([
-    {
-        'title': 'Запуск',
-        'price': '10 000',
-        'servicesList': [
-            'Ежедневный/еженедельный мониторинг',
-            'Оптимизация кампаний',
-            'А/В тестирование объявлений',
-            'Анализ и отчетность',
-            'Анализ и отчетность',
-            'Масштабирование рекламы',
-            'Поддержка и консультации',
-            ],
-        'servicesListFullTitle': 'Запуск',
-        'servicesListFullList': [
-            'SEO - продвижение',
-            'Добавление компаний на основные платформы',
-            'Добавление фото',
-            'Добавление/корректировка акций',
-            'Добавление/корректировка акций',
-            'Актуализация информации',
-            'Удаление дубликатов',
-            'Обжалование негативных отзывов',
-            'Ответы на положительные отзывы',
-            'Подбор/создание изображений под акции и скидки',
-            'Настройки и внедрение витрины товаров',
-            'Контроль синей галочки на Яндекс.Картах',
-            'Внедрение и оформление stories',
-            'Персональный менеджер',
-            'Статистика по продвижению',
-            'Статистика по отзывам',
-        ]
-    },
+const { data: pageData } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/pages?slug=direct`)
 
-    {
-        'title': 'Ведение',
-        'price': '12 000',
-        'servicesList': [
-            'Ежедневный/еженедельный мониторинг',
-            'Оптимизация кампаний',
-            'А/В тестирование объявлений',
-            'Анализ и отчетность',
-            'Анализ и отчетность',
-            'Масштабирование рекламы',
-            'Поддержка и консультации',
-            ],
-        'servicesListFullTitle': 'Ведение',
-        'servicesListFullList': [
-            'SEO - продвижение',
-            'Добавление компаний на основные платформы',
-            'Добавление фото',
-            'Добавление/корректировка акций',
-            'Добавление/корректировка акций',
-            'Актуализация информации',
-            'Удаление дубликатов',
-            'Обжалование негативных отзывов',
-            'Ответы на положительные отзывы',
-            'Подбор/создание изображений под акции и скидки',
-            'Настройки и внедрение витрины товаров',
-            'Контроль синей галочки на Яндекс.Картах',
-            'Внедрение и оформление stories',
-            'Персональный менеджер',
-            'Статистика по продвижению',
-            'Статистика по отзывам',
-        ]
-    }
-])
-
+console.log('pageData', pageData)
 
 
 
@@ -608,7 +531,44 @@ onBeforeUnmount(() => {
 });
 
 
+//SEO
+useHead({
+    title: pageData.value[0].acf.seo_title || pageData.value[0].title.rendered,
+    meta: [
+        // Description
+        { name: 'description', content: pageData.value[0].acf.seo_description || 'Описание по умолчанию' },
 
+        // Keywords (опционально, не влияет сильно на SEO)
+        { name: 'keywords',  content: pageData.value[0].acf.klyuchevaya_fraza || 'test' },
+
+        // OpenGraph
+        { property: 'og:title', content: pageData.value[0].acf.seo_title },
+        { property: 'og:description', content: pageData.value[0].acf.seo_description },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: `${store.domainUrlCurrent}${route.fullPath}` },
+        { property: 'og:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Twitter Card (если используешь)
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: pageData.value[0].acf.seo_title },
+        { name: 'twitter:description', content: pageData.value[0].acf.seo_description },
+        { name: 'twitter:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Индексация / Деиндексация
+        // Например, noindex для черновика:
+        {
+        name: 'robots',
+        content:
+            pageData.value[0].acf.indeksacziya_v_poiskovyh_sistemah === 'index'
+            ? 'index, follow'
+            : 'noindex, nofollow'
+        }
+    ],
+    link: [
+        // Canonical (вручную или динамически)
+        { rel: 'canonical', href: `${store.domainUrlCurrent}/${pageData.value[0].acf.canonical || route.name}` }
+    ]
+})
   
 </script>
 

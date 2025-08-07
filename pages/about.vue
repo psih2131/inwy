@@ -1,20 +1,22 @@
 <template>
 
-    <main class="main">
+    <main class="main" v-if="pageData[0]">
         <div class="about-hero-sec-100vh" ref="heroSec"></div>
      
         <section class="about-hero-sec" ref="aboutSec">
             <div class="about-hero-sec__container">
                 <p class="about-hero-sec__subtiltle">О нас</p>
-                <h2 class="about-hero-sec__title"><b>Помогаем бизнесу</b> проложить путь к<span><br></span> простоте за счет своих знаний.</h2>
+                <h2 class="about-hero-sec__title" v-html="pageData[0].acf.zagolovok"></h2>
                 <div class="about-hero-sec__img-row">
-                    <img src="@/assets/images/about/x1.jpg" alt="" class="about-hero-sec__img">
-                    <img src="@/assets/images/about/x2.jpg" alt="" class="about-hero-sec__img" ref="scrollImg1">
-                    <img src="@/assets/images/about/x3.jpg" alt="" class="about-hero-sec__img">
-                    <img src="@/assets/images/about/x4.jpg" alt="" class="about-hero-sec__img" ref="scrollImg2">
-                    <img src="@/assets/images/about/x5.jpg" alt="" class="about-hero-sec__img">
+
+                    <template v-for="(item, index) in pageData[0].acf.kartinki_posle_zagolovka" :key="index">
+                         
+                        <img :src="item.kartinka.url" :alt="item.kartinka.alt" class="about-hero-sec__img " >
+
+                    </template>
+
                 </div>
-                <p class="about-hero-sec__down-text">дизайном дополняем маркетинг</p>
+                <p class="about-hero-sec__down-text" v-html="pageData[0].acf.tekst_pod_kartinkami"></p>
             </div>
         </section>
 
@@ -30,37 +32,24 @@
                         </div>
                   
                             <div 
-                            v-for="(item, index) in aboutFixedImageList" :key="index"
+                            v-for="(item, index) in pageData[0].acf.kartinki_v_animaczii" :key="index"
                             class="circle-sector" 
                             @mouseenter="show(index)"
                             @mousemove="move($event, index)"
                             @mouseleave="hide(index)"
                             :class="[`circle-sector--${index}`]">
 
-
                                 <img 
                                 :class="{ active: activeIndex === index }"
                                 :style="activeIndex === index ? style : null"
-                                src="@/assets/images/about/fix1.jpg" alt="" class="circle-sector__img">
-
+                                :src="item.kartinka.url" :alt="item.kartinka.alt" class="circle-sector__img">
 
                             </div>
                
-                 
                     </div>
                 </div>
                 <div class="about-why-we-are__right">
-                   <div class="about-why-we-are__text-wrapper">
-                    <p><strong>Мы — команда inwy</strong>           , и наша миссия — делать жизнь предпринимателей проще. <img src="@/assets/images/about/text-1.png" alt=""></p>
-
-                    <p><strong>Наш путь начался с продаж</strong>, поэтому мы как никто другой понимаем боли бизнеса и знаем, как их решать. 
-                        Первым нашим проектом стала компания mediamaps          ,<strong>которая занималась продвижением на онлайн-картах</strong>. 
-                        Но очень скоро мы осознали, что у предпринимателей гораздо больше задач, в решении которых мы можем помочь. 
-                        <strong>Так появилась inwy — компания с широким спектром услуг и особым отношением к партнёрам</strong>: мы работаем с вами так же ответственно, как и для себя.
-                          Мы родом из Петербурга, а значит, в <strong>нашей ДНК — сильный дизайн, маркетинг и продажи</strong>. Мы используем этот опыт и экспертизу во благо наших клиентов.
-inwy — молодая, но амбициозная команда. <strong>Нам не занимать опыта, усердия и желания расти</strong>. Уже сейчас наши клиенты доверяют нам и рекомендуют своим партнёрам — за это мы им искренне благодарны.
-<strong>Мы не просто оказываем услуги, а становимся надёжными помощниками в вашем бизнесе</strong>. Доверьтесь inwy — и убедитесь сами! <img src="@/assets/images/about/text-2.png" alt=""></p>
-                   </div>
+                   <div class="about-why-we-are__text-wrapper" v-html="pageData[0].acf.tekst_opisanie"></div>
                 </div>
             </div>
         </section>
@@ -121,15 +110,17 @@ inwy — молодая, но амбициозная команда. <strong>Н
 
 //IMPORT
 
-// import { useCounterStore } from '@/stores/counter'
+import { useCounterStore } from '@/stores/counter';
 
 import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 
 
 //DATA
-const scrollImg1 = ref(null)
+const store = useCounterStore()
 
-const scrollImg2 = ref(null)
+const route = useRoute()
+
+
 
 const aboutSec = ref(null)
 
@@ -147,6 +138,14 @@ const aboutFixedImageList = ref([
 const activeIndex = ref(null)
 
 const style = ref({ top: '0px', left: '0px' })
+
+const { data: pageData } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/pages?slug=about`)
+
+console.log('pageData', pageData)
+
+// const scrollImg1 = ref(null)
+
+// const scrollImg2 = ref(null)
 
 
 //METHODS 
@@ -210,8 +209,9 @@ function aboutScrollImgAnim(){
     culcScaleValue = (70 * currentProcent) / 100
     finishScaleValue = culcScaleValue
     
-    scrollImg1.value.style.transform = `translateY(-${finishScaleValue}px)`
-    scrollImg2.value.style.transform = `translateY(-${finishScaleValue}px)`
+    let imagesArray = document.querySelectorAll('.about-hero-sec__img')
+    imagesArray[1].style.transform = `translateY(-${finishScaleValue}px)`
+    imagesArray[3].style.transform = `translateY(-${finishScaleValue}px)`
 
     // console.log('currentProcent', currentProcent)
     // console.log(windowsHeight.value, (windowsHeight.value / 100) * 65 )
@@ -232,10 +232,45 @@ onBeforeUnmount(() => {
 
 
 
- // props
- const props = defineProps({
+//SEO
+useHead({
+    title: pageData.value[0].acf.seo_title || pageData.value[0].title.rendered,
+    meta: [
+        // Description
+        { name: 'description', content: pageData.value[0].acf.seo_description || 'Описание по умолчанию' },
 
-  })
+        // Keywords (опционально, не влияет сильно на SEO)
+        { name: 'keywords',  content: pageData.value[0].acf.klyuchevaya_fraza || 'test' },
+
+        // OpenGraph
+        { property: 'og:title', content: pageData.value[0].acf.seo_title },
+        { property: 'og:description', content: pageData.value[0].acf.seo_description },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: `${store.domainUrlCurrent}${route.fullPath}` },
+        { property: 'og:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Twitter Card (если используешь)
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: pageData.value[0].acf.seo_title },
+        { name: 'twitter:description', content: pageData.value[0].acf.seo_description },
+        { name: 'twitter:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Индексация / Деиндексация
+        // Например, noindex для черновика:
+        {
+        name: 'robots',
+        content:
+            pageData.value[0].acf.indeksacziya_v_poiskovyh_sistemah === 'index'
+            ? 'index, follow'
+            : 'noindex, nofollow'
+        }
+    ],
+    link: [
+        // Canonical (вручную или динамически)
+        { rel: 'canonical', href: `${store.domainUrlCurrent}/${pageData.value[0].acf.canonical || route.name}` }
+    ]
+})
+
   
 </script>
 

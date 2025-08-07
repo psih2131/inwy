@@ -1,15 +1,15 @@
 <template>
     <div class="app-wrapper">
-        <component__header  :trigerCloseSubMeny="triggerCloseSubMeny"/>
+        <component__header  :trigerCloseSubMeny="triggerCloseSubMeny" :optionData="optionsData"/>
         
         <div class="page-main-wrapper" @click="closeHeaderSub">
           <slot></slot>
         </div>
         
     
-        <component__footer @click="closeHeaderSub"/>
+        <component__footer @click="closeHeaderSub" :optionData="optionsData"/>
 
-        <popupsPlagin v-if="store.popupCurrent != null" />
+        <popupsPlagin v-if="store.popupCurrent != null" :optionData="optionsData"/>
     </div>
 </template>
 
@@ -18,11 +18,13 @@
 
 
 <script setup>
+
 import { useCounterStore } from '@/stores/counter'
 
 import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 
 import component__header from '@/components/header.vue'
+
 import component__footer from '@/components/footer.vue'
 
 import popupsPlagin from '@/components/popups/popups-parent.vue'
@@ -33,6 +35,10 @@ const currentSearchType = ref('personPhone')
 const store = useCounterStore()
 
 const triggerCloseSubMeny = ref(false)
+
+const { data: optionsData } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/acf/v3/options`)
+
+console.log('optionsData',optionsData)
 
 
 

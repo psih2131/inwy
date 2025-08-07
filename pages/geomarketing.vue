@@ -1,38 +1,41 @@
 <template>
 
-  <main class="main">
+  <main class="main" v-if="pageData[0]">
     <div class="geomarketing-100vh-sec" ref="g100vhSec"></div>
 
-    <section class="geomarketing-hero-sec">
+    <section class="geomarketing-hero-sec" v-if="pageData[0].acf?.sekcziya_1_hero">
       <div class="geomarketing-hero-sec__container">
         <div class="geomarketing-hero-sec__images-claster">
           <img src="@/assets/images/geo/hero-phone.png" alt="" class="geomarketing-hero-sec__image geomarketing-herogeomarketing-hero-sec__image--phone">
-          <img src="@/assets/images/geo/hero-1.jpg" alt="" class="geomarketing-hero-sec__image geomarketing-hero-sec__image--x1">
-          <img src="@/assets/images/geo/hero-2.jpg" alt="" class="geomarketing-hero-sec__image geomarketing-hero-sec__image--x2">
+
+          <img v-for="(item, index) in pageData[0].acf.sekcziya_1_hero['4_malyh_izobrazheniya']" :key="index"
+          :src="item.izobrazhenie.url" 
+          :alt="item.izobrazhenie.alt" 
+          :class="`geomarketing-hero-sec__image geomarketing-hero-sec__image--x${index + 1}`">
+          <!-- <img src="@/assets/images/geo/hero-2.jpg" alt="" class="geomarketing-hero-sec__image geomarketing-hero-sec__image--x2">
           <img src="@/assets/images/geo/hero-3.jpg" alt="" class="geomarketing-hero-sec__image geomarketing-hero-sec__image--x3">
-          <img src="@/assets/images/geo/hero-4.jpg" alt="" class="geomarketing-hero-sec__image geomarketing-hero-sec__image--x4">
+          <img src="@/assets/images/geo/hero-4.jpg" alt="" class="geomarketing-hero-sec__image geomarketing-hero-sec__image--x4"> -->
         </div>
         <div class="geomarketing-hero-sec__text">
-          <h1 class="geomarketing-hero-sec__title">Будьте первые в выдачи</h1>
-          <p class="geomarketing-hero-sec__subtitle">Продвижение в геосервисах</p>
+          <h1 class="geomarketing-hero-sec__title" v-html="pageData[0].acf.sekcziya_1_hero.zagolovok"></h1>
+          <p class="geomarketing-hero-sec__subtitle" v-html="pageData[0].acf.sekcziya_1_hero.podzagolovok"></p>
         </div>
       </div>
     </section>
 
+    
     <section class="geomarketing-road-sec target-block" ref="roadSec">
 
       <div class="geomarketing-road-sec__container">
         <div class="geomarketing-road-sec__text">
-          <h2 class="geomarketing-road-sec__title">Дорога к сердцу клиента</h2>
-          <p class="geomarketing-road-sec__text">лежит через inwy.</p>
+          <h2 class="geomarketing-road-sec__title" v-html="pageData[0].acf.sekcziya_2_doroga_k_serdczu_klienta.zagolovok"></h2>
+          <p class="geomarketing-road-sec__text"  v-html="pageData[0].acf.sekcziya_2_doroga_k_serdczu_klienta.podzagolovok"></p>
         </div>
         <div class="geomarketing-road-sec__info-wrapper">
           <div class="geomarketing-road-sec__info-wrapper-col">
             <div class="geomarketing-road-sec__info-box geomarketing-road-sec__info-box--el1">
-              <p class="geomarketing-road-sec__info-box-text">
-                Мы делаем так, чтобы ваш бизнес находили первым в Яндекс.Картах, ZOON и 2ГИС. Настраиваем карточку компании, работаем с отзывами и улучшаем видимость — это приводит реальных клиентов.
-                <br><br>
-                <b>+65% звонков из поиска "рядом со мной"</b>
+              <p class="geomarketing-road-sec__info-box-text" v-html="pageData[0].acf.sekcziya_2_doroga_k_serdczu_klienta.tekst_levyj_verhnij_blok">
+         
               </p>
 
               <div class="geomarketing-road-sec__info-box-graf-1">
@@ -73,8 +76,8 @@
             </div>
 
              <div class="geomarketing-road-sec__info-box geomarketing-road-sec__info-box--el2">
-              <p class="geomarketing-road-sec__info-box-text">
-                Мы помогаем привлекать клиентов сразу со всех ресурсов, тем самым охватываем более 105 млн человек.
+              <p class="geomarketing-road-sec__info-box-text" v-html="pageData[0].acf.sekcziya_2_doroga_k_serdczu_klienta.tekst_levyj_nizhnij_blok">
+               
               </p>
               <div class="geomarketing-road-sec__info-box-map-list">
                 <div class="geomarketing-road-sec__info-box-map-list-element geomarketing-road-sec__info-box-map-list-element--v1">
@@ -98,10 +101,8 @@
           </div>
           <div class="geomarketing-road-sec__info-wrapper-col">
             <div class="geomarketing-road-sec__info-box geomarketing-road-sec__info-box--el3">
-              <p class="geomarketing-road-sec__info-box-text">
-                Мы превращаем ваше присутствие в Яндекс.Картах и 2ГИС в мощный канал привлечения клиентов. Не просто заполняем данные, а делаем каждый элемент карточки работающим на ваш бизнес.
-                <br><br>
-                <b>+70% кликов на ваш номер и сайт из геосервисов</b>
+              <p class="geomarketing-road-sec__info-box-text" v-html="pageData[0].acf.sekcziya_2_doroga_k_serdczu_klienta.tekst_pravyj_verhnij_blok">
+
               </p>
 
               <div class="geomarketing-road-sec__info-box-graf-2">
@@ -132,20 +133,8 @@
           </div>
 
           <div class="geomarketing-road-sec__partners-wrapper-row">
-            <div class="geomarketing-road-sec__partners-wrapper-element">
-              <img src="@/assets/images/geo/logo-1.png" alt="">
-            </div>
-
-            <div class="geomarketing-road-sec__partners-wrapper-element">
-              <img src="@/assets/images/geo/logo-2.png" alt="">
-            </div>
-
-            <div class="geomarketing-road-sec__partners-wrapper-element">
-              <img src="@/assets/images/geo/logo-3.png" alt="">
-            </div>
-
-            <div class="geomarketing-road-sec__partners-wrapper-element">
-              <img src="@/assets/images/geo/logo-4.png" alt="">
+            <div class="geomarketing-road-sec__partners-wrapper-element" v-for="item in pageData[0].acf.sekcziya_2_doroga_k_serdczu_klienta.logotipy" :key="item">
+              <img :src="item.izobrazhenie.url" :alt="item.izobrazhenie.alt">
             </div>
           </div>
         </div>
@@ -154,7 +143,7 @@
 
 
 
-    <section class="geomarketing-phones-sec">
+    <section class="geomarketing-phones-sec" v-if="pageData[0].acf?.sekcziya_3_vizualizacziya_kart_v_telefone">
       <div class="geomarketing-phones-sec__container">
           <div class="geomarketing-phones-sec__claster">
             <div class="geomarketing-phones-sec__phone geomarketing-phones-sec__phone-v1">
@@ -164,7 +153,8 @@
             <div class="geomarketing-phones-sec__phone geomarketing-phones-sec__phone-v2">
               <img src="@/assets/images/geo/phone-sec-2.png" alt="">
 
-              <div class="geomarketing-phones-sec__phone-v2-data-element geomarketing-phones-sec__phone-v2-data-element--1">
+              <div v-for="(item, index) in pageData[0].acf.sekcziya_3_vizualizacziya_kart_v_telefone.tekstovyj_blok" :key="index"
+              :class="`geomarketing-phones-sec__phone-v2-data-element geomarketing-phones-sec__phone-v2-data-element--${index + 1}`">
                 <div class="geomarketing-phones-sec__phone-v2-data-element-btn">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.3491 31.55V19.44H0.239063V12.09H12.3491V0.0499973H19.6991V12.09H31.7391V19.44H19.6991V31.55H12.3491Z" fill="#ACFA03"/>
@@ -173,25 +163,10 @@
                 </div>
 
                 <div class="geomarketing-phones-sec__phone-v2-data-element-info">
-                  <p class="geomarketing-phones-sec__phone-v2-data-element-info-title">СЕО- продвижение</p>
-                  <p class="geomarketing-phones-sec__phone-v2-data-element-info-text">Мы обеспечиваем повышение видимости вашего бизнеса на локальных картах и привлечение клиентов, применяя алгоритмы Яндекс.Карт, 2ГИС и другие геосервисы.</p>
+                  <p class="geomarketing-phones-sec__phone-v2-data-element-info-title" v-html="item.zagolovok"></p>
+                  <p class="geomarketing-phones-sec__phone-v2-data-element-info-text" v-html="item.tekst"></p>
                 </div>
               </div>
-
-              <div class="geomarketing-phones-sec__phone-v2-data-element geomarketing-phones-sec__phone-v2-data-element--2">
-                <div class="geomarketing-phones-sec__phone-v2-data-element-btn">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.3491 31.55V19.44H0.239063V12.09H12.3491V0.0499973H19.6991V12.09H31.7391V19.44H19.6991V31.55H12.3491Z" fill="#ACFA03"/>
-                </svg>
-
-                </div>
-
-                <div class="geomarketing-phones-sec__phone-v2-data-element-info">
-                  <p class="geomarketing-phones-sec__phone-v2-data-element-info-title">Репутация</p>
-                  <p class="geomarketing-phones-sec__phone-v2-data-element-info-text">Мы помогаем компаниям управлять своей репутацией на картах, что способствует привлечению новых клиентов.</p>
-                </div>
-              </div>
-
 
             </div>
 
@@ -208,11 +183,12 @@
         <div class="geomarketing-revard-sec__container">
           <h2 class="geomarketing-revard-sec__title">Награды в ваших руках.</h2>
           <p class="geomarketing-revard-sec__subtitle">Благодаря нашей работе.</p>
-          <div class="geomarketing-revard-sec__wrapper">
+
+          <div class="geomarketing-revard-sec__wrapper" v-if="pageData[0].acf?.sekcziya_4_nagrady">
             <div class="geomarketing-revard-sec__info">
-              <div class="geomarketing-revard-sec__title-info">Премия 2ГИС</div>
-              <div class="geomarketing-revard-sec__title-info">Хорошее место</div>
-              <div class="geomarketing-revard-sec__text">Эти награды — не просто признание качества, а доказательство доверия и симпатий горожан. Мы помогаем нашим клиентам завоевывать эти награды, чтобы их успех становился магнитом для новых клиентов.</div>
+              <div class="geomarketing-revard-sec__title-info" v-html="pageData[0].acf.sekcziya_4_nagrady.zagolovok_1"></div>
+              <div class="geomarketing-revard-sec__title-info" v-html="pageData[0].acf.sekcziya_4_nagrady.zagolovok_2"></div>
+              <div class="geomarketing-revard-sec__text" v-html="pageData[0].acf.sekcziya_4_nagrady.tekst"></div>
 
               <div class="geomarketing-revard-sec__info-down-row">
                 <img src="@/assets/images/geo/reward-img.png" alt="" class="geomarketing-revard-sec__img">
@@ -236,15 +212,15 @@
 
           <div class="geomarketing-revard-sec__wrapper-row"></div>
 
-          <div class="geomarketing-revard-sec__reviews">
+          <div class="geomarketing-revard-sec__reviews" v-if="pageData[0].acf?.otzyvy">
             <div class="geomarketing-revard-sec__reviews-text">
-              <h2 class="geomarketing-revard-sec__reviews-ttitle">Что о нас пишут наши клиенты.</h2>
-              <p class="geomarketing-revard-sec__reviews-subtitle">Мы не просто обещаем результат — мы ежедневно подтверждаем свою эффективность реальными цифрами и довольными клиентами. Каждый наш проект — это кропотливая работа, основанная на глубокой аналитике, проверенных методиках и инновационных подходах.</p>
+              <h2 class="geomarketing-revard-sec__reviews-ttitle" v-html="pageData[0].acf.otzyvy.zagolovok"></h2>
+              <p class="geomarketing-revard-sec__reviews-subtitle" v-html="pageData[0].acf.otzyvy.podzagolovok"></p>
             </div>
 
             <div class="geomarketing-revard-sec__reviews-list">
 
-              <componentReview  v-for="item in reviews" :key="item" :commentData="item"/>
+              <componentReview  v-for="item in pageData[0].acf.otzyvy.spisok_otzyvov" :key="item" :commentData="item"/>
 
             </div>
           </div>
@@ -256,32 +232,38 @@
 
 
 
-    <section class="geomarketing-price-sec">
+    <section class="geomarketing-price-sec" v-if="pageData[0].acf?.czeny?.length">
       <div class="geomarketing-price-sec__container">
+
         <div class="geomarketing-price-sec__header">
           <div class="geomarketing-price-sec__header-row-1"></div>
           <ul class="geomarketing-price-sec__header-nav">
-            <li class="geomarketing-price-sec__header-li"
-            :class="{'geomarketing-price-sec__header-li--activ': currentTabPrice == 1}"
-            @click="currentTabPrice = 1">3 месяца</li>
-            <li class="geomarketing-price-sec__header-li"
-            :class="{'geomarketing-price-sec__header-li--activ': currentTabPrice == 2}"
-            @click="currentTabPrice = 2">6 месяцев</li>
-            <li class="geomarketing-price-sec__header-li"
-            :class="{'geomarketing-price-sec__header-li--activ': currentTabPrice == 3}"
-            @click="currentTabPrice = 3">12 месяцев</li>
+
+            <li v-for="(item, index) in pageData[0].acf.czeny"
+            :key="index" 
+            class="geomarketing-price-sec__header-li"
+            :class="{'geomarketing-price-sec__header-li--activ': currentTabPrice == index + 1}"
+            @click="currentTabPrice = 1" v-html="item.period"></li>
+
           </ul>
+
           <div class="geomarketing-price-sec__header-row-2"></div>
         </div>
 
         <div class="geomarketing-price-sec__body">
-          <div class="geomarketing-price-sec__body-tab" v-if="currentTabPrice == 1">
 
-            <div class="geomarketing-price-sec__element geomarketing-price-item" v-for="(item, index) in dataPriceSec" :key="index" :class="{'geomarketing-price-item--z-index': dataPriceSecActioDopIndex == index}">
+          <template v-for="(item, index) in pageData[0].acf.czeny" :key="index">
+
+
+            <div class="geomarketing-price-sec__body-tab" v-if="currentTabPrice == index + 1">
+
+            <div v-for="(itemTarif, tarifIndex) in item.tarify" :key="tarifIndex" 
+            class="geomarketing-price-sec__element geomarketing-price-item" 
+            :class="{'geomarketing-price-item--z-index': dataPriceSecActioDopIndex == tarifIndex}">
               <div class="geomarketing-price-item__top">
-                <p class="geomarketing-price-item__title" v-html="item.title"></p>
-                <p class="geomarketing-price-item__price">{{ item.price3Month }} ₽</p>
-                <p class="geomarketing-price-item__subprice">{{ item.price3perMonth }}/мес</p>
+                <p class="geomarketing-price-item__title" v-html="itemTarif.nazvanie_tarifa"></p>
+                <p class="geomarketing-price-item__price">{{ itemTarif.czena }} ₽</p>
+                <p class="geomarketing-price-item__subprice">{{ itemTarif.czena_za_mesyacz }}/мес</p>
 
                 <div class="cost-box__btn" @click="openFormPopup()">
                   <p class="cost-box__btn-title">Заказать</p>
@@ -292,42 +274,39 @@
                   </div>
               </div>
               <ul class="geomarketing-price-item__services-list">
-                <li class="geomarketing-price-item__services-list-li" v-for="serviceItem in item.servicesList" :key="serviceItem">{{ serviceItem }}</li>
+                <li class="geomarketing-price-item__services-list-li" v-for="serviceItem in itemTarif.spisok_uslug" :key="serviceItem">{{ serviceItem.tekst }}</li>
               </ul>
               </div>
               <div class="geomarketing-price-item__down">
-                <div class="geomarketing-price-item__more" @click="dataPriceSecActioDopIndex = index, targetClickOutside()">
+                <div class="geomarketing-price-item__more" @click="dataPriceSecActioDopIndex = tarifIndex, targetClickOutside()">
                   <img src="@/assets/images/geo/more.png" alt="">
                   другие преимущества
                 </div>
               </div>
 
 
-              <div class="cost-box__dop" v-if="dataPriceSecActioDopIndex == index">
-                  <p class="cost-box__dop-title" v-html="item.title" ></p>
+              <div class="cost-box__dop" v-if="dataPriceSecActioDopIndex == tarifIndex">
+                  <p class="cost-box__dop-title" v-html="itemTarif.nazvanie_tarifa" ></p>
                   <ul class="cost-box__dop-list">
-                      <li class="cost-box__dop-list-element" v-for="dopServItem in item.servicesListFullList" :key="dopServItem">{{ dopServItem }}</li>                                 
+                      <li class="cost-box__dop-list-element" v-for="dopServItem in itemTarif.polnyj_spisok_uslug" :key="dopServItem">{{ dopServItem.test }}</li>                                 
                   </ul>
               </div>
 
             </div>
 
 
-
-
-            <div class="geomarketing-price-sec__element geomarketing-price-item geomarketing-price-item-dop">
+            <div class="geomarketing-price-sec__element geomarketing-price-item geomarketing-price-item-dop" v-if="item.dop_tarif">
               <div class="eomarketing-price-item-dop__top-box">
-                <p class="eomarketing-price-item-dop__title">Дополнительные площадки</p>
+                <p class="eomarketing-price-item-dop__title" v-html="item.dop_tarif.zagolovok"></p>
               </div>
 
               <div class="geomarketing-price-item-dop__list-secvicess">
-                <div class="geomarketing-price-item-dop__sercise">ПроДокторов</div>
-                <div class="geomarketing-price-item-dop__sercise">Докту</div>
-                <div class="geomarketing-price-item-dop__sercise">НаПоправку</div>
-                <div class="geomarketing-price-item-dop__sercise">Stom-Firms</div>
+
+                <div class="geomarketing-price-item-dop__sercise" v-for="itemDop in item.dop_tarif.spisok_dop_poshhadok" :key="itemDop" v-html="itemDop.nazvanie"></div>
+
               </div>
               <div class="geomarketing-price-item-dop__price-box">
-                <p class="geomarketing-price-item__price">49 600 ₽</p>
+                <p class="geomarketing-price-item__price">{{ item.dop_tarif.czena_za_1_ploshhadku }} ₽</p>
                 <p class="geomarketing-price-item__subprice">за 1 площадку</p>
               </div>
 
@@ -335,122 +314,8 @@
 
           </div>
 
-          <div class="geomarketing-price-sec__body-tab" v-if="currentTabPrice == 2">
+          </template>
 
-            <div class="geomarketing-price-sec__element geomarketing-price-item" v-for="(item, index) in dataPriceSec" :key="index" :class="{'geomarketing-price-item--z-index': dataPriceSecActioDopIndex == index}">
-              <div class="geomarketing-price-item__top">
-                <p class="geomarketing-price-item__title" v-html="item.title"></p>
-                <p class="geomarketing-price-item__price">{{ item.price6Month }} ₽</p>
-                <p class="geomarketing-price-item__subprice">{{ item.price6perMonth }}/мес</p>
-
-                <div class="cost-box__btn" @click="openFormPopup()">
-                  <p class="cost-box__btn-title">Заказать</p>
-                  <div class="cost-box__btn-icon">
-                      <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0.591701 1.23274L1.16743 0.564631L17.8807 10.8802L17.9021 12.2716L1.51353 23.0717L0.917524 22.4216L10.397 11.6789L0.591701 1.23274Z" fill="#ACFA03"/>
-                      </svg>
-                  </div>
-              </div>
-              <ul class="geomarketing-price-item__services-list">
-                <li class="geomarketing-price-item__services-list-li" v-for="serviceItem in item.servicesList" :key="serviceItem">{{ serviceItem }}</li>
-              </ul>
-              </div>
-              <div class="geomarketing-price-item__down">
-                <div class="geomarketing-price-item__more" @click="dataPriceSecActioDopIndex = index, targetClickOutside()">
-                  <img src="@/assets/images/geo/more.png" alt="">
-                  другие преимущества
-                </div>
-              </div>
-
-
-              <div class="cost-box__dop" v-if="dataPriceSecActioDopIndex == index">
-                  <p class="cost-box__dop-title" v-html="item.title" ></p>
-                  <ul class="cost-box__dop-list">
-                      <li class="cost-box__dop-list-element" v-for="dopServItem in item.servicesListFullList" :key="dopServItem">{{ dopServItem }}</li>                                 
-                  </ul>
-              </div>
-
-            </div>
-
-
-            <div class="geomarketing-price-sec__element geomarketing-price-item geomarketing-price-item-dop">
-              <div class="eomarketing-price-item-dop__top-box">
-                <p class="eomarketing-price-item-dop__title">Дополнительные площадки</p>
-              </div>
-
-              <div class="geomarketing-price-item-dop__list-secvicess">
-                <div class="geomarketing-price-item-dop__sercise">ПроДокторов</div>
-                <div class="geomarketing-price-item-dop__sercise">Докту</div>
-                <div class="geomarketing-price-item-dop__sercise">НаПоправку</div>
-                <div class="geomarketing-price-item-dop__sercise">Stom-Firms</div>
-              </div>
-              <div class="geomarketing-price-item-dop__price-box">
-                <p class="geomarketing-price-item__price">49 600 ₽</p>
-                <p class="geomarketing-price-item__subprice">за 1 площадку</p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="geomarketing-price-sec__body-tab" v-if="currentTabPrice == 3">
-
-            <div class="geomarketing-price-sec__element geomarketing-price-item" v-for="(item, index) in dataPriceSec" :key="index" :class="{'geomarketing-price-item--z-index': dataPriceSecActioDopIndex == index}">
-              <div class="geomarketing-price-item__top">
-                <p class="geomarketing-price-item__title" v-html="item.title"></p>
-                <p class="geomarketing-price-item__price">{{ item.price12Month }} ₽</p>
-                <p class="geomarketing-price-item__subprice">{{ item.price12perMonth }}/мес</p>
-
-                <div class="cost-box__btn" @click="openFormPopup()">
-                  <p class="cost-box__btn-title">Заказать</p>
-                  <div class="cost-box__btn-icon">
-                      <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0.591701 1.23274L1.16743 0.564631L17.8807 10.8802L17.9021 12.2716L1.51353 23.0717L0.917524 22.4216L10.397 11.6789L0.591701 1.23274Z" fill="#ACFA03"/>
-                      </svg>
-                  </div>
-              </div>
-              <ul class="geomarketing-price-item__services-list">
-                <li class="geomarketing-price-item__services-list-li" v-for="serviceItem in item.servicesList" :key="serviceItem">{{ serviceItem }}</li>
-              </ul>
-              </div>
-              <div class="geomarketing-price-item__down">
-                <div class="geomarketing-price-item__more" @click="dataPriceSecActioDopIndex = index, targetClickOutside()">
-                  <img src="@/assets/images/geo/more.png" alt="">
-                  другие преимущества
-                </div>
-              </div>
-
-
-              <div class="cost-box__dop" v-if="dataPriceSecActioDopIndex == index">
-                  <p class="cost-box__dop-title" v-html="item.title" ></p>
-                  <ul class="cost-box__dop-list">
-                      <li class="cost-box__dop-list-element" v-for="dopServItem in item.servicesListFullList" :key="dopServItem">{{ dopServItem }}</li>                                 
-                  </ul>
-              </div>
-
-            </div>
-
-
-            <div class="geomarketing-price-sec__element geomarketing-price-item geomarketing-price-item-dop">
-              <div class="eomarketing-price-item-dop__top-box">
-                <p class="eomarketing-price-item-dop__title">Дополнительные площадки</p>
-              </div>
-
-              <div class="geomarketing-price-item-dop__list-secvicess">
-                <div class="geomarketing-price-item-dop__sercise">ПроДокторов</div>
-                <div class="geomarketing-price-item-dop__sercise">Докту</div>
-                <div class="geomarketing-price-item-dop__sercise">НаПоправку</div>
-                <div class="geomarketing-price-item-dop__sercise">Stom-Firms</div>
-              </div>
-              <div class="geomarketing-price-item-dop__price-box">
-                <p class="geomarketing-price-item__price">49 600 ₽</p>
-                <p class="geomarketing-price-item__subprice">за 1 площадку</p>
-              </div>
-
-            </div>
-
-          </div>
-          
         </div>
       </div>
     </section>
@@ -515,6 +380,7 @@ import componentReview from '@/components/review.vue'
 
 
 //DATA
+const route = useRoute()
 
 const store = useCounterStore()
 
@@ -522,190 +388,9 @@ const currentTabPrice = ref(1)
 
 const dataPriceSecActioDopIndex = ref(null)
 
-const reviews = ref([
-  {
-    text: `Хочу выразить благодарность команде inwy за долгую и плодотворную работу по продвижению моего барбершопа на Яндекс.Картах, 2ГИС и других геосервисах.
+const { data: pageData } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/pages?slug=geomarketing`)
 
-    Ребята действительно профессионалы своего дела: они полностью сняли с меня всю работу, взяв на себя все заботы о карточке бизнеса. Самостоятельно отвечают на отзывы, причем делают это грамотно и оперативно, поддерживая репутацию на высоком уровне.
-
-    Благодаря их стратегии продвижения барбершоп стабильно находится в ТОПе выдачи, что напрямую влияет на поток клиентов. Также они тщательно следят за актуальностью данных, регулярно обновляя информацию и контролируя корректность отображения.
-
-    Сотрудничаю с inwy уже давно и могу с уверенностью сказать: это команда, которой можно доверять! Спасибо за ваш профессионализм и результат!
-
-    Рекомендую всем, кто хочет спокойно развивать бизнес, не тратя время на технические моменты.`,
-  },
-
-  {
-    text: `Хочу выразить благодарность команде inwy за долгую и плодотворную работу по продвижению моего барбершопа на Яндекс.Картах, 2ГИС и других геосервисах.
-
-    Ребята действительно профессионалы своего дела: они полностью сняли с меня всю работу, взяв на себя все заботы о карточке бизнеса. Самостоятельно отвечают на отзывы, причем делают это грамотно и оперативно, поддерживая репутацию на высоком уровне.
-
-    Благодаря их стратегии продвижения барбершоп стабильно находится в ТОПе выдачи, что напрямую влияет на поток клиентов. Также они тщательно следят за актуальностью данных, регулярно обновляя информацию и контролируя корректность отображения.
-
-    Сотрудничаю с inwy уже давно и могу с уверенностью сказать: это команда, которой можно доверять! Спасибо за ваш профессионализм и результат!
-
-    Рекомендую всем, кто хочет спокойно развивать бизнес, не тратя время на технические моменты.`,
-  },
-
-  {
-    text: `Хочу выразить благодарность команде inwy за долгую и плодотворную работу по продвижению моего барбершопа на Яндекс.Картах, 2ГИС и других геосервисах.
-
-    Ребята действительно профессионалы своего дела: они полностью сняли с меня всю работу, взяв на себя все заботы о карточке бизнеса. Самостоятельно отвечают на отзывы, причем делают это грамотно и оперативно, поддерживая репутацию на высоком уровне.
-
-    Благодаря их стратегии продвижения барбершоп стабильно находится в ТОПе выдачи, что напрямую влияет на поток клиентов. Также они тщательно следят за актуальностью данных, регулярно обновляя информацию и контролируя корректность отображения.
-
-    Сотрудничаю с inwy уже давно и могу с уверенностью сказать: это команда, которой можно доверять! Спасибо за ваш профессионализм и результат!
-
-    Рекомендую всем, кто хочет спокойно развивать бизнес, не тратя время на технические моменты.`,
-  },
-
-  {
-    text: `Хочу выразить благодарность команде inwy за долгую и плодотворную работу по продвижению моего барбершопа на Яндекс.Картах, 2ГИС и других геосервисах.
-
-    `,
-  },
-
-  {
-    text: `Хочу выразить благодарность команде inwy за долгую и плодотворную работу по продвижению моего барбершопа на Яндекс.Картах, 2ГИС и других геосервисах.
-
-    `,
-  },
-
-  {
-    text: `Хочу выразить благодарность команде inwy за долгую и плодотворную работу по продвижению моего барбершопа на Яндекс.Картах, 2ГИС и других геосервисах.
-
-    `,
-  },
-
-  {
-    text: `Хочу выразить благодарность команде inwy за долгую и плодотворную работу по продвижению моего барбершопа на Яндекс.Картах, 2ГИС и других геосервисах.
-
-    `,
-  },
-
-  {
-    text: `Хочу выразить благодарность команде inwy за долгую и плодотворную работу по продвижению моего барбершопа на Яндекс.Картах, 2ГИС и других геосервисах.
-
-    `,
-  },
-])
-
-const dataPriceSec = ref([
-    {
-        'title': 'lite',
-        'price3Month': '10 000',
-        'price3perMonth': '3 000',
-
-        'price6Month': '15 000',
-        'price6perMonth': '3 000',
-
-        'price12Month': '20 000',
-        'price12perMonth': '2 000',
-
-        'servicesList': [
-            'Добавление акций',
-            'Добавление площадок',
-            'SEO - продвижение',
-            'Добавление фото',
-            ],
-
-        'servicesListFullList': [
-            'SEO - продвижение',
-            'Добавление компаний на основные платформы',
-            'Добавление фото',
-            'Добавление/корректировка акций',
-            'Добавление/корректировка акций',
-            'Актуализация информации',
-            'Удаление дубликатов',
-            'Обжалование негативных отзывов',
-            'Ответы на положительные отзывы',
-            'Подбор/создание изображений под акции и скидки',
-            'Настройки и внедрение витрины товаров',
-            'Контроль синей галочки на Яндекс.Картах',
-            'Внедрение и оформление stories',
-            'Персональный менеджер',
-            'Статистика по продвижению',
-            'Статистика по отзывам',
-        ]
-    },
-
-    {
-        'title': 'start',
-        'price3Month': '11 000',
-        'price3perMonth': '3 000',
-
-        'price6Month': '15 000',
-        'price6perMonth': '3 000',
-
-        'price12Month': '20 000',
-        'price12perMonth': '2 000',
-
-        'servicesList': [
-            'Добавление акций',
-            'Добавление площадок',
-            'SEO - продвижение',
-            'Добавление фото',
-            ],
-
-        'servicesListFullList': [
-            'SEO - продвижение',
-            'Добавление компаний на основные платформы',
-            'Добавление фото',
-            'Добавление/корректировка акций',
-            'Добавление/корректировка акций',
-            'Актуализация информации',
-            'Удаление дубликатов',
-            'Обжалование негативных отзывов',
-            'Ответы на положительные отзывы',
-            'Подбор/создание изображений под акции и скидки',
-            'Настройки и внедрение витрины товаров',
-            'Контроль синей галочки на Яндекс.Картах',
-            'Внедрение и оформление stories',
-            'Персональный менеджер',
-            'Статистика по продвижению',
-            'Статистика по отзывам',
-        ]
-    },
-
-    {
-        'title': 'pro',
-        'price3Month': '12 000',
-        'price3perMonth': '3 000',
-
-        'price6Month': '15 000',
-        'price6perMonth': '3 000',
-
-        'price12Month': '20 000',
-        'price12perMonth': '2 000',
-
-        'servicesList': [
-            'Добавление акций',
-            'Добавление площадок',
-            'SEO - продвижение',
-            'Добавление фото',
-            ],
-
-        'servicesListFullList': [
-            'SEO - продвижение',
-            'Добавление компаний на основные платформы',
-            'Добавление фото',
-            'Добавление/корректировка акций',
-            'Добавление/корректировка акций',
-            'Актуализация информации',
-            'Удаление дубликатов',
-            'Обжалование негативных отзывов',
-            'Ответы на положительные отзывы',
-            'Подбор/создание изображений под акции и скидки',
-            'Настройки и внедрение витрины товаров',
-            'Контроль синей галочки на Яндекс.Картах',
-            'Внедрение и оформление stories',
-            'Персональный менеджер',
-            'Статистика по продвижению',
-            'Статистика по отзывам',
-        ]
-    },
-
-])
+console.log('pageData', pageData)
 
 
 //METHODS
@@ -824,6 +509,46 @@ onBeforeUnmount(() => {
 
 });
 
+
+
+//SEO
+useHead({
+    title: pageData.value[0].acf.seo_title || pageData.value[0].title.rendered,
+    meta: [
+        // Description
+        { name: 'description', content: pageData.value[0].acf.seo_description || 'Описание по умолчанию' },
+
+        // Keywords (опционально, не влияет сильно на SEO)
+        { name: 'keywords',  content: pageData.value[0].acf.klyuchevaya_fraza || 'test' },
+
+        // OpenGraph
+        { property: 'og:title', content: pageData.value[0].acf.seo_title },
+        { property: 'og:description', content: pageData.value[0].acf.seo_description },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: `${store.domainUrlCurrent}${route.fullPath}` },
+        { property: 'og:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Twitter Card (если используешь)
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: pageData.value[0].acf.seo_title },
+        { name: 'twitter:description', content: pageData.value[0].acf.seo_description },
+        { name: 'twitter:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Индексация / Деиндексация
+        // Например, noindex для черновика:
+        {
+        name: 'robots',
+        content:
+            pageData.value[0].acf.indeksacziya_v_poiskovyh_sistemah === 'index'
+            ? 'index, follow'
+            : 'noindex, nofollow'
+        }
+    ],
+    link: [
+        // Canonical (вручную или динамически)
+        { rel: 'canonical', href: `${store.domainUrlCurrent}/${pageData.value[0].acf.canonical || route.name}` }
+    ]
+})
 
 
   

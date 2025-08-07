@@ -1,68 +1,43 @@
 <template>
 
-    <main class="main">
+    <main class="main" v-if="pageData[0]">
 
-        <section class="website-hero-sec target-block">
+        <section class="website-hero-sec target-block" v-if="pageData[0].acf['sekcziya_1_-_hero']">
             <div class="website-hero-sec__container">
                 <img src="@/assets/images/website/hero.jpg" alt="" class="website-hero-sec__bg">
-                <h1 class="website-hero-sec__title">Делаем сайты,<span><br></span> которые продают</h1>
-                <p class="website-hero-sec__subtitle">И  любят поисковики</p>
+                <h1 class="website-hero-sec__title" v-html="pageData[0].acf['sekcziya_1_-_hero'].zagolovok"></h1>
+                <p class="website-hero-sec__subtitle" v-html="pageData[0].acf['sekcziya_1_-_hero'].podzagolovok"></p>
             </div>
         </section>
 
-        <div class="website-sticky-container">
+        <div class="website-sticky-container"  v-if="pageData[0].acf['sekcziya_2_telefon']">
             <section class="website-fase-sec">
                 <div class="website-fase-sec__container">
-                    <h2 class="website-fase-sec__title">Создаем запоминающиеся сайты, <span><br></span> которые продают</h2>
-                    <p class="website-fase-sec__subtitle">Ваш сайт — это первое впечатление о компании. Мы делаем его настолько ярким и удобным,<span><br></span> что клиенты сразу хотят с вами работать.</p>
+                    <h2 class="website-fase-sec__title" v-html="pageData[0].acf['sekcziya_2_telefon'].zagolovok"></h2>
+                    <p class="website-fase-sec__subtitle" v-html="pageData[0].acf['sekcziya_2_telefon'].podzagolovok"></p>
 
                     <div class="website-fase-sec__phone">
 
-                        <div class="website-fase-sec__phone-info-box phone-info-box phone-info-box--el-1">
-                            <div class="phone-info-box__btn">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.3491 31.55V19.44H0.239063V12.09H12.3491V0.0499973H19.6991V12.09H31.7391V19.44H19.6991V31.55H12.3491Z" fill="#ACFA03"/>
-                                </svg>
+                        <template v-for="(item, index) in pageData[0].acf['sekcziya_2_telefon'].nadpisi_na_telefone" :key="index">
+                            <div :class="`website-fase-sec__phone-info-box phone-info-box phone-info-box--el-${index + 1}`">
+                                <div class="phone-info-box__btn">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.3491 31.55V19.44H0.239063V12.09H12.3491V0.0499973H19.6991V12.09H31.7391V19.44H19.6991V31.55H12.3491Z" fill="#ACFA03"/>
+                                    </svg>
+                                </div>
+                                <div class="phone-info-box__info" v-html="item.tekst"></div>
                             </div>
-                            <div class="phone-info-box__info">удобный дизайн</div>
-                        </div>
-
-                        <div class="website-fase-sec__phone-info-box phone-info-box phone-info-box--el-2">
-                            <div class="phone-info-box__btn">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.3491 31.55V19.44H0.239063V12.09H12.3491V0.0499973H19.6991V12.09H31.7391V19.44H19.6991V31.55H12.3491Z" fill="#ACFA03"/>
-                                </svg>
-                            </div>
-                            <div class="phone-info-box__info">простота восприятия информации</div>
-                        </div>
-
-                        <div class="website-fase-sec__phone-info-box phone-info-box phone-info-box--el-3">
-                            <div class="phone-info-box__btn">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.3491 31.55V19.44H0.239063V12.09H12.3491V0.0499973H19.6991V12.09H31.7391V19.44H19.6991V31.55H12.3491Z" fill="#ACFA03"/>
-                                </svg>
-                            </div>
-                            <div class="phone-info-box__info">адаптивный дизайн под все устройства</div>
-                        </div>
-
-                        <div class="website-fase-sec__phone-info-box phone-info-box phone-info-box--el-4">
-                            <div class="phone-info-box__btn">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.3491 31.55V19.44H0.239063V12.09H12.3491V0.0499973H19.6991V12.09H31.7391V19.44H19.6991V31.55H12.3491Z" fill="#ACFA03"/>
-                                </svg>
-                            </div>
-                            <div class="phone-info-box__info">быстрая загрузка</div>
-                        </div>
+                        </template>
 
                         <img src="@/assets/images/website/phone.png" alt="" class="website-fase-sec__phone-img">
                     </div>
                 </div>
             </section>
 
-            <section class="website-portfolio-sec target-block">
+            <section class="website-portfolio-sec target-block" v-if="pageData[0].acf['sekcziya_3_-_razrabotannye_sajty']">
                 <div class="website-portfolio-sec__container">
-                    <h2 class="website-portfolio-sec__title">Разработанные сайты</h2>
-                    <p class="website-portfolio-sec__subtitle">которые отвечают задачам</p>
+                    <h2 class="website-portfolio-sec__title" v-html="pageData[0].acf['sekcziya_3_-_razrabotannye_sajty'].zagolovok"></h2>
+                    <p class="website-portfolio-sec__subtitle" v-html="pageData[0].acf['sekcziya_3_-_razrabotannye_sajty'].podzagolovok"></p>
                     <div class="website-portfolio-sec__works-wrapper">
                         <NuxtLink
                             v-for="(work, index) in works"
@@ -71,9 +46,9 @@
                             @mouseenter="show(index)"
                             @mousemove="move($event, index)"
                             @mouseleave="hide(index)"
-                            :to="`/website/${index}`"
+                            :to="`/website/${work.slug}`"
                         >
-                            <span class="website-portfolio-sec__work-name">{{ work.title }}</span>
+                            <span class="website-portfolio-sec__work-name" v-html="work.title.rendered"></span>
                             <span class="website-portfolio-sec__work-ar">
                                 <svg width="50" height="40" viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_3143_1547)">
@@ -93,7 +68,7 @@
                             :style="activeIndex === index ? style : null"
                             >
                             <video autoplay muted loop playsinline>
-                            <source src="@/assets/video/work1.mp4" type="video/mp4">
+                            <source :src="work.acf.fonovoe_video_pri_navedenii.url" type="video/mp4">
                             Ваш браузер не поддерживает видео.
                             </video>
                             </div>
@@ -107,17 +82,17 @@
 
 
 
-        <section class="price-sec website-price-sec">
+        <section class="price-sec website-price-sec" v-if="pageData[0].acf['sekcziya_4_-_czena']?.length">
             <div class="price-sec__container">
 
                 <div class="price-sec__body">
 
-                    <div class="price-sec__col" v-for="(item, index) in dataPriceSec" :key="index">
+                    <div class="price-sec__col" v-for="(item, index) in pageData[0].acf['sekcziya_4_-_czena']" :key="index">
                         <div class="price-sec__list-work-wrapper">
-                            <p class="price-sec__list-work-wrapper-title" v-html="item.title"></p>
+                            <p class="price-sec__list-work-wrapper-title" v-html="item.nazvanie_paketa"></p>
          
 
-                            <p class="price-sec__text" v-html="item.serviceDescription"></p>
+                            <p class="price-sec__text" v-html="item.opisanie_paketa"></p>
 
                             <div class="price-sec__list-work-wrapper-down-btn" @click="dataPriceSecActioDopIndex = index, targetClickOutside()" >
                                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,8 +109,8 @@
                                 
                             </div>
                             <div class="cost-box__wrapper">
-                                <p class="cost-box__value">{{ item.price }} ₽</p>
-                                <div class="cost-box__btn" @click="openFormPopup()">
+                                <p class="cost-box__value">{{ item.czena_v_rublyah }} ₽</p>
+                                <div class="cost-box__btn" @click="openFormPopup(`блок с ценой, тариф: ${item.nazvanie_paketa}`)">
                                     <p class="cost-box__btn-title">Заказать</p>
                                     <div class="cost-box__btn-icon">
                                         <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -146,9 +121,9 @@
                             </div>
 
                             <div class="cost-box__dop" v-if="dataPriceSecActioDopIndex == index">
-                                <p class="cost-box__dop-title" v-html="item.servicesListFullTitle" ></p>
+                                <p class="cost-box__dop-title" v-html="item.nazvanie_paketa" ></p>
                                 <ul class="cost-box__dop-list">
-                                    <li class="cost-box__dop-list-element" v-for="dopServItem in item.servicesListFullList" :key="dopServItem">{{ dopServItem }}</li>                                 
+                                    <li class="cost-box__dop-list-element" v-for="dopServItem in item.dop_parametry" :key="dopServItem" v-html="dopServItem.tekst"></li>                                 
                                 </ul>
                             </div>
                         </div>
@@ -160,10 +135,10 @@
         </section>
 
 
-        <section class="website-bonus-sec target-block">
+        <section class="website-bonus-sec target-block" v-if="pageData[0].acf['sekcziya_5_-_bonusy']">
             <div class="website-bonus-sec__container">
-                <h2 class="website-bonus-sec__title">Это ещё не все. </h2>
-                <p class="website-bonus-sec__subtitle">У нас для вас бонусы.</p>
+                <h2 class="website-bonus-sec__title" v-html="pageData[0].acf['sekcziya_5_-_bonusy'].zagolovok"></h2>
+                <p class="website-bonus-sec__subtitle" v-html="pageData[0].acf['sekcziya_5_-_bonusy'].podzagolovok"></p>
 
                 <div class="website-bonus-sec__wrapper">
                     <div class="website-bonus-sec__col-1">
@@ -176,8 +151,8 @@
                                     <p class="website-bonus-sec__content-box-header-text">Сделаем CEO</p>
                                 </div>
 
-                                <div class="website-bonus-sec__content-box-body">
-                                    Поможем настроить SEO вашего сайта для улучшения позиций в поиске. Это увеличит органический трафик и поможет привлекать клиентов без дополнительных рекламных затрат. Работаем с технической оптимизацией, контентом и внутренней структурой сайта.
+                                <div class="website-bonus-sec__content-box-body" v-html="pageData[0].acf['sekcziya_5_-_bonusy']['tekst_-_sdelaem_seo']">
+                                   
                                 </div>
                             </div>
                             <div class="website-bonus-sec__content-box-down">
@@ -210,8 +185,8 @@
                                     <p class="website-bonus-sec__content-box-header-text">В online режиме</p>
                                 </div>
 
-                                <div class="website-bonus-sec__content-box-body">
-                                    Будем сообщать и согласовывать каждый этап работы, чтобы вы остались довольны конечным результатом 
+                                <div class="website-bonus-sec__content-box-body" v-html="pageData[0].acf['sekcziya_5_-_bonusy']['tekst_-_v_onlajn_rezhime']">
+                                    
                                 </div>
                             </div>
 
@@ -231,8 +206,8 @@
                                     <p class="website-bonus-sec__content-box-header-text">Подключим CRM и метрики</p>
                                 </div>
 
-                                <div class="website-bonus-sec__content-box-body">
-                                    За посещениями сайта важно и нужно следить. Настроим все метрики, прием заявок, чтобы сделать процесс работы с сайтом максимально комфортным
+                                <div class="website-bonus-sec__content-box-body"  v-html="pageData[0].acf['sekcziya_5_-_bonusy']['tekst_-_czrm_metriki']">
+                                   
                                 </div>
                             </div>
                             <div class="website-bonus-sec__content-box-down">
@@ -242,7 +217,7 @@
                         </div>
 
                         <div class="website-bonus-sec__content-box website-bonus-sec__content-box--v5">
-                            <div class="website-bonus-sec__content-box__btn" @click="openFormPopup()">
+                            <div class="website-bonus-sec__content-box__btn" @click="openFormPopup(`секция после цены там где доп услуги или бонусы`)">
                                 <p class="website-bonus-sec__content-box__btn-title">Задать вопрос </p>
                                 <div class="website-bonus-sec__content-box__btn-icon">
                                     <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -317,18 +292,11 @@ import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 
 
 //DATA
+const route = useRoute()
 
 const store = useCounterStore()
 
-const works = [
-  { title: 'Korex', preview: '/images/korex-preview.jpg' },
-  { title: 'Anime Point', preview: '/images/anime-preview.jpg' },
-  { title: 'Garms climat', preview: '/images/anime-preview.jpg' },
-  { title: 'Школа Биодинамики', preview: '/images/anime-preview.jpg' },
-  { title: 'Edemcar', preview: '/images/anime-preview.jpg' },
-  { title: 'ВалаАМ', preview: '/images/anime-preview.jpg' },
-  // добавь другие кейсы
-]
+const works =  ref(null)
 
 const activeIndex = ref(null)
 
@@ -336,119 +304,41 @@ const style = ref({ top: '0px', left: '0px' })
 
 const dataPriceSecActioDopIndex = ref(null)
 
-const dataPriceSec = ref([
-    {
-        'title': 'Запуск',
-        'price': '10 000',
-        'servicesList': [
-            'Ежедневный/еженедельный мониторинг',
-            'Оптимизация кампаний',
-            'А/В тестирование объявлений',
-            'Анализ и отчетность',
-            'Анализ и отчетность',
-            'Масштабирование рекламы',
-            'Поддержка и консультации',
-            ],
-        'serviceDescription': 'Сайт с детализированным каталогом товаров, ориентированный на сбор заявок или онлайн-продажи через корзину. Функционал включает промокоды, скидки, выбор способов доставки, настройку вариантов и свойств товаров.',
-        'servicesListFullTitle': 'Запуск',
-        'servicesListFullList': [
-            'SEO - продвижение',
-            'Добавление компаний на основные платформы',
-            'Добавление фото',
-            'Добавление/корректировка акций',
-            'Добавление/корректировка акций',
-            'Актуализация информации',
-            'Удаление дубликатов',
-            'Обжалование негативных отзывов',
-            'Ответы на положительные отзывы',
-            'Подбор/создание изображений под акции и скидки',
-            'Настройки и внедрение витрины товаров',
-            'Контроль синей галочки на Яндекс.Картах',
-            'Внедрение и оформление stories',
-            'Персональный менеджер',
-            'Статистика по продвижению',
-            'Статистика по отзывам',
-        ]
-    },
+const { data: pageData } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/pages?slug=website`)
 
-    {
-        'title': 'Ведение',
-        'price': '12 000',
-        'servicesList': [
-            'Ежедневный/еженедельный мониторинг',
-            'Оптимизация кампаний',
-            'А/В тестирование объявлений',
-            'Анализ и отчетность',
-            'Анализ и отчетность',
-            'Масштабирование рекламы',
-            'Поддержка и консультации',
-            ],
-        'serviceDescription': 'Сайт с детализированным каталогом товаров, ориентированный на сбор заявок или онлайн-продажи через корзину. Функционал включает промокоды, скидки, выбор способов доставки, настройку вариантов и свойств товаров.',
-        'servicesListFullTitle': 'Ведение',
-        'servicesListFullList': [
-            'SEO - продвижение',
-            'Добавление компаний на основные платформы',
-            'Добавление фото',
-            'Добавление/корректировка акций',
-            'Добавление/корректировка акций',
-            'Актуализация информации',
-            'Удаление дубликатов',
-            'Обжалование негативных отзывов',
-            'Ответы на положительные отзывы',
-            'Подбор/создание изображений под акции и скидки',
-            'Настройки и внедрение витрины товаров',
-            'Контроль синей галочки на Яндекс.Картах',
-            'Внедрение и оформление stories',
-            'Персональный менеджер',
-            'Статистика по продвижению',
-            'Статистика по отзывам',
-        ]
-    },
+// получаем рекомендованные товары
+try {
+  const mainPost = pageData.value?.[0]
+  const chitatTakzhe = mainPost?.acf['sekcziya_3_-_razrabotannye_sajty'].raboty
 
+  if (Array.isArray(chitatTakzhe) && chitatTakzhe.length) {
+    const slugs = chitatTakzhe.map(obj => obj.post_name)
 
-    {
-        'title': 'Ведение',
-        'price': '12 000',
-        'servicesList': [
-            'Ежедневный/еженедельный мониторинг',
-            'Оптимизация кампаний',
-            'А/В тестирование объявлений',
-            'Анализ и отчетность',
-            'Анализ и отчетность',
-            'Масштабирование рекламы',
-            'Поддержка и консультации',
-            ],
-        'serviceDescription': 'Сайт с детализированным каталогом товаров, ориентированный на сбор заявок или онлайн-продажи через корзину. Функционал включает промокоды, скидки, выбор способов доставки, настройку вариантов и свойств товаров.',
-        'servicesListFullTitle': 'Ведение',
-        'servicesListFullList': [
-            'SEO - продвижение',
-            'Добавление компаний на основные платформы',
-            'Добавление фото',
-            'Добавление/корректировка акций',
-            'Добавление/корректировка акций',
-            'Актуализация информации',
-            'Удаление дубликатов',
-            'Обжалование негативных отзывов',
-            'Ответы на положительные отзывы',
-            'Подбор/создание изображений под акции и скидки',
-            'Настройки и внедрение витрины товаров',
-            'Контроль синей галочки на Яндекс.Картах',
-            'Внедрение и оформление stories',
-            'Персональный менеджер',
-            'Статистика по продвижению',
-            'Статистика по отзывам',
-        ]
-    }
-])
+    const promises = slugs.map(slug =>
+      fetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/my-works?slug=${slug}`)
+        .then(res => res.json())
+        .then(data => data?.[0] || null)
+    )
 
+    works.value = await Promise.all(promises)
+  }
+} catch (error) {
+  console.error('Ошибка при загрузке рекомендованных постов:', error)
+}
+
+console.log('pageData', pageData)
 
 
 
 //METHODS 
 
 //open form popup 
-function openFormPopup(){
-    store.changeTrigerButtonForm('Кнопка в блоке с ценой ')
+function openFormPopup(valueTarget){
+    let message = ''
+    if(valueTarget){
+        message = valueTarget
+    }
+    store.changeTrigerButtonForm(valueTarget)
     store.changePopupCurrent('popup-form')
 }
 
@@ -516,6 +406,46 @@ onBeforeUnmount(() => {
 });
 
 
+
+
+//SEO
+useHead({
+    title: pageData.value[0].acf.seo_title || pageData.value[0].title.rendered,
+    meta: [
+        // Description
+        { name: 'description', content: pageData.value[0].acf.seo_description || 'Описание по умолчанию' },
+
+        // Keywords (опционально, не влияет сильно на SEO)
+        { name: 'keywords',  content: pageData.value[0].acf.klyuchevaya_fraza || 'test' },
+
+        // OpenGraph
+        { property: 'og:title', content: pageData.value[0].acf.seo_title },
+        { property: 'og:description', content: pageData.value[0].acf.seo_description },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: `${store.domainUrlCurrent}${route.fullPath}` },
+        { property: 'og:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Twitter Card (если используешь)
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: pageData.value[0].acf.seo_title },
+        { name: 'twitter:description', content: pageData.value[0].acf.seo_description },
+        { name: 'twitter:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Индексация / Деиндексация
+        // Например, noindex для черновика:
+        {
+        name: 'robots',
+        content:
+            pageData.value[0].acf.indeksacziya_v_poiskovyh_sistemah === 'index'
+            ? 'index, follow'
+            : 'noindex, nofollow'
+        }
+    ],
+    link: [
+        // Canonical (вручную или динамически)
+        { rel: 'canonical', href: `${store.domainUrlCurrent}/${pageData.value[0].acf.canonical || route.name}` }
+    ]
+})
 
   
 </script>

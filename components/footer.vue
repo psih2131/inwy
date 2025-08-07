@@ -5,13 +5,13 @@
             <div class="footer-100vh" ref="footer100vh"></div>
 
             <div class="footer__logo-wrapper" ref="footerLogoRef">
-                <a href="" class="footer__logo-wrapper-ar">
+                <NuxtLink to="/" class="footer__logo-wrapper-ar">
                     <svg width="53" height="42" viewBox="0 0 53 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.38589 36.4712C-0.0107059 37.3627 -0.420213 39.2175 0.471233 40.6141C1.36268 42.0107 3.21751 42.4202 4.61411 41.5288L1.38589 36.4712ZM52.9295 9.64676C53.2867 8.02887 52.2647 6.42774 50.6468 6.07055L24.2817 0.249682C22.6638 -0.107515 21.0627 0.91448 20.7055 2.53237C20.3483 4.15027 21.3703 5.75139 22.9882 6.10859L46.4238 11.2827L41.2497 34.7183C40.8925 36.3362 41.9145 37.9373 43.5324 38.2945C45.1503 38.6517 46.7514 37.6297 47.1086 36.0118L52.9295 9.64676ZM3 39L4.61411 41.5288L51.6141 11.5288L50 9L48.3859 6.47123L1.38589 36.4712L3 39Z" fill="white"/>
                     </svg>
 
-                </a>
-                <a href="mailto:hello@inwy.ru" class="footer__logo-wrapper-email">hello@inwy.ru</a>
+                </NuxtLink>
+                <a :href="`mailto:${optionData.email}`" class="footer__logo-wrapper-email" v-html="optionData.email"></a>
                 <p class="footer__logo-wrapper-logo">inwy</p>
             </div>
 
@@ -35,55 +35,27 @@
                 </div>
                 <div class="footer__middle-row-col">
                     <ul class="footer__social">
-                        <li class="footer__social-element">
-                            <a href="" class="footer__social-link">
-                                <img src="@/assets/images/icons/telegram.png" alt="" class="footer__social-element-img">
+
+                        <li class="footer__social-element" v-for="item in optionData.socz_seti" :key="item">
+                            <a :href="item.ssylka" class="footer__social-link">
+                                <img :src="item.ikonka.url" :alt="item.ikonka.alt" class="footer__social-element-img">
                             </a>
                         </li>
 
-                        <li class="footer__social-element">
-                            <a href="" class="footer__social-link">
-                                <img src="@/assets/images/icons/wt.png" alt="" class="footer__social-element-img">
-                            </a>
-                        </li>
-
-                        <li class="footer__social-element">
-                            <a href="" class="footer__social-link">
-                                <img src="@/assets/images/icons/wk.png" alt="" class="footer__social-element-img">
-                            </a>
-                        </li>
-
-                        <li class="footer__social-element">
-                            <a href="" class="footer__social-link">
-                                <img src="@/assets/images/icons/dzen.png" alt="" class="footer__social-element-img">
-                            </a>
-                        </li>
-
-                        <li class="footer__social-element">
-                            <a href="" class="footer__social-link">
-                                <img src="@/assets/images/icons/vc.png" alt="" class="footer__social-element-img">
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer__down-row">
-                <p class="footer__copy">© 2025 Inwy. All rights reserved </p>
+                <p class="footer__copy" v-html="optionData.copy_text_footer"></p>
                 <nav class="footer__nav">
                     <ul class="footer__nav-ul">
 
-                        <li class="footer__nav-li">
-                            <NuxtLink to="/oferta" class="footer__nav-link">Оферта</NuxtLink>
+                        <li class="footer__nav-li" v-for="item in doc_pages" :key="item">
+                            <NuxtLink :to="`/docs/${item.slug}`" class="footer__nav-link">{{ item.title.rendered }}</NuxtLink>
                         </li>
 
-                        <li class="footer__nav-li">
-                            <NuxtLink to="/privacy-policy" class="footer__nav-link">Политика конфиденциальности</NuxtLink>
-                        </li>
 
-                        <li class="footer__nav-li">
-                            <NuxtLink to="/cookie" class="footer__nav-link">Политика использования cookie</NuxtLink>
-                        </li>
 
                     </ul>
                 </nav>
@@ -94,10 +66,16 @@
 </template>
 
 <script setup>
-    // import { useCounterStore } from '@/stores/counter'
+    import { useCounterStore } from '@/stores/counter'
+
     import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
+
     // import component__user_panel from '@/components/user-panel.vue'
 
+
+    //DATA
+    const store = useCounterStore()
+    
     const scrollPosition = ref(null)
 
     const footer100vh = ref(null)
@@ -107,6 +85,10 @@
     const footerLogoRef = ref(null)
 
     const windowsHeight = ref(null)
+
+    const { data: doc_pages } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/simple-pages?per_page=100`)
+
+    console.log('doc_pages',doc_pages)
 
     //scroll start script
     function firstLoadScollScripts(){
@@ -181,5 +163,11 @@
     onBeforeUnmount(() => {
         window.removeEventListener('scroll', handleScroll);
     });
+
+     const props = defineProps({
+
+        optionData: Object,
+      // postAllCategory: Object,
+  })
 
 </script>

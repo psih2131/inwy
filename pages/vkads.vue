@@ -1,44 +1,38 @@
 <template>
 
-    <main class="main">
+    <main class="main" v-if="pageData[0]">
 
-        <section class="tgads-hero-sec vk-hero-sec">
+
+        <section class="tgads-hero-sec vk-hero-sec" v-if="pageData[0].acf?.sekcziya_1_hero">
             <div class="tgads-hero-sec__img-wrapper vk-hero-sec__img-wrapper">
-                <img src="@/assets/images/vkads/hero.png" alt="" class="tgads-hero-sec__img vk-hero-sec__img">
+                <img :src="pageData[0].acf.sekcziya_1_hero.izobrazhenie_pk.url" 
+                :alt="pageData[0].acf.sekcziya_1_hero.izobrazhenie_pk.alt" class="tgads-hero-sec__img vk-hero-sec__img">
             </div>
 
             <div class="tgads-hero-sec__container">
-                <h1 class="tgads-hero-sec__title">Запускаем <span class="tgads-hero-sec__title-blue">ВК</span> рекламу</h1>
-                <h2 class="tgads-hero-sec--vk_subtitle">Которая цепляет и приводит клиентов</h2>
+                <h1 class="tgads-hero-sec__title" v-html="pageData[0].acf.sekcziya_1_hero.zagolovok"></h1>
+                <h2 class="tgads-hero-sec--vk_subtitle" v-html="pageData[0].acf.sekcziya_1_hero.podzagolovok"></h2>
             </div>
         </section>
+
 
         <div class="tgads-watch-sec-wrapper" >
             <section class="tgads-watch-sec tgads-watch-sec--vk target-block" ref="watchSec">
                 <div class="tgads-watch-sec__wrapper">
                     <div class="tgads-watch-sec__header">
-                        <h2 class="tgads-watch-sec__title">Доверьте нам свою рекламу</h2>
-                        <p class="tgads-watch-sec__subtitle">и мы покажем её правильно аудитории.</p>
+                        <h2 class="tgads-watch-sec__title" v-html="pageData[0].acf.sekcziya_2_doverie.zagolovok"></h2>
+                        <p class="tgads-watch-sec__subtitle" v-html="pageData[0].acf.sekcziya_2_doverie.podzagolovok"></p>
                     </div>
 
                     <div class="tgads-watch-sec__img-wrapper">
-                        <img src="@/assets/images/vkads/sec2-img.png" alt="" class="tgads-watch-sec__img tgads-watch-sec--vk-img">
-                        <img src="@/assets/images/vkads/sec2-img-mob.png" alt="" class="tgads-watch-sec__img-mob tgads-watch-sec--vk-img-mob">
+                        <img :src="pageData[0].acf.sekcziya_2_doverie.izobrazhenie_pk.url" :alt="pageData[0].acf.sekcziya_2_doverie.izobrazhenie_pk.alt" class="tgads-watch-sec__img tgads-watch-sec--vk-img">
+                        <img :src="pageData[0].acf.sekcziya_2_doverie.izobrazhenie_mobilka.url" :alt="pageData[0].acf.sekcziya_2_doverie.izobrazhenie_mobilka.alt" class="tgads-watch-sec__img-mob tgads-watch-sec--vk-img-mob">
                     </div>
 
-
                     <div class="tgads-watch-sec__down-row">
-                        <div class="direct-direction-sec__down-el">
-                            <p class="direct-direction-sec__down-el-title">200 +</p>
-                            <p class="direct-direction-sec__down-el-subtitle">запущенных рекламных <br>компаний </p>
-                        </div>
-                        <div class="direct-direction-sec__down-el">
-                            <p class="direct-direction-sec__down-el-title">100 000 +</p>
-                            <p class="direct-direction-sec__down-el-subtitle">едежневный откручиваемый<br> бюджет </p>
-                        </div>
-                        <div class="direct-direction-sec__down-el">
-                            <p class="direct-direction-sec__down-el-title">61</p>
-                            <p class="direct-direction-sec__down-el-subtitle">компания доверила нам свой <br>рекламный кабинет</p>
+                        <div class="direct-direction-sec__down-el" v-for="item in pageData[0].acf.sekcziya_2_doverie.infografik" :key="item">
+                            <p class="direct-direction-sec__down-el-title" v-html="item.znachenie"></p>
+                            <p class="direct-direction-sec__down-el-subtitle" v-html="item.tekst"></p>
                         </div>
                     </div>
                 </div>
@@ -46,8 +40,7 @@
         </div>
 
 
-
-        <section class="vkads-benefits-sec">
+        <section class="vkads-benefits-sec" v-if="pageData[0].acf?.sekcziya_3_pautina">
             <div class="vkads-benefits-sec__container">
                 <div class="vkads-benefits-sec__claster">
                     <div  class="vkads-benefits-sec__img-element vkads-benefits-sec__img-element--v1" data-aos="fade-right">
@@ -115,20 +108,11 @@
                             <img src="@/assets/images/vkads/sec-3-logo.png" alt="" class="vkads-benefits-sec__logo-img">
                         </div>
 
-                        <div class="vkads-benefits-sec__info vkads-benefits-sec__info--v1">
-                            Мы не просто показываем ваши объявления — мы создаем эмоциональную связь между брендом и клиентами. Наши стратегии превращают обычных пользователей ВК в лояльных покупателей.
-                        </div>
 
-                        <div class="vkads-benefits-sec__info vkads-benefits-sec__info--v2">
-                            Мы разрабатываем рекламные кампании, которые не просто повышают узнаваемость, а формируют эмоциональную связь с аудиторией. Ваш бренд будут не только знать — им будут доверять и выбирать снова.
-                        </div>
+                        <template v-for="(item, index) in pageData[0].acf.sekcziya_3_pautina.testovyj_blok" :key="index">
+                            <div :class="`vkads-benefits-sec__info vkads-benefits-sec__info--v${index + 1}`" v-html="item.tekst"></div>
+                        </template>
 
-                        <div class="vkads-benefits-sec__info vkads-benefits-sec__info--v3">
-                            Мы настраиваем таргетированную рекламу ВК, которая не просто набирает просмотры, а приносит реальных клиентов. Точный таргетинг по интересам, возрасту и поведению — ваши объявления видят только потенциальные покупатели.
-                            <br><br>
-
-                            <i>Конверсия в заказы до 27%</i>
-                        </div>
 
                     </div>
 
@@ -141,7 +125,7 @@
 
 
 
-        <section class="vkads-make-all-sec">
+        <section class="vkads-make-all-sec" v-if="pageData[0].acf['sekcziya_4_-_delaem_vse_sami']">
             <div class="vkads-make-all-sec__container">
                 <div class="vkads-make-all-sec__top-row"></div>
                 <h2 class="vkads-make-all-sec__title">Сделаем 
@@ -158,15 +142,10 @@
                     <div class="vkads-make-all-sec__col-1">
                         <div class="vkads-make-all-sec__humans-wrapper">
                             <div class="vkads-make-all-sec__humans-wrapper-col">
-                                <img src="@/assets/images/vkads/h1.png" alt="" class="vkads-make-all-sec__human">
 
-                                <img src="@/assets/images/vkads/h2.png" alt="" class="vkads-make-all-sec__human">
+                                <img v-for="item in pageData[0].acf['sekcziya_4_-_delaem_vse_sami'].lyudi" :key="item"
+                                :src="item.foto.url" :alt="item.foto.alt" class="vkads-make-all-sec__human">
 
-                                <img src="@/assets/images/vkads/h3.png" alt="" class="vkads-make-all-sec__human">
-
-                                <img src="@/assets/images/vkads/h4.png" alt="" class="vkads-make-all-sec__human">
-
-                                <img src="@/assets/images/vkads/h5.png" alt="" class="vkads-make-all-sec__human">
                             </div>
                             
                         </div>
@@ -175,8 +154,8 @@
                     <div class="vkads-make-all-sec__col-2">
                         <div class="vkads-make-all-sec__diagram-box vkads-make-all-sec__diagram-box--v1">
                             <div class="vkads-make-all-sec__diagram-box-header">
-                                <p class="vkads-make-all-sec__diagram-box-title">Оптимизация</p>
-                                <p class="vkads-make-all-sec__diagram-box-subtitle">Отслеживаем результаты и дополняем для лучшей эффективности.</p>
+                                <p class="vkads-make-all-sec__diagram-box-title" v-html="pageData[0].acf['sekcziya_4_-_delaem_vse_sami'].zagolovok_1"></p>
+                                <p class="vkads-make-all-sec__diagram-box-subtitle" v-html="pageData[0].acf['sekcziya_4_-_delaem_vse_sami'].tekst_1"></p>
                             </div>
 
                             <img src="@/assets/images/vkads/diagram-1.png" alt="" class="vkads-make-all-sec__diagram-box-img vkads-make-all-sec__diagram-box-img--v1">
@@ -186,8 +165,8 @@
 
                         <div class="vkads-make-all-sec__diagram-box vkads-make-all-sec__diagram-box--v2">
                             <div class="vkads-make-all-sec__diagram-box-header">
-                                <p class="vkads-make-all-sec__diagram-box-title">География</p>
-                                <p class="vkads-make-all-sec__diagram-box-subtitle">Вашу рекламу видят те, кто точно может обратиться.</p>
+                                <p class="vkads-make-all-sec__diagram-box-title" v-html="pageData[0].acf['sekcziya_4_-_delaem_vse_sami'].zagolovok_3"></p>
+                                <p class="vkads-make-all-sec__diagram-box-subtitle" v-html="pageData[0].acf['sekcziya_4_-_delaem_vse_sami'].tekst_3"></p>
                             </div>
 
                             <img src="@/assets/images/vkads/russia.png" alt="" class="vkads-make-all-sec__diagram-box-img vkads-make-all-sec__diagram-box-img--v1">
@@ -198,8 +177,8 @@
                     <div class="vkads-make-all-sec__col-3">
                         <div class="vkads-make-all-sec__diagram-box vkads-make-all-sec__diagram-box--v3">
                             <div class="vkads-make-all-sec__diagram-box-header">
-                                <p class="vkads-make-all-sec__diagram-box-title">Точная настройка</p>
-                                <p class="vkads-make-all-sec__diagram-box-subtitle">Мы таргетируем ваши объявления на тех, кто уже интересовался вашими услугами </p>
+                                <p class="vkads-make-all-sec__diagram-box-title" v-html="pageData[0].acf['sekcziya_4_-_delaem_vse_sami'].zagolovok_2"></p>
+                                <p class="vkads-make-all-sec__diagram-box-subtitle" v-html="pageData[0].acf['sekcziya_4_-_delaem_vse_sami'].tekst_2"></p>
                             </div>
 
                             <img src="@/assets/images/vkads/diagram-2.png" alt="" class="vkads-make-all-sec__diagram-box-img vkads-make-all-sec__diagram-box-img--v1">
@@ -209,8 +188,8 @@
 
                         <div class="vkads-make-all-sec__diagram-box vkads-make-all-sec__diagram-box--v4">
                             <div class="vkads-make-all-sec__diagram-box-header">
-                                <p class="vkads-make-all-sec__diagram-box-title">Рекламные материалы</p>
-                                <p class="vkads-make-all-sec__diagram-box-subtitle">Наши маркетологи сделают классные текста и заголовки, а дизайнеры баннеры.</p>
+                                <p class="vkads-make-all-sec__diagram-box-title" v-html="pageData[0].acf['sekcziya_4_-_delaem_vse_sami'].zagolovok_4"></p>
+                                <p class="vkads-make-all-sec__diagram-box-subtitle" v-html="pageData[0].acf['sekcziya_4_-_delaem_vse_sami'].tekst_4"></p>
                             </div>
 
                             <img src="@/assets/images/vkads/matherial.png" alt="" class="vkads-make-all-sec__diagram-box-img vkads-make-all-sec__diagram-box-img--v1">
@@ -227,44 +206,29 @@
         <section class="tgads-watch-sec tgads-make-ads-sec target-block" ref="makeAdsSec">
             <div class="tgads-watch-sec__wrapper">
                 <div class="tgads-watch-sec__header">
-                    <h2 class="tgads-watch-sec__title">Делаем объявления</h2>
-                    <p class="tgads-watch-sec__subtitle">Которые привлекают внимание и доносят значимость.</p>
+                    <h2 class="tgads-watch-sec__title" v-html="pageData[0].acf['sekcziya_5_-_delaem_obyavleniya'].zagolovok"></h2>
+                    <p class="tgads-watch-sec__subtitle" v-html="pageData[0].acf['sekcziya_5_-_delaem_obyavleniya'].podzagolovok"></p>
                 </div>
 
                 <div class="tgads-watch-sec__img-wrapper">
-                    <img src="@/assets/images/vkads/make-ads-sec.png" alt="" class="tgads-watch-sec__img">
+                    <img :src="pageData[0].acf['sekcziya_5_-_delaem_obyavleniya'].izobrazhenie_pk.url" 
+                    :alt="pageData[0].acf['sekcziya_5_-_delaem_obyavleniya'].izobrazhenie_pk.alt" class="tgads-watch-sec__img">
                 </div>
 
 
                 <div class="tgads-watch-sec__down-row-v2">
-                    <div class="direct-direction-sec__down-el-v2">
-                        <p class="direct-direction-sec__down-el-title-v2">1</p>
-                        <p class="direct-direction-sec__down-el-subtitle-v2">Согласуем с вами все<br> рекламные материалы и УТП.</p>
+                    
+                    <div class="direct-direction-sec__down-el-v2" v-for="(item, index) in pageData[0].acf['sekcziya_5_-_delaem_obyavleniya'].infografika" :key="index">
+                        <p class="direct-direction-sec__down-el-title-v2">{{ index + 1 }}</p>
+                        <p class="direct-direction-sec__down-el-subtitle-v2" v-html="item.tekst"></p>
                     </div>
-                    <div class="direct-direction-sec__down-el-v2">
-                        <p class="direct-direction-sec__down-el-title-v2">2</p>
-                        <p class="direct-direction-sec__down-el-subtitle-v2">Дизайнеры подготовят<br> от 5 до 20 баннеров.</p>
-                    </div>
-                    <div class="direct-direction-sec__down-el-v2">
-                        <p class="direct-direction-sec__down-el-title-v2">3</p>
-                        <p class="direct-direction-sec__down-el-subtitle-v2">Запустим и при необходимости<br> поменяем рекламные материалы. </p>
-                    </div>
+                    
                 </div>
             </div>
         </section>
 
 
-
-
-
-
-
-
-        
-
-
-
-        <section class="price-sec vkads-price-sec">
+        <section class="price-sec vkads-price-sec" v-if="pageData[0].acf?.sekcziya_6_czena?.length">
             <div class="price-sec__container">
                 <div class="price-sec__header">
 
@@ -294,11 +258,11 @@
                 </div>
 
                 <div class="price-sec__body">
-                    <div class="price-sec__col" v-for="(item, index) in dataPriceSec" :key="index">
+                    <div class="price-sec__col" v-for="(item, index) in pageData[0].acf.sekcziya_6_czena" :key="index">
                         <div class="price-sec__list-work-wrapper">
-                            <p class="price-sec__list-work-wrapper-title" v-html="item.title"></p>
+                            <p class="price-sec__list-work-wrapper-title" v-html="item.nazvanie_paketa"></p>
                             <ul class="price-sec__list-work-wrapper-list">
-                                <li v-for="servElement in item.servicesList" :key="servElement">{{ servElement }}</li>
+                                <li v-for="servElement in item.opisanie_paketa" :key="servElement">{{ servElement.tekst }}</li>
 
                             </ul>
 
@@ -317,7 +281,7 @@
                                 
                             </div>
                             <div class="cost-box__wrapper">
-                                <p class="cost-box__value">15 000 ₽</p>
+                                <p class="cost-box__value">{{ item.czena_v_rublyah }} ₽</p>
                                 <div class="cost-box__btn" @click="openFormPopup()">
                                     <p class="cost-box__btn-title">Заказать</p>
                                     <div class="cost-box__btn-icon">
@@ -331,9 +295,9 @@
                             </div>
 
                             <div class="cost-box__dop" v-if="dataPriceSecActioDopIndex == index">
-                                <p class="cost-box__dop-title" v-html="item.servicesListFullTitle" ></p>
+                                <p class="cost-box__dop-title" v-html="item.nazvanie_paketa" ></p>
                                 <ul class="cost-box__dop-list">
-                                    <li class="cost-box__dop-list-element" v-for="dopServItem in item.servicesListFullList" :key="dopServItem">{{ dopServItem }}</li>                                 
+                                    <li class="cost-box__dop-list-element" v-for="dopServItem in item.dop_parametry" :key="dopServItem">{{ dopServItem.tekst }}</li>                                 
                                 </ul>
                             </div>
                         </div>
@@ -342,6 +306,9 @@
                 </div>
             </div>
         </section>
+
+
+
 
 
          <section class="direct-other-services-sec">
@@ -400,6 +367,8 @@ import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 //DATA
 const store = useCounterStore()
 
+const route = useRoute()
+
 const windowsHeight = ref(null)
 
 const watchSec = ref(null)
@@ -410,73 +379,10 @@ const scrollPosition = ref(null)
 
 const dataPriceSecActioDopIndex = ref(null)
 
-const dataPriceSec = ref([
-    {
-        'title': 'Запуск',
-        'price': '10 000',
-        'servicesList': [
-            'Ежедневный/еженедельный мониторинг',
-            'Оптимизация кампаний',
-            'А/В тестирование объявлений',
-            'Анализ и отчетность',
-            'Анализ и отчетность',
-            'Масштабирование рекламы',
-            'Поддержка и консультации',
-            ],
-        'servicesListFullTitle': 'Запуск',
-        'servicesListFullList': [
-            'SEO - продвижение',
-            'Добавление компаний на основные платформы',
-            'Добавление фото',
-            'Добавление/корректировка акций',
-            'Добавление/корректировка акций',
-            'Актуализация информации',
-            'Удаление дубликатов',
-            'Обжалование негативных отзывов',
-            'Ответы на положительные отзывы',
-            'Подбор/создание изображений под акции и скидки',
-            'Настройки и внедрение витрины товаров',
-            'Контроль синей галочки на Яндекс.Картах',
-            'Внедрение и оформление stories',
-            'Персональный менеджер',
-            'Статистика по продвижению',
-            'Статистика по отзывам',
-        ]
-    },
+const { data: pageData } = await useFetch(`${store.serverUrlDomainRequest}/wp-json/wp/v2/pages?slug=vkads`)
 
-    {
-        'title': 'Ведение',
-        'price': '12 000',
-        'servicesList': [
-            'Ежедневный/еженедельный мониторинг',
-            'Оптимизация кампаний',
-            'А/В тестирование объявлений',
-            'Анализ и отчетность',
-            'Анализ и отчетность',
-            'Масштабирование рекламы',
-            'Поддержка и консультации',
-            ],
-        'servicesListFullTitle': 'Ведение',
-        'servicesListFullList': [
-            'SEO - продвижение',
-            'Добавление компаний на основные платформы',
-            'Добавление фото',
-            'Добавление/корректировка акций',
-            'Добавление/корректировка акций',
-            'Актуализация информации',
-            'Удаление дубликатов',
-            'Обжалование негативных отзывов',
-            'Ответы на положительные отзывы',
-            'Подбор/создание изображений под акции и скидки',
-            'Настройки и внедрение витрины товаров',
-            'Контроль синей галочки на Яндекс.Картах',
-            'Внедрение и оформление stories',
-            'Персональный менеджер',
-            'Статистика по продвижению',
-            'Статистика по отзывам',
-        ]
-    }
-])
+console.log('pageData', pageData)
+
 
 
 //METHODS
@@ -629,6 +535,45 @@ windowsHeight.value = watchSec.value.clientHeight
 onBeforeUnmount(() => {
    
 });
+
+
+useHead({
+    title: pageData.value[0].acf.seo_title || pageData.value[0].title.rendered,
+    meta: [
+        // Description
+        { name: 'description', content: pageData.value[0].acf.seo_description || 'Описание по умолчанию' },
+
+        // Keywords (опционально, не влияет сильно на SEO)
+        { name: 'keywords',  content: pageData.value[0].acf.klyuchevaya_fraza || 'test' },
+
+        // OpenGraph
+        { property: 'og:title', content: pageData.value[0].acf.seo_title },
+        { property: 'og:description', content: pageData.value[0].acf.seo_description },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: `${store.domainUrlCurrent}${route.fullPath}` },
+        { property: 'og:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Twitter Card (если используешь)
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: pageData.value[0].acf.seo_title },
+        { name: 'twitter:description', content: pageData.value[0].acf.seo_description },
+        { name: 'twitter:image', content: pageData.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Индексация / Деиндексация
+        // Например, noindex для черновика:
+        {
+        name: 'robots',
+        content:
+            pageData.value[0].acf.indeksacziya_v_poiskovyh_sistemah === 'index'
+            ? 'index, follow'
+            : 'noindex, nofollow'
+        }
+    ],
+    link: [
+        // Canonical (вручную или динамически)
+        { rel: 'canonical', href: `${store.domainUrlCurrent}/${pageData.value[0].acf.canonical || route.name}` }
+    ]
+})
   
 </script>
 

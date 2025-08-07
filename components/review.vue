@@ -1,8 +1,8 @@
 <template>
-    <div class="geomarketing-revard-sec__reviews-element">
+    <div class="geomarketing-revard-sec__reviews-element" v-if="commentData">
         <div class="geomarketing-revard-sec__reviews-element-text-wrapper" ref="textWrapper" :class="{'full-text-review': openFulltext == true}">
             <div class="geomarketing-revard-sec__reviews-element-text-hiddent" ref="textWrapperHidden">
-                <p class="geomarketing-revard-sec__reviews-element-text"  ref="textElement" v-html="commentData.text">
+                <p class="geomarketing-revard-sec__reviews-element-text"  ref="textElement" v-html="commentData.tekst_komentariya">
             </p>
 
             <div class="geomarketing-revard-sec__reviews-element-btn-row" v-if="buttonStatus == true" >
@@ -14,10 +14,10 @@
         </div>
 
         <div class="geomarketing-revard-sec__reviews-element-client">
-            <img src="@/assets/images/geo/girl.jpg" alt="" class="geomarketing-revard-sec__reviews-element-client-img">
+            <img :src="commentData.foto.url" :alt="commentData.foto.alt" class="geomarketing-revard-sec__reviews-element-client-img">
             <div class="geomarketing-revard-sec__reviews-element-client-data">
-            <p class="geomarketing-revard-sec__reviews-element-client-name">Анна</p>
-            <p class="geomarketing-revard-sec__reviews-element-client-description">Основательница  сети барбершопов Newman</p>
+            <p class="geomarketing-revard-sec__reviews-element-client-name" v-html="commentData.imya_avtora"></p>
+            <p class="geomarketing-revard-sec__reviews-element-client-description" v-html="commentData.dolzhnost"></p>
             </div>
         </div>
         

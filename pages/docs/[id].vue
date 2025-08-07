@@ -1,45 +1,14 @@
 <template>
 
-    <main class="main" v-if="object_data_single[0]">
-
-        <section class="website-single-sec target-block">
-            <div class="website-single-sec__container">
-                <h1 class="website-single-sec__title" v-html="object_data_single[0].title.rendered"></h1>
-                <p class="website-single-sec__subtitle" v-if="object_data_single[0].acf?.kratkoe_opisanie" v-html="object_data_single[0].acf.kratkoe_opisanie"></p>
-                <p class="website-single-sec__link-text" v-if="object_data_single[0].acf?.ssylka_na_proekt">
-                    Ссылка на проект: 
-                    <a :href="object_data_single[0].acf.ssylka_na_proekt" class="website-single-sec__link" v-html="object_data_single[0].acf.ssylka_na_proekt"></a>
-                </p>
-
-                <template v-for="(item, index) in object_data_single[0].acf.konstruktor_posta" :key="index">
-
-                    <div class="website-single-sec__video-big video-work" v-if="item.acf_fc_layout == '1_большое_видео'">
-                        <video autoplay muted loop playsinline>
-                        <source :src="item.video.url" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                        </video>
-                    </div>
-
-
-                    <div class="website-single-sec__wp-editor wp-editor-work" v-if="item.acf_fc_layout == 'текстовый_блок'" v-html="item.redaktor"></div>
-
-
-                    <div class="website-single-sec__two-video-row" v-if="item.acf_fc_layout == '2_видео_в_ряду'">
-
-                        <div class="video-work" v-for="iteelementVideo in item.spisok_video" :key="iteelementVideo">
-                            <video autoplay muted loop playsinline>
-                            <source :src="iteelementVideo.video.url" type="video/mp4">
-                            Ваш браузер не поддерживает видео.
-                            </video>
-                        </div>
-
-                    </div>
-
-                </template>
-
+    <main class="main">
+     
+        <section class="system-page-sec">
+            <div class="system-page-sec__container">
+                <h1 class="system-page-sec__title" v-html="object_data_single[0].title.rendered"></h1>
+                <div class="system-page-sec__editor wp-editor" v-html="object_data_single[0].acf.redaktor_teksta"></div>
             </div>
         </section>
-        
+
     </main>
     
 </template>
@@ -48,29 +17,35 @@
 
 //IMPORT
 
-// import { useCounterStore } from '@/stores/counter'
+import { useCounterStore } from '@/stores/counter'
 
 import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 
+// import newsCard from '@/components/component__news-card.vue'
 
 
-//DATA
+
+
 
 //DATA
 const route = useRoute()
 
 const store = useCounterStore()
 
+
 // основной пост
 const { data: object_data_single } = await useFetch(
-  `${store.serverUrlDomainRequest}/wp-json/wp/v2/my-works?slug=${route.params.id}`,
+  `${store.serverUrlDomainRequest}/wp-json/wp/v2/simple-pages?slug=${route.params.id}`,
   { key: `post-${route.params.id}` }
 )
+console.log('object_data_single',object_data_single)
 
-console.log(object_data_single)
+
 
 
 //METHODS 
+
+
 
 
 
@@ -84,8 +59,11 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-   
+
 });
+
+
+
 
 //SEO
 useHead({
@@ -122,10 +100,9 @@ useHead({
     ],
     link: [
         // Canonical (вручную или динамически)
-        { rel: 'canonical', href: `${store.domainUrlCurrent}/blog/${object_data_single.value[0].acf.canonical || route.params.id}` }
+        { rel: 'canonical', href: `${store.domainUrlCurrent}/docs/${object_data_single.value[0].acf.canonical || route.params.id}` }
     ]
 })
-
   
 </script>
 

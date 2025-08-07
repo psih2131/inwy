@@ -1,9 +1,9 @@
 <template>
     <div class="popups-wrapper" @click.self="closeAllForms">
 
-        <popupForm v-if="store.popupCurrent == 'popup-form'" />
+        <popupForm v-if="store.popupCurrent == 'popup-form'" :formData="optionData" />
 
-        <popupFormDone v-if="store.popupCurrent == 'popup-form-done'" /> 
+        <popupFormDone v-if="store.popupCurrent == 'popup-form-done'" :formData="optionData"/> 
 <!-- 
         <popupSerteficat v-if="store.popupCurrent == 'popup-serteficat'" />  -->
    
@@ -47,8 +47,10 @@ onBeforeUnmount(() => {
 });
 
  const props = defineProps({
-//   mainData: Object,
+   optionData: Object,
       // postAllCategory: Object,
   })
+
+  
 
 </script>

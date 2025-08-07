@@ -161,16 +161,8 @@
           </nav>
 
           <ul class="moob-sub-meny__social">
-            <li class="moob-sub-meny__social-li">
-              <a href="" class="moob-sub-meny__social-link">vk</a>
-            </li>
-
-            <li class="moob-sub-meny__social-li">
-              <a href="" class="moob-sub-meny__social-link">telegram</a>
-            </li>
-
-            <li class="moob-sub-meny__social-li">
-              <a href="" class="moob-sub-meny__social-link">whatsapp</a>
+            <li class="moob-sub-meny__social-li" v-for="item in optionData.socz_seti" :key="item">
+              <a :href="item.ssylka" class="moob-sub-meny__social-link" v-html="item.zagolovok_dlya_mob_versii_socz_setej_v_shapke"></a>
             </li>
           </ul>
 
@@ -347,11 +339,12 @@ function openFormPopup(){
 
 watch(() => route.fullPath, (newPath) => {
   console.log('Маршрут изменился:', newPath)
-  changeHeaderColor() // твой метод
+  checkHeaderOverTargetBlocks() // твой метод
 })
 
  const props = defineProps({
   trigerCloseSubMeny: Boolean,
+  optionData: Object,
       // postAllCategory: Object,
   })
 
