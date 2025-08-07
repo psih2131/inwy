@@ -217,7 +217,7 @@
                         </div>
 
                         <div class="website-bonus-sec__content-box website-bonus-sec__content-box--v5">
-                            <div class="website-bonus-sec__content-box__btn" @click="openFormPopup(`секция после цены там где доп услуги или бонусы`)">
+                            <div class="website-bonus-sec__content-box__btn" @click="openFormPopup(`секция после цены там где доп услуги или бонусы. Задать вопрос`)">
                                 <p class="website-bonus-sec__content-box__btn-title">Задать вопрос </p>
                                 <div class="website-bonus-sec__content-box__btn-icon">
                                     <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">

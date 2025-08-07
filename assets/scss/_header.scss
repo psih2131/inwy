@@ -70,7 +70,7 @@
 .header__list-element-link {
     display: block;
     overflow: hidden;
-    height: 18px;
+    height: 22px;
 
     &:hover {
         .header__list-element-link-col {
@@ -85,7 +85,7 @@
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 100%;
+    line-height: 120%;
     /* 18px */
     letter-spacing: -0.72px;
     color: #000;
@@ -421,7 +421,7 @@
         .moob-sub-meny {
             padding-top: 40px;
             padding-bottom: 20px;
-            max-height: 550px;
+            max-height: 600px;
         }
     }
 

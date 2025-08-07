@@ -28,12 +28,14 @@
 
 .blog-sec__nav-link {
     display: inline-block;
-    border-radius: 100px;
-    padding: 5px 10px;
-    background: #EDEFF4;
-    color: #373737;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #6d7885;
+    background-color: #e1e3e6;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-right: 8px;
 }
 
 .blog-sec__nav-link--activ {

@@ -166,7 +166,7 @@
             </li>
           </ul>
 
-          <button class="header__btn-mob btn-v1">обсудить проект</button>
+          <button class="header__btn-mob btn-v1" @click="openFormPopup()">обсудить проект</button>
         
       </div>
       

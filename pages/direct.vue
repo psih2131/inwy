@@ -384,7 +384,7 @@
                             </div>
                             <div class="cost-box__wrapper">
                                 <p class="cost-box__value">{{ item.czena_v_rublyah }} ₽</p>
-                                <div class="cost-box__btn" @click="openFormPopup()">
+                                <div class="cost-box__btn" @click="openFormPopup(`блок с ценами. Пакет: ${item.nazvanie_paketa}`)">
                                     <p class="cost-box__btn-title">Заказать</p>
                                     <div class="cost-box__btn-icon">
                                         <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -486,8 +486,8 @@ console.log('pageData', pageData)
 //METHODS 
 
 //open form popup 
-function openFormPopup(){
-    store.changeTrigerButtonForm('Кнопка в блоке с ценой ')
+function openFormPopup(text){
+    store.changeTrigerButtonForm(text)
     store.changePopupCurrent('popup-form')
 }
 

@@ -520,6 +520,10 @@
     display: none;
 }
 
+.vk-hero-sec__img-mob {
+    display: none;
+}
+
 
 @media only screen and (max-width: 1560px) {
     .tgads-hero-sec__img-wrapper {
@@ -992,5 +996,35 @@
         .tgads-watch-sec__subtitle {
             font-size: 16px;
         }
+    }
+
+    .vk-hero-sec {
+        display: flex;
+        flex-wrap: wrap;
+
+        .tgads-hero-sec__container {
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+
+        .vk-hero-sec__img {
+            display: none;
+        }
+    }
+
+    .vk-hero-sec__img-wrapper {
+        order: 2;
+        padding: 0;
+        height: auto;
+        max-width: 370px;
+        width: auto;
+        border: none;
+        box-shadow: none;
+        background: none;
+    }
+
+    .vk-hero-sec__img-mob {
+        display: block;
+        width: 100%;
     }
 }

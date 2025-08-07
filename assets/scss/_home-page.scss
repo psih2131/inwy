@@ -683,6 +683,7 @@
         max-width: calc(10000px);
         width: auto;
         height: 130%;
+        min-height: 770px;
 
         left: 30px;
     }
@@ -802,6 +803,7 @@
         left: 30px;
         top: 30px;
         width: 1000px;
+        min-height: 0;
         height: auto;
     }
 
@@ -824,12 +826,36 @@
 
     .home-partner-sec__row {
         flex-wrap: wrap;
+        align-items: center;
     }
 
     .home-partner-sec__row-element {
         border: none;
         margin-bottom: 20px;
         height: 30px;
+        margin-bottom: 20px;
+
+        img {
+            height: auto;
+            width: 100%;
+        }
+
+        &:nth-child(1) {
+            width: 50%;
+        }
+
+        &:nth-child(2) {
+            display: none;
+        }
+
+        &:nth-child(3) {
+            width: 50%;
+        }
+
+        &:nth-child(4) {
+            width: 100%;
+            height: auto;
+        }
     }
 
     .services-el-1 {

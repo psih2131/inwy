@@ -417,7 +417,7 @@
                     <div class="home-services-sec__down-text-wrapper" v-if="pageData[0].acf?.sekcziya_4_zayavka">
                         <h3 class="home-services-sec__down-title" v-html="pageData[0].acf.sekcziya_4_zayavka.zagolovok"> </h3>
                         <div class="home-services-sec__down-btn-row">
-                            <button class="home-services-sec__down-btn btn-v2" @click="openFormPopup()" v-html="pageData[0].acf.sekcziya_4_zayavka.tekst_knopki"></button>
+                            <button class="home-services-sec__down-btn btn-v2" @click="openFormPopup('форма на главной после секци с услугами')" v-html="pageData[0].acf.sekcziya_4_zayavka.tekst_knopki"></button>
                         </div>
                         <div class="home-services-sec__down-subtitle-wrapper">
                             <p class="home-services-sec__down-subtitle" v-html="pageData[0].acf.sekcziya_4_zayavka.podzagolovok"></p>
@@ -482,8 +482,8 @@ console.log('pageData', pageData)
 //METHODS 
 
 //open form popup 
-function openFormPopup(){
-    store.changeTrigerButtonForm('Кнопка внизу страницы ')
+function openFormPopup(text){
+    store.changeTrigerButtonForm(text)
     store.changePopupCurrent('popup-form')
 }
 

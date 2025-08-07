@@ -193,7 +193,7 @@
               <div class="geomarketing-revard-sec__info-down-row">
                 <img src="@/assets/images/geo/reward-img.png" alt="" class="geomarketing-revard-sec__img">
 
-                <div class="website-bonus-sec__content-box__btn geomarketing-revard-sec__btn" @click="openFormPopup()">
+                <div class="website-bonus-sec__content-box__btn geomarketing-revard-sec__btn" @click="openFormPopup('Кнопка задать вопрос в наградах')">
                     <p class="website-bonus-sec__content-box__btn-title">Задать вопрос </p>
                     <div class="website-bonus-sec__content-box__btn-icon">
                         <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -265,7 +265,7 @@
                 <p class="geomarketing-price-item__price">{{ itemTarif.czena }} ₽</p>
                 <p class="geomarketing-price-item__subprice">{{ itemTarif.czena_za_mesyacz }}/мес</p>
 
-                <div class="cost-box__btn" @click="openFormPopup()">
+                <div class="cost-box__btn" @click="openFormPopup(`Блок с ценой. Период: ${item.period} | Тариф: ${itemTarif.nazvanie_tarifa}`)">
                   <p class="cost-box__btn-title">Заказать</p>
                   <div class="cost-box__btn-icon">
                       <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -396,8 +396,8 @@ console.log('pageData', pageData)
 //METHODS
 
 //open form popup 
-function openFormPopup(){
-    store.changeTrigerButtonForm('Кнопка в блоке с ценой ')
+function openFormPopup(text){
+    store.changeTrigerButtonForm(text)
     store.changePopupCurrent('popup-form')
 }
 
