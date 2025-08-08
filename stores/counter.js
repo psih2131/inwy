@@ -5,7 +5,7 @@ import { defineStore } from 'pinia'
 export const useCounterStore = defineStore('counter', () => {
     const router = useRouter();
 
-    const serverUrlDomainRequest = ref('http://ichinyfd.beget.tech')
+    const serverUrlDomainRequest = ref('https://backendinwyss.ru')
     // const serverUrlDomainRequest = ref('https://panel.gift-siberia.com')
 
 

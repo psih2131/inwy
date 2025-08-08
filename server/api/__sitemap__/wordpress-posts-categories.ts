@@ -7,7 +7,7 @@ interface WPPost {
 }
 
 export default defineSitemapEventHandler(async () => {
-    const posts: WPPost[] = await $fetch('http://ichinyfd.beget.tech/wp-json/wp/v2/blog-category?per_page=100')
+    const posts: WPPost[] = await $fetch('https://backendinwyss.ru/wp-json/wp/v2/blog-category?per_page=100')
 
     return posts.map((post) => ({
         loc: `/blog/category/${post.slug}/`,       // локальный маршрут
