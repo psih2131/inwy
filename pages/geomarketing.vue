@@ -243,7 +243,7 @@
             :key="index" 
             class="geomarketing-price-sec__header-li"
             :class="{'geomarketing-price-sec__header-li--activ': currentTabPrice == index + 1}"
-            @click="currentTabPrice = 1" v-html="item.period"></li>
+            @click="currentTabPrice = index + 1" v-html="item.period"></li>
 
           </ul>
 

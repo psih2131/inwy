@@ -1,7 +1,7 @@
 <template>
     <div class="blog-sec__post post-element">
         <NuxtLink :to="`/blog/${postData.slug}`"  class="post-element__img-wrapper">
-            <img :src="postData.acf.osnovnoe_izobrazhenie.url" :alt="postData.acf.osnovnoe_izobrazhenie.alt" class="post-element__img">
+            <img :src="postData.acf.maloe_fonovoe_izobrazhenie_dlya_kartochki_tovara.url" :alt="postData.acf.maloe_fonovoe_izobrazhenie_dlya_kartochki_tovara.alt" class="post-element__img">
         </NuxtLink>
         <p class="post-element__title">
             <NuxtLink :to="`/blog/${postData.slug}`" >{{ postData.title.rendered }}</NuxtLink>
