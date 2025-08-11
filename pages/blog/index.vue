@@ -130,8 +130,6 @@ console.log(all_object)
 console.log(all_categories)
 
 
-
-
 //METHODS 
 
 //get posts on client side
