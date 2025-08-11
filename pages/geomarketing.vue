@@ -193,7 +193,7 @@
               <div class="geomarketing-revard-sec__info-down-row">
                 <img src="@/assets/images/geo/reward-img.png" alt="" class="geomarketing-revard-sec__img">
 
-                <div class="website-bonus-sec__content-box__btn geomarketing-revard-sec__btn" @click="openFormPopup('Кнопка задать вопрос в наградах')">
+                <div class="website-bonus-sec__content-box__btn geomarketing-revard-sec__btn cursor-mod cursor-mod-dark-form-text" @click="openFormPopup('Кнопка задать вопрос в наградах')">
                     <p class="website-bonus-sec__content-box__btn-title">Задать вопрос </p>
                     <div class="website-bonus-sec__content-box__btn-icon">
                         <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -265,7 +265,7 @@
                 <p class="geomarketing-price-item__price">{{ itemTarif.czena }} ₽</p>
                 <p class="geomarketing-price-item__subprice">{{ itemTarif.czena_za_mesyacz }}/мес</p>
 
-                <div class="cost-box__btn" @click="openFormPopup(`Блок с ценой. Период: ${item.period} | Тариф: ${itemTarif.nazvanie_tarifa}`)">
+                <div class="cost-box__btn cursor-mod cursor-mod-price" @click="openFormPopup(`Блок с ценой. Период: ${item.period} | Тариф: ${itemTarif.nazvanie_tarifa}`)">
                   <p class="cost-box__btn-title">Заказать</p>
                   <div class="cost-box__btn-icon">
                       <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -327,7 +327,7 @@
                 <h2 class="about-services-sec_title">Другие наши услуги.</h2>
                 <div class="about-services-sec__row">
 
-                    <NuxtLink to="/direct" class="about-services-sec__element about-services-sec__element--yandex">
+                    <NuxtLink to="/direct" class="about-services-sec__element about-services-sec__element--yandex cursor-mod cursor-mod-services" >
                         <p class="about-services-sec__element-text">Яндекс.Директ</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1AFF00;"></div>
@@ -335,7 +335,7 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/vkads" class="about-services-sec__element about-services-sec__element--vk">
+                    <NuxtLink to="/vkads" class="about-services-sec__element about-services-sec__element--vk cursor-mod cursor-mod-services">
                         <p class="about-services-sec__element-text">VK реклама</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1A00FF;"></div>
@@ -343,7 +343,7 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/tgads" class="about-services-sec__element about-services-sec__element--telegtam">
+                    <NuxtLink to="/tgads" class="about-services-sec__element about-services-sec__element--telegtam cursor-mod cursor-mod-services">
                         <p class="about-services-sec__element-text">Telegram Ads</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #FF00BB;"></div>
@@ -351,7 +351,7 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/website" class="about-services-sec__element about-services-sec__element--dev">
+                    <NuxtLink to="/website" class="about-services-sec__element about-services-sec__element--dev cursor-mod cursor-mod-services">
                         <p class="about-services-sec__element-text">Разработка сайтов</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #FF7700;"></div>

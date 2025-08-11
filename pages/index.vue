@@ -14,7 +14,7 @@
                 <nav class="home-hero-sec__nav">
                     <ul class="home-hero-sec__nav-ul" v-if="heroBannerSecMobActiv == false">
                         <li class="home-hero-sec__nav-li">
-                            <NuxtLink to="/website" class="home-hero-sec__nav-li-link">
+                            <NuxtLink to="/website" class="home-hero-sec__nav-li-link cursor-mod">
                                 <span class="home-hero-sec__nav-li-link-text">создаем</span>
                                 <span class="home-hero-sec__nav-li-link-icon-wrapper" style="background: #FBFFC7;">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -32,7 +32,7 @@
                             </NuxtLink>
                         </li>
 
-                        <li class="home-hero-sec__nav-li">
+                        <li class="home-hero-sec__nav-li cursor-mod">
                             <NuxtLink to="/tgads" class="home-hero-sec__nav-li-link">
                                 <span class="home-hero-sec__nav-li-link-text">настроем</span>
                                 <span class="home-hero-sec__nav-li-link-icon-wrapper" style="background: #AD9FF1;">
@@ -52,7 +52,7 @@
                         </li>
 
                         <li class="home-hero-sec__nav-li">
-                            <NuxtLink to="/direct" class="home-hero-sec__nav-li-link">
+                            <NuxtLink to="/direct" class="home-hero-sec__nav-li-link cursor-mod">
                                 <span class="home-hero-sec__nav-li-link-text">запускаем</span>
                                 <span class="home-hero-sec__nav-li-link-icon-wrapper" style="background: #FF70F3;">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -71,7 +71,7 @@
                         </li>
 
                         <li class="home-hero-sec__nav-li">
-                            <NuxtLink to="/geomarketing" class="home-hero-sec__nav-li-link">
+                            <NuxtLink to="/geomarketing" class="home-hero-sec__nav-li-link cursor-mod">
                                 <span class="home-hero-sec__nav-li-link-text">продвигаем</span>
                                 <span class="home-hero-sec__nav-li-link-icon-wrapper" style="background: #DFB0F9;">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -91,7 +91,7 @@
                         </li>
 
                         <li class="home-hero-sec__nav-li">
-                            <NuxtLink to="/vkads" class="home-hero-sec__nav-li-link">
+                            <NuxtLink to="/vkads" class="home-hero-sec__nav-li-link cursor-mod">
                                 <span class="home-hero-sec__nav-li-link-text">делаем</span>
                                 <span class="home-hero-sec__nav-li-link-icon-wrapper" style="background: #00AAFF;">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -277,7 +277,7 @@
                             </div>
 
                             <div class="services-el__btn-wrapper">
-                                <NuxtLink to="/website" class="services-el__btn">
+                                <NuxtLink to="/website" class="services-el__btn cursor-mod cursor-mod-dark">
                                     <div class="services-el__btn-element">
                                         <div class="services-el__btn-ar">
                                             <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -317,7 +317,7 @@
                                 </div>
 
                                 <div class="services-el__btn-wrapper">
-                                <NuxtLink to="/geomarketing" class="services-el__btn">
+                                <NuxtLink to="/geomarketing" class="services-el__btn cursor-mod cursor-mod-dark">
                                     <div class="services-el__btn-element">
                                         <div class="services-el__btn-ar">
                                             <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -344,7 +344,7 @@
                             </div>
 
                             <div class="services-el__btn-wrapper">
-                                <NuxtLink to="/direct" class="services-el__btn">
+                                <NuxtLink to="/direct" class="services-el__btn cursor-mod cursor-mod-dark">
                                     <div class="services-el__btn-element">
                                         <div class="services-el__btn-ar">
                                             <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -370,7 +370,7 @@
                             </div>
 
                             <div class="services-el__btn-wrapper">
-                                <NuxtLink to="/vkads" class="services-el__btn">
+                                <NuxtLink to="/vkads" class="services-el__btn cursor-mod cursor-mod-dark">
                                     <div class="services-el__btn-element">
                                         <div class="services-el__btn-ar">
                                             <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -395,7 +395,7 @@
                             </div>
 
                             <div class="services-el__btn-wrapper">
-                                <NuxtLink to="/tgads" class="services-el__btn">
+                                <NuxtLink to="/tgads" class="services-el__btn cursor-mod cursor-mod-dark">
                                     <div class="services-el__btn-element">
                                         <div class="services-el__btn-ar">
                                             <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -417,7 +417,7 @@
                     <div class="home-services-sec__down-text-wrapper" v-if="pageData[0].acf?.sekcziya_4_zayavka">
                         <h3 class="home-services-sec__down-title" v-html="pageData[0].acf.sekcziya_4_zayavka.zagolovok"> </h3>
                         <div class="home-services-sec__down-btn-row">
-                            <button class="home-services-sec__down-btn btn-v2" @click="openFormPopup('форма на главной после секци с услугами')" v-html="pageData[0].acf.sekcziya_4_zayavka.tekst_knopki"></button>
+                            <button class="home-services-sec__down-btn btn-v2 cursor-mod cursor-mod-dark-form-text" @click="openFormPopup('форма на главной после секци с услугами')" v-html="pageData[0].acf.sekcziya_4_zayavka.tekst_knopki"></button>
                         </div>
                         <div class="home-services-sec__down-subtitle-wrapper">
                             <p class="home-services-sec__down-subtitle" v-html="pageData[0].acf.sekcziya_4_zayavka.podzagolovok"></p>
@@ -493,23 +493,6 @@ const swiperHerroBanner = useSwiper(heroBannerSec, {
 slidesPerView: "auto",
    spaceBetween: 10,   
    speed: 4000,
-// breakpoints: {
-//     250: {
-//       slidesPerView: "auto",
-//       spaceBetween: 30,
-//     },
-//     750: {
-//       slidesPerView: "auto",
-//       spaceBetween: 30,
-//     },
-//     950: {
-//       slidesPerView: "auto",
-//       spaceBetween: 30,
-   
-//     },
-
-//   }
-
 })
 
 //hero sec anim show

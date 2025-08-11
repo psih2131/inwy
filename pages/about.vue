@@ -59,7 +59,7 @@
                 <h2 class="about-services-sec_title">Другие наши услуги.</h2>
                 <div class="about-services-sec__row">
 
-                    <NuxtLink to="/direct" class="about-services-sec__element about-services-sec__element--yandex">
+                    <NuxtLink to="/direct" class="about-services-sec__element about-services-sec__element--yandex cursor-mod cursor-mod-services" >
                         <p class="about-services-sec__element-text">Яндекс.Директ</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1AFF00;"></div>
@@ -67,7 +67,7 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/geomarketing" class="about-services-sec__element about-services-sec__element--geo" >
+                    <NuxtLink to="/geomarketing" class="about-services-sec__element about-services-sec__element--geo cursor-mod cursor-mod-services" >
                         <p class="about-services-sec__element-text">Геомаркетинг</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1A00FF;"></div>
@@ -75,7 +75,7 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/vkads" class="about-services-sec__element about-services-sec__element--vk">
+                    <NuxtLink to="/vkads" class="about-services-sec__element about-services-sec__element--vk cursor-mod cursor-mod-services">
                         <p class="about-services-sec__element-text">VK реклама</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1A00FF;"></div>
@@ -83,7 +83,7 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/tgads" class="about-services-sec__element about-services-sec__element--telegtam">
+                    <NuxtLink to="/tgads" class="about-services-sec__element about-services-sec__element--telegtam cursor-mod cursor-mod-services">
                         <p class="about-services-sec__element-text">Telegram Ads</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #FF00BB;"></div>
@@ -91,7 +91,7 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/website" class="about-services-sec__element about-services-sec__element--dev">
+                    <NuxtLink to="/website" class="about-services-sec__element about-services-sec__element--dev cursor-mod cursor-mod-services">
                         <p class="about-services-sec__element-text">Разработка сайтов</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #FF7700;"></div>

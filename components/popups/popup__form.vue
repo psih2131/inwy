@@ -41,7 +41,7 @@
                 </select>
               </div>
 
-              <div class="info-form-sec__form-inp-btn-v2" @click="validationForm()">
+              <div class="info-form-sec__form-inp-btn-v2 cursor-mod cursor-mod-dark-form-send-text" @click="validationForm()">
                   Оставить заявку
               </div>
 

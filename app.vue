@@ -9,22 +9,22 @@
 
       </NuxtLayout>
 
-
-      <div id="custom-cursor"></div>
+      <cursor />
       
   </div>
 </template>
 
 
 <script setup>
-// import { useCounterStore } from '@/stores/counter'
-import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
-
 import { useCounterStore } from '@/stores/counter'
+
+import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
 
 import HeadScripts from '@/components/HeadRaw.vue'
 
 import BodyScripts from '@/components/BodyScripts.vue'
+
+import cursor from '@/components/cursor.vue'
 
 const store = useCounterStore()
 
@@ -35,31 +35,5 @@ console.log('optionsData',optionsData)
 const scriptsBlock = optionsData.value?.blok_metrik_pered_zakryvayushhim_tegom_head || ''
 
 const bodyScripts = optionsData.value?.blok_metrik_pered_zakryvayushhim_tegom_body || ''
-
-
-onMounted(() => {
-  const cursor = document.getElementById('custom-cursor')
-
-  const move = (e) => {
-    cursor.style.top = `${e.clientY}px`
-    cursor.style.left = `${e.clientX}px`
-  }
-
-  window.addEventListener('mousemove', move)
-
-  onBeforeUnmount(() => {
-    window.removeEventListener('mousemove', move)
-  })
-})
-
-
-
-
-
-
-
-
-
-
 
 </script>

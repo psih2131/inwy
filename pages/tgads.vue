@@ -232,7 +232,7 @@
                             </div>
                             <div class="cost-box__wrapper">
                                 <p class="cost-box__value">{{ item.czena_v_rublyah }} ₽</p>
-                                <div class="cost-box__btn" @click="openFormPopup(`Блок с ценой. Пакет: ${item.nazvanie_paketa}`)">
+                                <div class="cost-box__btn cursor-mod cursor-mod-price" @click="openFormPopup(`Блок с ценой. Пакет: ${item.nazvanie_paketa}`)">
                                     <p class="cost-box__btn-title">Заказать</p>
                                     <div class="cost-box__btn-icon">
                                         <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -263,7 +263,7 @@
                 <h2 class="about-services-sec_title">Другие наши услуги.</h2>
                 <div class="about-services-sec__row">
 
-                    <NuxtLink to="/direct" class="about-services-sec__element about-services-sec__element--yandex">
+                    <NuxtLink to="/direct" class="about-services-sec__element about-services-sec__element--yandex cursor-mod cursor-mod-services" >
                         <p class="about-services-sec__element-text">Яндекс.Директ</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1AFF00;"></div>
@@ -271,7 +271,7 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/geomarketing" class="about-services-sec__element about-services-sec__element--geo" >
+                    <NuxtLink to="/geomarketing" class="about-services-sec__element about-services-sec__element--geo cursor-mod cursor-mod-services" >
                         <p class="about-services-sec__element-text">Геомаркетинг</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1A00FF;"></div>
@@ -279,7 +279,7 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/vkads" class="about-services-sec__element about-services-sec__element--vk">
+                    <NuxtLink to="/vkads" class="about-services-sec__element about-services-sec__element--vk cursor-mod cursor-mod-services">
                         <p class="about-services-sec__element-text">VK реклама</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #1A00FF;"></div>
@@ -287,13 +287,14 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/website" class="about-services-sec__element about-services-sec__element--dev">
+                    <NuxtLink to="/website" class="about-services-sec__element about-services-sec__element--dev cursor-mod cursor-mod-services">
                         <p class="about-services-sec__element-text">Разработка сайтов</p>
                         <div class="about-services-sec__element-img-wrapper">
                             <div class="about-services-sec__element-img-wrapper-circle" style="background: #FF7700;"></div>
                             <img src="@/assets/images/about/a1.jpg" alt="" class="about-services-sec__element-img">
                         </div>
                     </NuxtLink>
+
                 </div>
             </div>
         </section>
