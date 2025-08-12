@@ -339,7 +339,15 @@ function openFormPopup(){
 
 watch(() => route.fullPath, (newPath) => {
   console.log('Маршрут изменился:', newPath)
-  checkHeaderOverTargetBlocks() // твой метод
+  
+
+  setTimeout(()=>{
+    checkHeaderOverTargetBlocks()
+  },300)
+
+
+
+  
 })
 
  const props = defineProps({

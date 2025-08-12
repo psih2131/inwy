@@ -27,7 +27,7 @@
                 </div>
 
 
-                <div class="blog-sec__body-pagination-row" v-if="all_object && all_categories && all_object.length > 0">
+                <div class="blog-sec__body-pagination-row" v-if="all_object && all_categories && all_object.length > 0 && totalPages > 1">
 
                     <div class="pagination">
 
@@ -182,6 +182,51 @@ onBeforeUnmount(() => {
 
 });
 
+
+
+  //SEO
+watchEffect(() => {
+
+useHead({
+    title: current_category.value[0].acf.seo_title,
+    meta: [
+        // Description
+        { name: 'description', content: current_category.value[0].acf.seo_description  || 'Описание по умолчанию' },
+
+        // Keywords (опционально, не влияет сильно на SEO)
+        { name: 'keywords',  content: current_category.value[0].acf.klyuchevaya_fraza || 'test' },
+
+        // OpenGraph
+        { property: 'og:title', content: current_category.value[0].acf.seo_title },
+        { property: 'og:description', content: current_category.value[0].acf.seo_description },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: `${store.domainUrlCurrent}${route.fullPath}` },
+        { property: 'og:image', content: current_category.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Twitter Card (если используешь)
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: current_category.value[0].acf.seo_title },
+        { name: 'twitter:description', content: current_category.value[0].acf.seo_description },
+        { name: 'twitter:image', content: current_category.value?.[0]?.acf?.og_image?.url || 'http://syberia.gearsdpz.beget.tech/wp-content/uploads/2025/07/87baa9efe5d849e4f8da67fe01f9e029.jpg' },
+
+        // Индексация / Деиндексация
+        // Например, noindex для черновика:
+        {
+        name: 'robots',
+        content:
+            current_category.value[0].acf.indeksacziya_v_poiskovyh_sistemah === 'index'
+            ? 'index, follow'
+            : 'noindex, nofollow'
+        }
+    ],
+    link: [
+        // Canonical (вручную или динамически)
+        { rel: 'canonical', href: `${store.domainUrlCurrent}/blog/categories/${current_category.value[0].acf.canonical || route.params.id}` }
+    ]
+})
+
+
+})
 
 
 

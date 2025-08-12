@@ -10,7 +10,7 @@ export default defineSitemapEventHandler(async () => {
     const posts: WPPost[] = await $fetch('https://backendinwyss.ru/wp-json/wp/v2/my-blog?per_page=100')
 
     return posts.map((post) => ({
-        loc: `/blog/${post.slug}`,       // локальный маршрут
+        loc: `https://inwy.ru/blog/${post.slug}`,       // локальный маршрут
         lastmod: post.modified,                // дата последнего изменения
         changefreq: 'weekly',
         priority: 0.7

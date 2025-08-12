@@ -110,3 +110,17 @@
         font-size: 12px;
     }
 }
+
+
+
+@media only screen and (max-width: 1200px) {
+    * {
+        cursor: default !important;
+    }
+
+    .custom-cursor {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+}

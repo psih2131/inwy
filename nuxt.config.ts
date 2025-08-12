@@ -18,6 +18,10 @@ export default defineNuxtConfig({
     }
   },
 
+  site: {
+    url: 'https://inwy.ru',
+  },
+
   sitemap: {
 
     sitemaps: {

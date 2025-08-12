@@ -10,12 +10,11 @@
 
         <div class="custom-cursor__text custom-cursor__text--v3">Отправить</div>
 
-        <div class="custom-cursor__text custom-cursor__text--v4">Заказать</div>
+        <div class="custom-cursor__text custom-cursor__text--v4">Выбрать</div>
 
     </div>
 
 </template>
-
 
 
 <script setup>
@@ -31,7 +30,7 @@ onMounted(() => {
 
   const checkHover = (e) => {
     const target = e.target
-    console.log('target', target)
+    // console.log('target', target)
     if (target.closest('.cursor-mod')) {
       cursor.classList.add('cursor-active')
     } else {
@@ -71,7 +70,7 @@ onMounted(() => {
 
     if (target.closest('.cursor-mod-services')) {
       let currentColorValue = target.closest('.cursor-mod-services').querySelector('.about-services-sec__element-img-wrapper-circle').style.background
-      console.log(currentColorValue)
+      // console.log(currentColorValue)
       cursor.querySelector('.custom-cursor__wrapper').style.background = currentColorValue
 
       cursor.classList.add('cursor-active--services')

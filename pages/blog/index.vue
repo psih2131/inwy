@@ -13,15 +13,7 @@
                         <li v-for="item in all_categories" :key="item" class="blog-sec__nav-list-element">
                             <NuxtLink :to="`/blog/category/${item.slug}`" class="blog-sec__nav-link">{{item.name}}</NuxtLink>
                         </li>
-                        <!-- <li class="blog-sec__nav-list-element">
-                            <a href="" class="blog-sec__nav-link">Маркетинг</a>
-                        </li>
-                        <li class="blog-sec__nav-list-element">
-                            <a href="" class="blog-sec__nav-link">Новости компании</a>
-                        </li>
-                        <li class="blog-sec__nav-list-element">
-                            <a href="" class="blog-sec__nav-link">Разработка</a>
-                        </li> -->
+
                     </ul>
                 </nav>
 
@@ -35,12 +27,8 @@
                     
                 </div>
 
-                <!-- <div class="blog-sec__load-more-row">
-                    <button class="blog-sec__load-more-btn">Показать еще</button>
-                </div> -->
 
-
-                <div class="blog-sec__body-pagination-row" v-if="all_object && all_categories && all_object.length > 0">
+                <div class="blog-sec__body-pagination-row" v-if="all_object && all_categories && all_object.length > 0 && totalPages > 1">
 
                     <div class="pagination">
 
@@ -68,16 +56,7 @@
                         </a>
                     </div>
 
-                    <!-- <div class="page-counter">
-                        <div class="page-counter__text">Страница</div>
-                        <div class="page-counter__counter">{{ currentPage }}</div>
-                        <div class="page-counter__text">из  {{ totalPages }}</div>
-                    </div> -->
-
                 </div>
-
-
-
                 
             </div>
         </section>

@@ -9,7 +9,7 @@ export const useCounterStore = defineStore('counter', () => {
     // const serverUrlDomainRequest = ref('https://panel.gift-siberia.com')
 
 
-    const domainUrlCurrent = ref('inwy.ru')
+    const domainUrlCurrent = ref('https://inwy.ru')
 
     const popupCurrent = ref(null)
 

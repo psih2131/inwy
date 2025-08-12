@@ -9,7 +9,7 @@
 
                 <div class="post-sec__teg-wrapper">
                     <template v-if="object_data_single[0]['blog-category'] && all_categories && all_categories.length > 0">
-                        <NuxtLink v-for="item in object_data_single[0]['blog-category']" :key="item"  class="blog-post__teg" :to="`/blog/categories/${currentCatSlug(item)}`">{{ curentCatTitle(item) }}</NuxtLink>
+                        <NuxtLink v-for="item in object_data_single[0]['blog-category']" :key="item"  class="blog-post__teg" :to="`/blog/category/${currentCatSlug(item)}`">{{ curentCatTitle(item) }}</NuxtLink>
                     </template>
                 </div>
 
@@ -30,7 +30,6 @@
                     </div>
                 </div>
 
-      
                 <img :src="object_data_single[0].acf.osnovnoe_izobrazhenie.url" :alt="object_data_single[0].acf.osnovnoe_izobrazhenie.alt" class="post-sec__img">
                 
                 <div class="post-sec__sticky-wrapper">
@@ -43,7 +42,7 @@
 
                             <div class="post-sec__teg-wrapper">
                                 <template v-if="object_data_single[0]['blog-category'] && all_categories && all_categories.length > 0">
-                                    <NuxtLink v-for="item in object_data_single[0]['blog-category']" :key="item"  class="blog-post__teg" :to="`/blog/categories/${currentCatSlug(item)}`">{{ curentCatTitle(item) }}</NuxtLink>
+                                    <NuxtLink v-for="item in object_data_single[0]['blog-category']" :key="item"  class="blog-post__teg" :to="`/blog/category/${currentCatSlug(item)}`">{{ curentCatTitle(item) }}</NuxtLink>
                                 </template>
                             </div>
                         </div>
@@ -66,16 +65,13 @@
                                 </div>
                             </NuxtLink>
 
-
                         </div>
                     </aside>
 
                 </div>
 
-
             </div>
         </section>
-
 
     </main>
     
@@ -88,11 +84,6 @@
 import { useCounterStore } from '@/stores/counter'
 
 import { ref, onMounted, onBeforeUnmount, computed, watch  } from 'vue';
-
-// import newsCard from '@/components/component__news-card.vue'
-
-
-
 
 
 //DATA
@@ -177,10 +168,6 @@ return date.toLocaleDateString('ru-RU', {
 }
 
 
-
-
-
-
 //HOOKS
 onMounted(() => {
   // Добавляем обработчик события scroll
@@ -198,8 +185,7 @@ onBeforeUnmount(() => {
  const props = defineProps({
 //   mainData: Object,
       // postAllCategory: Object,
-  })
-
+})
 
 
 

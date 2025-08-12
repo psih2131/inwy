@@ -121,7 +121,7 @@
             </div>
 
              <div class="geomarketing-road-sec__info-box geomarketing-road-sec__info-box--el4">
-              <img src="@/assets/images/geo/map.jpg" alt="" class="geomarketing-road-sec__info-box-map">
+              <img src="@/assets/images/geo/map.png" alt="" class="geomarketing-road-sec__info-box-map">
              </div>
           </div>
         </div>
