@@ -18,6 +18,10 @@ export default defineNuxtConfig({
     }
   },
 
+  plugins: [
+    '@/plugins/yandex-metrika.js'
+  ],
+
   site: {
     url: 'https://inwy.ru',
   },

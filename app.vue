@@ -10,6 +10,10 @@
       </NuxtLayout>
 
       <cursor />
+
+      <noscript>
+      <div><img src="https://mc.yandex.ru/watch/103111113" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
       
   </div>
 </template>

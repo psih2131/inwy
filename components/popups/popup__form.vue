@@ -175,6 +175,12 @@ const sendForm = async () => {
 
     // Теперь response содержит ответ с сервера
     console.log('Ответ от сервера:', response)
+
+    if (process.client && window.ym) {
+      window.ym(103111113, 'reachGoal', 'form_submit');
+      console.log('yandex stat done')
+    }
+
     openFormDonePopup()
 
 
