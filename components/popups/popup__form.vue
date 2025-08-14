@@ -179,32 +179,32 @@ const sendForm = async () => {
 
     if (import.meta.client && window.ym) {
       if(route.fullPath == '/direct'){
-        ym(103111113,'reachGoal','form_submit_yandex')
+        window.ym(103111113,'reachGoal','form_submit_yandex')
         console.log('yandex stat done', route.fullPath)
       }
 
       else if(route.fullPath == '/vkads'){
-        ym(103111113,'reachGoal','form_submit_vk')
+        window.ym(103111113,'reachGoal','form_submit_vk')
         console.log('form_submit_vk  done', route.fullPath)
       }
 
       else if(route.fullPath == '/tgads'){
-        ym(103111113,'reachGoal','form_submit_tg')
+        window.ym(103111113,'reachGoal','form_submit_tg')
         console.log('form_submit_tg  done', route.fullPath)
       }
 
       else if(route.fullPath == '/website'){
-       ym(103111113,'reachGoal','form_submit_site')
+       window.ym(103111113,'reachGoal','form_submit_site')
        console.log('website  done', route.fullPath)
       }
 
       else if(route.fullPath == '/geomarketing'){
-       ym(103111113,'reachGoal','form_submit_geo')
+       window.ym(103111113,'reachGoal','form_submit_geo')
        console.log('geomarketing  done', route.fullPath)
       }
 
       else if(route.fullPath == '/'){
-       ym(103111113,'reachGoal','form_submit_home')
+       window.ym(103111113,'reachGoal','form_submit_home')
        console.log('form_submit_home  done', route.fullPath)
       }
 
