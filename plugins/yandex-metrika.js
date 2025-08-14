@@ -1,5 +1,5 @@
 export default defineNuxtPlugin(() => {
-    if (process.client) {
+    if (import.meta.client) { // вместо process.client
         if (!window.ym) {
             (function (m, e, t, r, i, k, a) {
                 m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };

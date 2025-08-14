@@ -102,6 +102,8 @@ const formPhoneValidStatus = ref(null)
 
 const sendStatus = ref(null)
 
+const ymGoal = inject('ymGoal');
+
 
 //METHODS 
 function closePopup(){
@@ -175,36 +177,42 @@ const sendForm = async () => {
     // Теперь response содержит ответ с сервера
     console.log('Ответ от сервера:', response)
 
-    if (process.client && window.ym) {
+    if (import.meta.client && window.ym) {
       if(route.fullPath == '/direct'){
         ym(103111113,'reachGoal','form_submit_yandex')
+        console.log('yandex stat done', route.fullPath)
       }
 
       else if(route.fullPath == '/vkads'){
         ym(103111113,'reachGoal','form_submit_vk')
+        console.log('form_submit_vk  done', route.fullPath)
       }
 
       else if(route.fullPath == '/tgads'){
         ym(103111113,'reachGoal','form_submit_tg')
+        console.log('form_submit_tg  done', route.fullPath)
       }
 
       else if(route.fullPath == '/website'){
        ym(103111113,'reachGoal','form_submit_site')
+       console.log('website  done', route.fullPath)
       }
 
       else if(route.fullPath == '/geomarketing'){
        ym(103111113,'reachGoal','form_submit_geo')
+       console.log('geomarketing  done', route.fullPath)
       }
 
       else if(route.fullPath == '/'){
        ym(103111113,'reachGoal','form_submit_home')
+       console.log('form_submit_home  done', route.fullPath)
       }
 
       else{
         window.ym(103111113, 'reachGoal', 'form_submit');
+        console.log('yandex stat done', route.fullPath)
       }
       
-      console.log('yandex stat done', route.fullPath)
     }
 
     openFormDonePopup()
