@@ -18,9 +18,9 @@ export default defineNuxtConfig({
     }
   },
 
-  plugins: [
-    '@/plugins/yandex-metrika.js'
-  ],
+  // plugins: [
+  //   '@/plugins/yandex-metrika.js'
+  // ],
 
   site: {
     url: 'https://inwy.ru',
@@ -62,6 +62,19 @@ export default defineNuxtConfig({
   },
 
 
+  yandexMetrika: {
+    id: 103111113, // Замените на ваш ID счётчика
+    webvisor: true,
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    trackHash: true,          // отслеживание изменения хеша в URL
+    defer: false,             // откладывать загрузку скрипта
+    useCDN: true,             // использовать CDN Яндекса
+    childIframe: true,        // отслеживать клики внутри iframe
+  },
+
+
 
 
 
@@ -81,5 +94,6 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    'yandex-metrika-module-nuxt3',
   ],
 })
