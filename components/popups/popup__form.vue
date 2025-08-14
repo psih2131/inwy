@@ -158,7 +158,6 @@ function validPhone(phone) {
 }
 
 
-
 //send request to telegram
 const sendForm = async () => {
   try {
@@ -177,8 +176,35 @@ const sendForm = async () => {
     console.log('Ответ от сервера:', response)
 
     if (process.client && window.ym) {
-      window.ym(103111113, 'reachGoal', 'form_submit');
-      console.log('yandex stat done')
+      if(route.fullPath == '/direct'){
+        ym(103111113,'reachGoal','form_submit_yandex')
+      }
+
+      else if(route.fullPath == '/vkads'){
+        ym(103111113,'reachGoal','form_submit_vk')
+      }
+
+      else if(route.fullPath == '/tgads'){
+        ym(103111113,'reachGoal','form_submit_tg')
+      }
+
+      else if(route.fullPath == '/website'){
+       ym(103111113,'reachGoal','form_submit_site')
+      }
+
+      else if(route.fullPath == '/geomarketing'){
+       ym(103111113,'reachGoal','form_submit_geo')
+      }
+
+      else if(route.fullPath == '/'){
+       ym(103111113,'reachGoal','form_submit_home')
+      }
+
+      else{
+        window.ym(103111113, 'reachGoal', 'form_submit');
+      }
+      
+      console.log('yandex stat done', route.fullPath)
     }
 
     openFormDonePopup()
@@ -196,7 +222,6 @@ const sendForm = async () => {
 function openFormDonePopup(){
     store.changePopupCurrent('popup-form-done')
 }
-
 
 
 //HOOKS
