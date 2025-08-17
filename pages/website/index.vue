@@ -369,10 +369,12 @@ function stopTargetClickOutside() {
 }
 
 function show(index) {
+if (window.innerWidth < 1200) return
   activeIndex.value = index
 }
 
 function move(event, index) {
+if (window.innerWidth < 1200) return
   if (activeIndex.value === index) {
     const offsetX = -150 // половина ширины превью
     const offsetY = -100 // половина высоты превью
@@ -384,6 +386,7 @@ function move(event, index) {
 }
 
 function hide(index) {
+if (window.innerWidth < 1200) return
   if (activeIndex.value === index) {
     activeIndex.value = null
   }

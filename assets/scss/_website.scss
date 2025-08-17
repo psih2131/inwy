@@ -1032,4 +1032,8 @@
     .website-hero-sec__container {
         border-radius: 0;
     }
+
+    .website-portfolio-sec__work-name {
+        width: calc(100% - 80px);
+    }
 }
