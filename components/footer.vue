@@ -136,7 +136,7 @@
                 <div class="footer__middle-row-col">
                     <ul class="footer__social">
 
-                        <li class="footer__social-element" v-for="item in optionData.socz_seti" :key="item">
+                        <li class="footer__social-element" v-for="item in (optionData && optionData.socz_seti ? optionData.socz_seti : [])" :key="item">
                             <a :href="item.ssylka" class="footer__social-link">
                                 <img :src="item.ikonka.url" :alt="item.ikonka.alt" class="footer__social-element-img">
                             </a>

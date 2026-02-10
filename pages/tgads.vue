@@ -110,7 +110,7 @@
                             <p class="possibilities__right-down-text">Мы всегда держим руку на пульсе и доносим информацию до вас </p>
                             <div class="possibilities__right-down-social-row">
                                 
-                                <a v-for="item in pageData[0].acf.sekcziya_3_novye_vozmozhnosti.socz_seti"
+                                <a v-for="item in (pageData[0].acf.sekcziya_3_novye_vozmozhnosti.socz_seti || [])"
                                 :key="item"
                                 :href="item.ssylka" class="possibilities__right-down-social">
                                     <img :src="item.ikonka.url" :alt="item.ikonka.alt">

@@ -62,7 +62,7 @@
 
           <ul class="form-popup__down-social-row">
 
-              <li class="footer__social-element" v-for="item in formData.socz_seti" :key="item">
+              <li class="footer__social-element" v-for="item in (formData && formData.socz_seti ? formData.socz_seti : [])" :key="item">
                   <a :href="item.ssylka" class="footer__social-link">
                       <img :src="item.ikonka.url" :alt="item.ikonka.alt" class="footer__social-element-img">
                   </a>
